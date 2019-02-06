@@ -1,0 +1,202 @@
+// diagrams of the verify user journey
+
+.user-journey-diagram {
+
+  ol {
+    border-left: 3px solid $grey-2;
+    padding: 30px 30px 0 30px;
+    counter-reset: section;
+
+    @media screen and (max-width: 600px) {
+      margin-left: 20px;
+    }
+
+    h2, p {
+      max-width: 18em;
+
+      @media screen and (max-width: 600px) {
+        max-width: 10em;
+      }
+
+    }
+
+    li {
+      position: relative;
+      border: 2px solid $black;
+      border-top: 20px solid $black;
+      padding: 5px;
+      margin-bottom: 30px;
+      width: 210px;
+      height: 140px;
+      box-sizing: border-box;
+
+      @media screen and (max-width: 920px) {
+        width: 120px;
+        padding: 10px 5px 0;
+        height: auto;
+      }
+
+      .blue-bg {
+        color: white;
+        background-color: $govuk-blue;
+        height: 75%;
+        margin-top: -44px;
+
+        @media screen and (max-width: 600px) {
+          height: 100%;
+        }
+
+      }
+
+    }
+
+    li > p {
+      padding: 5px;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: bold;
+      margin-top: -44px;
+    }
+
+    ol {
+      counter-reset: section;
+      position: absolute;
+      top: 55px;
+      left: 550px;
+      padding-top: 20px;
+
+      li:before {
+        counter-increment: section;
+        content: counters(section, ".") " ";
+      }
+
+      @media screen and (max-width: 920px) {
+        left: 400px;
+      }
+
+      @media screen and (max-width: 600px) {
+        top: 30px;
+        left: 220px;
+      }
+
+    }
+
+    ol:before {
+      content: '';
+      display: block;
+      position: relative;
+      height: 3px;
+      width: 330px;
+      background-color: #bfc1c3;
+      top: -20px;
+      left: -360px;
+
+      @media screen and (max-width: 920px) {
+        width: 200px;
+        left: -230px;
+      }
+
+      @media screen and (max-width: 600px) {
+        width: 100px;
+        left: -130px;
+      }
+
+    }
+
+  }
+
+  .idp {
+    border: 2px solid $grey-1;
+    border-top: 20px solid $grey-1;
+  }
+
+  .phone {
+    padding-top: 0;
+
+    @media screen and (max-width: 600px) {
+      top: -10px;
+    }
+
+    li {
+      border-radius: 8px;
+      border: 2px solid $grey-1;
+      border-top: 15px solid $grey-1;
+      border-bottom: 15px solid $grey-1;
+      width: 50px;
+      height: 90px;
+
+      p {
+        position: relative;
+        top: 10px;
+        left: 50px;
+        overflow-x: visible;
+        width: 20em;
+
+        @media screen and (max-width: 600px) {
+          width: 9em
+        }
+      }
+
+    }
+
+    li:before {
+      top: 0
+    }
+
+  }
+
+  li:before {
+    counter-increment: section;
+    content: counter(section);
+    display: inline-block;
+    position: relative;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    top: 30px;
+    left: -60px;
+    font-weight: bold;
+    background-color: $white;
+    border: 3px solid $grey-2;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding-top: 8px;
+
+    @media screen and (max-width: 600px) {
+      height: 36px;
+      width: 36px;
+      padding-top: 6px;
+      left: -57px;
+      top: 0;
+    }
+
+  }
+
+  ol:after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 18px solid #bfc1c3;
+    left: -44px;
+    top: 18px;
+  }
+
+  .phone:before {
+    top: 0;
+  }
+
+  .phone:after {
+    width: 325px;
+    height: 3px;
+    background-color: $grey-2;
+    border: none;
+    top: 0;
+    left: -355px;
+  }
+
+}

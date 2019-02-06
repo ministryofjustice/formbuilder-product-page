@@ -1,0 +1,76 @@
+// Content Section Component
+//
+// Represents a section of content on the product page, with a title and
+// optional image.
+//
+// Example Usage:
+//
+// <section class="content-section">
+//   <h2 class="content-section__title">Section Title</h2>
+//   <p class="content-section__body">Lorem ipsum dolor...</p>
+// </section>
+
+.content-section {
+  margin-top: $gutter;
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__video {
+    border: 1px solid $grey-2;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    padding: 30px 5px 56.25%;
+
+      iframe, object {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+  }
+
+  &__transcript {
+    margin: 5px 0;
+    padding: 5px 0;
+
+      summary:hover {
+        background-color: $grey-3;
+      }
+  }
+
+  &--with-top-border {
+    padding-top: $gutter;
+    border-top: 1px $grey-2 solid;
+  }
+
+  &--with-top-padding {
+    @include media(tablet) {
+      padding-top: $gutter * 1.5;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+
+    .column-two-thirds,
+    .column-half,
+    .column-one-half {
+      width: 100%
+    }
+
+  }
+
+}
+
+.partner-logo {
+  margin-bottom: $gutter;
+  width: auto;
+  height: 4em;
+}
