@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: formbuilder-product-page
+spec:
+  rules:
+  - host: formbuilder-product-page.apps.cloud-platform-live-0.k8s.integration.dsd.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: formbuilder-product-page
+          servicePort: 4567
