@@ -1,0 +1,3 @@
+#!/bin/sh
+
+kubectl apply --filename deploy/ --namespace formbuilder-product-page-prod
