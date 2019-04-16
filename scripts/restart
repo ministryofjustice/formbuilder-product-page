@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'json'
+
+namespace = 'formbuilder-product-page-prod'
+
+json = `kubectl -n #{namespace} get pods -o json`
+hash = JSON.parse(json)
+pods = hash['items'].map{|e| e['metadata']['name']}
+
+puts "Deleting pods #{pods.join(', ')}..."
+out = `kubectl delete pods -n #{namespace} #{pods.join(' ')}`
+puts out

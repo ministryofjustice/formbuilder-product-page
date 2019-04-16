@@ -9,8 +9,11 @@ spec:
       labels:
         app: formbuilder-product-page
     spec:
+      securityContext:
+        runAsUser: 999
       containers:
       - name: product-page
-        image: 926803513772.dkr.ecr.eu-west-1.amazonaws.com/formbuilder/formbuilder-product-page:latest
+        image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/formbuilder/formbuilder-product-page:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 4567
