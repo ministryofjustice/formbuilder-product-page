@@ -1,6 +1,6 @@
 # FormBuilder Product Page
 
-The FormBuilder product page can be found at: https://formbuilder-product-page.apps.cloud-platform-live-0.k8s.integration.dsd.io/
+The FormBuilder product page can be found at: https://formbuilder-product-page.apps.live-1.cloud-platform.service.justice.gov.uk
 
 ## Running Locally
 
