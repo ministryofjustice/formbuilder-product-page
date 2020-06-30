@@ -1,6 +1,6 @@
 # FormBuilder Product Page
 
-The FormBuilder product page can be found at: https://formbuilder-product-page.apps.live-1.cloud-platform.service.justice.gov.uk
+Product Pages are no longer live. For infomation on MoJ Form Builder please contact form-builder-team@digital.justice.gov.uk .
 
 ## Running Locally
 
