@@ -1,6 +1,6 @@
 # FormBuilder Product Page
 
-Product Pages are no longer live. For infomation on MoJ Form Builder please contact form-builder-team@digital.justice.gov.uk .
+Product Pages are being updated. For infomation on MoJ Form Builder please contact form-builder-team@digital.justice.gov.uk .
 
 ## Running Locally
 
