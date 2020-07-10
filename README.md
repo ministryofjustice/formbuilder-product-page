@@ -1,12 +1,15 @@
-# FormBuilder Product Page
+# MOJ Online Product Page
 
-Product Pages are no longer live. For infomation on MoJ Form Builder please contact form-builder-team@digital.justice.gov.uk .
+Product Pages are no longer live. For information on MOJ Online please contact form-builder-team@digital.justice.gov.uk .
 
 ## Running Locally
 
 If you wish to run in your own browser, you'll need to run the
 following commands from the root of this project:
 
+- `\curl -sSL https://get.rvm.io | bash` to install ruby version manager (rvm)
+- `cat .ruby-version | xargs rvm install` to install the correct version of ruby
+- `gem install bundler` to install the dependency manager
 - `bundle install` to install middleman and its dependencies
 - `npm install` to install the frontend dependencies
 - `bundle exec middleman server` - to start middleman's built in server

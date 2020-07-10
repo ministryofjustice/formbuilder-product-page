@@ -11,7 +11,7 @@
     gtag('config', 'UA-129572512-1');
   </script>
   <meta charset="utf-8">
-  <title><%= current_page.data.title && "#{current_page.data.title} – " %>Form Builder</title>
+  <title><%= current_page.data.title && "#{current_page.data.title} – " %>MOJ Online</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="https://assets.publishing.service.gov.uk/static/favicon-8d811b8c3badbc0b0e2f6e25d3660a96cc0cca7993e6f32e98785f205fc40907.ico" type="image/x-icon">
   <!--[if gt IE 8]><!--><%= stylesheet_link_tag :screen, media: 'screen' %><!--<![endif]-->
@@ -32,7 +32,7 @@
             Ministry of Justice
           </span>
           <span class="header__title">
-            Form Builder
+            MOJ Online
           </span>
         </a>
       </div>
@@ -45,7 +45,9 @@
                 #'About' => '/',
                 # 'Get started' => '/connecting',
                 'Features' => '/features',
-              'Contact' => '/contact'
+                'Our process' => '/process',
+                'Pricing' => '/pricing',
+              'Support' => '/support'
             }.each do |title, url|
               %>
               <li<% if url == current_page.url %> class="active" "aria-current"="page"<% end %>>
@@ -66,7 +68,7 @@
 
   <footer class="group js-footer" id="footer" role="contentinfo">
     <div class="footer-wrapper">
-      <div class="footer-categories">
+      <!--<div class="footer-categories">
         <div class="footer-categories-wrapper">
           <div class="grid-row">
             <div class="column-one-third">
@@ -104,7 +106,8 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
+
       <div class="footer-meta">
         <div class="footer-meta-inner">
           <div class="open-government-licence">
