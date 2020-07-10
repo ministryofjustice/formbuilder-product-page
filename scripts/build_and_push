@@ -16,7 +16,7 @@ out = `docker build -t #{repo_url}:latest .`
 puts out
 
 puts 'Logging into AWS ECR...'
-command = "AWS_ACCESS_KEY_ID=#{access_key} AWS_SECRET_ACCESS_KEY=#{secret_access_key} aws ecr get-login --no-include-email --region eu-west-2"
+command = "AWS_ACCESS_KEY_ID=#{access_key} AWS_SECRET_ACCESS_KEY=#{secret_access_key} aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 754256621582.dkr.ecr.eu-west-2.amazonaws.com"
 out = `#{command}`
 puts out
 

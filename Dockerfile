@@ -1,20 +1,19 @@
-FROM ministryofjustice/ruby:2.5.3-webapp-onbuild
+FROM httpd:2.4.43-alpine
 
-RUN apt-get update && apt-get install -y nodejs
+ARG UID=1001
 
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && apt-get -y install npm
+RUN apk update && apk upgrade && \
+    apk add --no-cache build-base bash libcurl
 
-RUN groupadd -r deploy && useradd -m -u 999 -r -g deploy deploy
-RUN chown -R deploy:deploy .
-RUN find $GEM_HOME ! -user deploy | xargs chown -R deploy:deploy
-USER deploy
+RUN addgroup -g ${UID} -S appgroup && \
+    adduser -u ${UID} -S appuser -G appgroup
 
-RUN bundle install
+RUN ls -laR /usr/local/apache2
 
-RUN npm install --unsafe-perm
+COPY build/ /usr/local/apache2/htdocs/
+COPY httpd.conf /usr/local/apache2/conf/
 
-EXPOSE 4567
+RUN chown -R appuser:appgroup /usr/local/apache2/
+USER appuser
 
-ENTRYPOINT bundle exec middleman server
-
-USER deploy
+RUN ls -laR /usr/local/apache2
