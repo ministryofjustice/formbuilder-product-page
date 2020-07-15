@@ -8,12 +8,8 @@ RUN apk update && apk upgrade && \
 RUN addgroup -g ${UID} -S appgroup && \
     adduser -u ${UID} -S appuser -G appgroup
 
-RUN ls -laR /usr/local/apache2
-
 COPY build/ /usr/local/apache2/htdocs/
 COPY httpd.conf /usr/local/apache2/conf/
 
 RUN chown -R appuser:appgroup /usr/local/apache2/
 USER appuser
-
-RUN ls -laR /usr/local/apache2
