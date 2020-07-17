@@ -22,4 +22,14 @@ $govuk-assets-path: "/assets/govuk/assets/";
   display: block;
   margin-bottom: govuk-spacing(9);
 }
+
 // scss-lint:enable IdSelector
+
+.content-section {
+  margin-top: 30px;
+}
+
+.content-section--with-top-border {
+  padding-top: 45px;
+  border-top: 1px #dee0e2 solid;
+}
