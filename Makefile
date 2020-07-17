@@ -4,6 +4,8 @@ all: clean build build-docker run-docker
 
 docker-go-away: remove-docker-containers remove-docker-images
 
+build-and-deploy: clean build live-deploy
+
 build:
 	@echo "Build..."
 	# git pull
