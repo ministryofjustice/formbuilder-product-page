@@ -1,2 +1,2 @@
-//= require vendor/jquery
-//= require vendor/modernizr
+//= require build/gaap-analytics.min
+//= require start-modules
