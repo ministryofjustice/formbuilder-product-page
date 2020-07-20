@@ -32,7 +32,7 @@ end
 
 # Insert your Google Analytics ID below
 configure :build do
-  set :analytics, "'UA-129572512-1'"
+  set :analytics, "'UA-162688961-1'"
 end
 
 ###
