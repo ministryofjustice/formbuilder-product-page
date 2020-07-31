@@ -1,0 +1,22 @@
+name: Deploy to Production
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy-production:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@master
+    - name: Build and push production
+      env:
+        K8S_TOKEN: ${{ secrets.FB_PRODUCT_PAGE_KUBE_TOKEN_PRODUCTION }}
+        K8S_CLUSTER_CERT: ${{ secrets.FB_PRODUCT_PAGE_KUBE_CERT_PRODUCTION}}
+        K8S_CLUSTER_NAME: ${{ secrets.FB_PRODUCT_PAGE_KUBE_CLUSTER }}
+        SERVICE_ACCOUNT: ${{ secrets.FB_PRODUCT_PAGE_SERVICE_ACCOUNT_PRODUCTION }}
+        K8S_NAMESPACE: formbuilder-product-page-prod
+        ECR_CREDENTIALS_SECRET: formbuilder-product-page-production-ecr-credentials-output
+        ECR_USERNAME: ${{ secrets.FB_PRODUCT_PAGE_ECR_USERNAME }}
+        ECR_PASSWORD: ${{ secrets.FB_PRODUCT_PAGE_ECR_PASSWORD }}
+      run: ./scripts/build_and_push.sh
