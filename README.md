@@ -1,6 +1,10 @@
 # MOJ Online Product Page
 
-Product Pages are no longer live. For information on MOJ Online please contact form-builder-team@digital.justice.gov.uk .
+![Deploy to Production](https://github.com/ministryofjustice/formbuilder-product-page/workflows/Deploy%20to%20Production/badge.svg)
+
+https://formbuilder-product-page.apps.live-1.cloud-platform.service.justice.gov.uk/
+
+For information on MOJ Online please contact moj-online@digital.justice.gov.uk.
 
 ## Running Locally
 
@@ -15,32 +19,10 @@ following commands from the root of this project:
 - `bundle exec middleman server` - to start middleman's built in server
 - `open http://localhost:4567` - to open the example in your browser
 
-## Application Deployment
+## Deployment
 
-To deploy you will need to
+Deployments are handled by [Github Actions](https://github.com/ministryofjustice/formbuilder-product-page/actions).
 
-1. Build docker image
-2. Push docker image to ECR
-3. Delete pods, so new containers are spun with the new docker image
+Any branch except master will deploy to the staging environment. This can be visited [here](https://formbuilder-product-page-staging.apps.live-1.cloud-platform.service.justice.gov.uk/)
 
-Build docker image and push to ECR with one command:
-```sh
-./scripts/build_and_push
-```
-
-Delete pods with the following command:
-```sh
-./scripts/restart
-```
-
-## Infrastructure deployment
-
-If you need to apply kubernetes changes, call the following command:
-```sh
-./scripts/deploy
-```
-
-On the very rare occasion you need to initialise the kubernetes deployment:
-```sh
-./scripts/create
-```
+Once a change is pushed or merged to master then production will automatically be deployed.
