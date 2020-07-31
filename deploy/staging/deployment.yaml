@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: formbuilder-product-page
+  name: formbuilder-product-page-staging
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: formbuilder-product-page
+      app: formbuilder-product-page-staging
   template:
     metadata:
       labels:
-        app: formbuilder-product-page
+        app: formbuilder-product-page-staging
     spec:
       securityContext:
         runAsUser: 1001
       containers:
       - name: product-page
-        image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/formbuilder/formbuilder-product-page:latest
+        image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/formbuilder/formbuilder-product-page-staging:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 4567

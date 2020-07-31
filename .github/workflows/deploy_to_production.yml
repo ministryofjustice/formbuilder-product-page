@@ -11,6 +11,7 @@ jobs:
       uses: actions/checkout@master
     - name: Build and push production
       env:
+        ENVIRONMENT: prod
         K8S_TOKEN: ${{ secrets.FB_PRODUCT_PAGE_KUBE_TOKEN_PRODUCTION }}
         K8S_CLUSTER_CERT: ${{ secrets.FB_PRODUCT_PAGE_KUBE_CERT_PRODUCTION}}
         K8S_CLUSTER_NAME: ${{ secrets.FB_PRODUCT_PAGE_KUBE_CLUSTER }}
