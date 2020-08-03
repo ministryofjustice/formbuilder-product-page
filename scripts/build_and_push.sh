@@ -23,7 +23,7 @@ bundle install
 bundle exec middleman build
 
 echo  'Building docker image...'
-out=$(docker build -t ${ECR_REPO_URL}:latest .)
+out=$(docker build -t ${ECR_REPO_URL}:${ENVIRONMENT}-latest .)
 echo $out
 
 echo 'Logging into AWS ECR...'
@@ -31,11 +31,11 @@ out=$(aws ecr get-login-password --region eu-west-2 | docker login --username ${
 echo $out
 
 echo 'Pushing docker image...'
-out=$(docker push ${ECR_REPO_URL}:latest)
+out=$(docker push ${ECR_REPO_URL}:${ENVIRONMENT}-latest)
 echo $out
 
 echo "Applying namespace configuration to ${K8S_NAMESPACE}..."
-kubectl apply --filename ./deploy/ -n ${K8S_NAMESPACE}
+kubectl apply --filename "./deploy/${ENVIRONMENT}" -n ${K8S_NAMESPACE}
 
 echo "Restarting pods..."
 kubectl rollout restart deployments -n ${K8S_NAMESPACE}
