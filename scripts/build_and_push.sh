@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 sudo apt-get update && sudo apt-get install -y awscli docker.io ruby-full nodejs
 
