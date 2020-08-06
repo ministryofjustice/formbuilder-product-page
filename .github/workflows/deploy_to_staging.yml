@@ -23,4 +23,5 @@ jobs:
         ECR_CREDENTIALS_SECRET: formbuilder-product-page-staging-ecr-credentials-output
         ECR_USERNAME: ${{ secrets.FB_PRODUCT_PAGE_ECR_USERNAME }}
         ECR_PASSWORD: ${{ secrets.FB_PRODUCT_PAGE_ECR_PASSWORD }}
+        BASIC_AUTH_STAGING: ${{ secrets.FB_BASIC_AUTH_STAGING }}
       run: ./scripts/build_and_push.sh
