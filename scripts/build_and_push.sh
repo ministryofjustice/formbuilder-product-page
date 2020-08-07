@@ -34,17 +34,11 @@ bundle exec middleman build
 
 if [ "$ENVIRONMENT" = "staging" ]; then
   echo 'Adding robots file to staging...'
-  echo "User-agent: *\nDisallow: /" > ./build/robots.txt
+  cp ./deploy/templates/staging_robots.txt ./build/robots.txt
 
   echo 'Adding basic auth secret file to staging...'
-  cat << EOF > ./deploy/staging/secret.yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: basic-auth
-data:
-  auth: ${BASIC_AUTH_STAGING}
-EOF
+  sed s/%BASIC_AUTH_STAGING%/${BASIC_AUTH_STAGING}/g \
+    ./deploy/templates/staging_secret.yaml > ./deploy/staging/secret.yaml
 fi
 
 echo  'Building docker image...'
