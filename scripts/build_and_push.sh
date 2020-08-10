@@ -32,8 +32,17 @@ sudo gem install bundler
 bundle install
 bundle exec middleman build
 
+if [ "$ENVIRONMENT" = "staging" ]; then
+  echo 'Adding robots file to staging...'
+  cp ./deploy/templates/staging_robots.txt ./build/robots.txt
+
+  echo 'Adding basic auth secret file to staging...'
+  sed s/%BASIC_AUTH_STAGING%/${BASIC_AUTH_STAGING}/g \
+    ./deploy/templates/staging_secret.yaml > ./deploy/staging/secret.yaml
+fi
+
 echo  'Building docker image...'
-out=$(docker build -t ${ECR_REPO_URL}:${ENVIRONMENT}-latest .)
+out=$(docker build -t ${ECR_REPO_URL}:latest .)
 echo $out
 
 echo 'Logging into AWS ECR...'
@@ -41,7 +50,7 @@ out=$(aws ecr get-login-password --region eu-west-2 | docker login --username ${
 echo $out
 
 echo 'Pushing docker image...'
-out=$(docker push ${ECR_REPO_URL}:${ENVIRONMENT}-latest)
+out=$(docker push ${ECR_REPO_URL}:latest)
 echo $out
 
 echo "Applying namespace configuration to ${K8S_NAMESPACE}..."
