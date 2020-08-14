@@ -16,7 +16,7 @@ spec:
         runAsUser: 1001
       containers:
       - name: product-page
-        image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/formbuilder/formbuilder-product-page-prod:latest
+        image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/formbuilder/formbuilder-product-page:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 4567
