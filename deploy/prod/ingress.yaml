@@ -6,11 +6,20 @@ spec:
   tls:
     - hosts:
         - formbuilder-product-page.apps.live-1.cloud-platform.service.justice.gov.uk
+    - hosts:
+        - moj-online.service.justice.gov.uk
   rules:
   - host: formbuilder-product-page.apps.live-1.cloud-platform.service.justice.gov.uk
     http:
       paths:
       - path: /
         backend:
+          serviceName: formbuilder-product-page
+          servicePort: 4567
+  - host: moj-online.service.justice.gov.uk
+    http:
+      paths:
+      - path: /
+        bakend:
           serviceName: formbuilder-product-page
           servicePort: 4567
