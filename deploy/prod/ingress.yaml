@@ -20,6 +20,6 @@ spec:
     http:
       paths:
       - path: /
-        bakend:
+        backend:
           serviceName: formbuilder-product-page
           servicePort: 4567
