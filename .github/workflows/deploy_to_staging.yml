@@ -1,27 +1,27 @@
-name: Deploy to Staging
-on:
-  push:
-    branches:
-      - '*'
-      - '*/*'
-      - '**'
-      - '!master'
-jobs:
-  deploy-staging:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@master
-    - name: Build and push staging
-      env:
-        ENVIRONMENT: staging
-        K8S_TOKEN: ${{ secrets.FB_PRODUCT_PAGE_KUBE_TOKEN_STAGING }}
-        K8S_CLUSTER_CERT: ${{ secrets.FB_PRODUCT_PAGE_KUBE_CERT_STAGING}}
-        K8S_CLUSTER_NAME: ${{ secrets.FB_PRODUCT_PAGE_KUBE_CLUSTER }}
-        SERVICE_ACCOUNT: ${{ secrets.FB_PRODUCT_PAGE_SERVICE_ACCOUNT_STAGING }}
-        K8S_NAMESPACE: formbuilder-product-page-staging
-        ECR_CREDENTIALS_SECRET: formbuilder-product-page-staging-ecr-credentials-output
-        ECR_USERNAME: ${{ secrets.FB_PRODUCT_PAGE_ECR_USERNAME }}
-        ECR_PASSWORD: ${{ secrets.FB_PRODUCT_PAGE_ECR_PASSWORD }}
-        BASIC_AUTH_STAGING: ${{ secrets.FB_BASIC_AUTH_STAGING }}
-      run: ./scripts/build_and_push.sh
+# name: Deploy to Staging
+# on:
+#   push:
+#     branches:
+#       - '*'
+#       - '*/*'
+#       - '**'
+#       - '!master'
+# jobs:
+#   deploy-staging:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@master
+#     - name: Build and push staging
+#       env:
+#         ENVIRONMENT: staging
+#         K8S_TOKEN: ${{ secrets.FB_PRODUCT_PAGE_KUBE_TOKEN_STAGING }}
+#         K8S_CLUSTER_CERT: ${{ secrets.FB_PRODUCT_PAGE_KUBE_CERT_STAGING}}
+#         K8S_CLUSTER_NAME: ${{ secrets.FB_PRODUCT_PAGE_KUBE_CLUSTER }}
+#         SERVICE_ACCOUNT: ${{ secrets.FB_PRODUCT_PAGE_SERVICE_ACCOUNT_STAGING }}
+#         K8S_NAMESPACE: formbuilder-product-page-staging
+#         ECR_CREDENTIALS_SECRET: formbuilder-product-page-staging-ecr-credentials-output
+#         ECR_USERNAME: ${{ secrets.FB_PRODUCT_PAGE_ECR_USERNAME }}
+#         ECR_PASSWORD: ${{ secrets.FB_PRODUCT_PAGE_ECR_PASSWORD }}
+#         BASIC_AUTH_STAGING: ${{ secrets.FB_BASIC_AUTH_STAGING }}
+#       run: ./scripts/build_and_push.sh
