@@ -28,7 +28,7 @@ export ECR_REPO_URL=$(kubectl get secrets -n ${K8S_NAMESPACE} ${ECR_CREDENTIALS_
 
 npm install
 
-sudo gem install bundler
+sudo gem install bundler -v 2.1.4
 bundle install
 bundle exec middleman build
 
