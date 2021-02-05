@@ -1,10 +1,10 @@
-# MOJ Online Product Page
+# MOJ Forms Product Page
 
 ![Deploy to Production](https://github.com/ministryofjustice/formbuilder-product-page/workflows/Deploy%20to%20Production/badge.svg)
 
-https://moj-online.service.justice.gov.uk
+https://moj-forms.service.justice.gov.uk
 
-For information on MOJ Online please contact moj-online@digital.justice.gov.uk.
+For information on MOJ Forms please contact moj-forms@digital.justice.gov.uk.
 
 ## Running Locally
 
