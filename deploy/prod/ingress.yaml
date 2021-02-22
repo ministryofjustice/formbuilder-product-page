@@ -21,6 +21,8 @@ spec:
           serviceName: formbuilder-product-page
           servicePort: 4567
   - host: moj-online.service.justice.gov.uk
+    # Previous product name URL - traffic still directed from this address
+    # Look at redirecting at the domain level in future
     http:
       paths:
       - path: /
@@ -28,6 +30,7 @@ spec:
           serviceName: formbuilder-product-page
           servicePort: 4567
   - host: moj-forms.service.justice.gov.uk
+    # New Product name URL
     http:
       paths:
       - path: /
