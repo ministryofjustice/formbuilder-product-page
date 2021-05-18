@@ -30,7 +30,7 @@
                 <image src="/assets/images/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image"></image>
               </svg>
               <span class="govuk-header__logotype-text">
-                Ministry of Justice <span class="govuk-header__product-name">MOJ Forms</span>
+                Ministry of Justice <span class="govuk-header__product-name">MoJ Forms</span>
               </span>
             </span>
 
@@ -42,8 +42,8 @@
             <ul id="navigation" class="govuk-header__navigation" aria-label="Top Level Navigation">
               <%
                 {
-                  'What you&#39;ll get' => '/features/',
-                  'Contact' => '/support/'
+                  'Features' => '/features/',
+                  'Support and contacts' => '/contact/'
                 }.each do |title, url|
               %>
                 <li class="govuk-header__navigation-item<% if url == current_page.url %> govuk-header__navigation-item--active" aria-current="page<% end %>">
