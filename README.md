@@ -26,3 +26,14 @@ Deployments are handled by [Github Actions](https://github.com/ministryofjustice
 Any branch except master will deploy to the staging environment. This can be visited [here](https://formbuilder-product-page-staging.apps.live-1.cloud-platform.service.justice.gov.uk/)
 
 Once a change is pushed or merged to master then production will automatically be deployed.
+
+
+## Making Content Changes without Installing Middleman and Other Tools (well maybe a text editor)
+Add this repo to git desktop
+Create a new branch for your changes
+Open the files in source/ and update the html
+Add your changes to the branch
+Commit changes and push up
+
+This will trigger an action to build the site in [staging](https://formbuilder-product-page-staging.apps.live-1.cloud-platform.service.justice.gov.uk/).
+
