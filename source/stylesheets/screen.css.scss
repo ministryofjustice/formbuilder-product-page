@@ -41,12 +41,24 @@ $govuk-assets-path: "/assets/govuk/assets/";
 .hero__description {
   font-family: Arial, Helvetica, sans-serif;
 }
+.govuk-header__navigation-item--active a:link, .govuk-header__navigation-item--active a:hover, .govuk-header__navigation-item--active a:visited
+{
+  font-family: Arial, Helvetica, sans-serif; color:#FFF;
+}
+
+.govuk-header__link {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 .govuk-heading-l {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .govuk-heading-m {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.govuk-heading-s {
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -64,4 +76,12 @@ $govuk-assets-path: "/assets/govuk/assets/";
 
 .govuk-footer {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+table, th, td {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #dee0e2;
+  vertical-align: top;
+  padding: 15px;
 }
