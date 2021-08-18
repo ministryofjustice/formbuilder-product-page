@@ -39,11 +39,25 @@ end
 # Helpers
 ###
 # Methods defined in the helpers block are available in templates
-# helpers do
+ helpers do
 #   def some_helper
 #     "Helping"
 #   end
-# end
+
+  # Helper to list pages in order for passed category (needs category and order in frontmatter)
+  def pages_by_category(category)
+    sitemap.resources.select do |resource|
+      resource.data.category.present? and resource.data.category.include?(category)
+    end.sort_by { |resource| resource.data.order }
+  end
+
+  def pages_by_menu(menu)
+    sitemap.resources.select do |resource|
+      resource.data.menu.present? and resource.data.menu.include?(menu)
+      end.sort_by { |resource| resource.data.menuindex }
+  end
+
+ end
 
 # Build-specific configuration
 configure :build do
@@ -66,3 +80,5 @@ sprockets.append_path File.join(root, 'node_modules/gaap-analytics/')
 
 # https://middlemanapp.com/advanced/pretty-urls/
 activate :directory_indexes
+
+
