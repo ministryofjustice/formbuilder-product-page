@@ -1,0 +1,57 @@
+---
+title: Accessibility
+heading: Accessibility
+category: user-guide
+order: 4
+---
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-body">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        <%= partial "user_nav" %>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
+        <!-- START CONTENT -->
+        <p>How to ensure your form meets accessibility requirements and can be used by as many people as possible.</p>
+      <section class="content-section content-section--with-top-border">
+        <h2 class="govuk-heading-m">Ensuring your form is accessible</h2>
+        <p>Any form you publish must meet <a href="https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps">government accessibility regulations</a>. MoJ Forms does most of the work to ensure that your form is accessible but you are ultimately responsible.</p>
+        <p>There are 3 things you need to do before publishing your form:</p>
+        <ul>
+        <li>ensure that your content is accessible</li>
+        <li>perform a basic accessibility check of your form</li> 
+        <li>complete your form’s accessibility statement</li>
+        </ul>
+        <p>You should follow these steps with any updates to your form, as well as when you first publish it.</p>
+      </section>
+      <section class="content-section content-section--with-top-border">
+        <h2 class="govuk-heading-m">Accessible content</h2>
+        <p>We have built MoJ Forms to produce accessible pages but the content needs to be accessible too. As you build your form, ensure that all of your page titles and headings are unique and informative, that you give meaningful hints and link text, and keep content clear and concise.</p> 
+        <p>Read the <a href="https://www.w3.org/WAI/tips/writing/">Web Accessibility Initiative writing tips</a> for more advice.</p>
+      </section>
+      <section class="content-section content-section--with-top-border">
+          <h2 class="govuk-heading-m">Basic accessibility checks</h2>
+          <p>As you are getting ready to publish your form, we recommend you perform a basic accessibility check. GDS has written a <a href="https://www.gov.uk/government/publications/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one/doing-a-basic-accessibility-check-if-you-cant-do-a-detailed-one">guide to doing basic accessibility checks</a>.</p>
+          <p>There are only a few things you need to check as an MoJ Forms editor. For each page:</p>
+          <ul>
+          <li>check you’re using proper headings</li>
+          <li>check that links make sense</li>
+          <li>check that pages have good titles</li>
+          <li>check it’s clear what information users need to provide</li>
+          <li>check that any error messages are helpful</li>
+          </ul>
+          <p>The <a href="https://wave.webaim.org/">Wave web accessibility evaluation tool</a> can help you with this.
+        </section>
+        <section class="content-section content-section--with-top-border">
+          <h2 class="govuk-heading-m">Accessibility statements</h2>
+          <p>All forms are created with an accessibility page in the footer section which comes pre-populated with a template accessibility statement. There are sections in the statement that you must fill in with details specific to your team and form. These are indicated in square brackets - [like this].</p> 
+          <p>If you are updating an existing form, you will need to check your accessibility statement against the latest version of the template as some sections may have changed.</p>
+          <p><a href="/pdf/Accessibility_statement_template.pdf">Accessibility statement - template</a> (PDF, 0.45MB)<br>
+          Last updated: 11 May 2021</p>
+        </section>
+        <!-- END CONTENT -->
+      </div>
+    </div>
+  </main>
+</div>

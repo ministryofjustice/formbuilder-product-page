@@ -1,0 +1,37 @@
+---
+title: Getting started
+heading: Getting started
+category: user-guide
+order: 2
+---
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-body">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        <%= partial "user_nav" %>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-l"><%= current_page.data.heading%></h1>
+        <!-- START CONTENT -->
+        <p>Find out what MoJ Forms can do and how you can get started creating your own forms and services.</p>
+      <section class="content-section content-section--with-top-border">
+          <h2 class="govuk-heading-m">Getting access and logging in</h2> 
+        <p>To get access, <a href="/contact">contact us</a> to discuss your requirements. As MoJ Forms is in private beta, we need your consent to take part in ongoing research. </p>
+        <p>You will need an email address ending in either:</p>
+        <ul>
+        <li>@digital.justice.gov.uk</li>
+        <li>@justice.gov.uk</li>
+        </ul>
+        <p>MoJ Forms shares a login with your primary work email address so you don't need to remember a separate username or password.
+      </section>
+      <section class="content-section content-section--with-top-border">
+        <h2 class="govuk-heading-m">Planning your first form</h2>
+        <p>We’ve designed MoJ Forms to be quick and easy to use but it helps to plan out your form in advance. For help with this, read the <a href="https://www.gov.uk/service-manual/design/form-structure">Service Manual chapter on structuring forms</a>.</p>
+        <p>You should also refer to the <a href="https://design-system.service.gov.uk/">Design System</a> for advice and guidance on putting the various form components and patterns to use.</p>
+      </section>
+        <!-- END CONTENT -->
+      </div>
+    </div>
+  </main>
+</div>

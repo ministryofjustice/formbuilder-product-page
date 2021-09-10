@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template">
   <head>
     <meta charset="utf-8">
-    <title><%= current_page.data.title && "#{current_page.data.title} – " %>MOJ Forms</title>
+    <title><%= current_page.data.title && "#{current_page.data.title} – " %>MoJ Forms</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -39,18 +39,17 @@
         <div class="govuk-header__content">
           <button type="button" role="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
           <nav>
-            <ul id="navigation" class="govuk-header__navigation" aria-label="Top Level Navigation">
-              <%
-                {
-                  'Features' => '/features/',
-                  'Support and contacts' => '/contact/'
-                }.each do |title, url|
-              %>
-                <li class="govuk-header__navigation-item<% if url == current_page.url %> govuk-header__navigation-item--active" aria-current="page<% end %>">
-                  <a class="govuk-header__link" href="<%= url == current_page.url ? "#main-content" : url %>">
-                    <%= title %>
-                  </a>
-                </li>
+            <ul id="navigation" class="govuk-header__navigation " aria-label="Navigation menu">
+              <% pages_by_menu('top').each do |page| %>
+                <% if page.url == current_page.url %>
+                  <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+                    <a class="govuk-header__link" href="<%= page.url %>"><%= page.data.title %></a>
+                  </li>
+                <% else %>
+                  <li class="govuk-header__navigation-item">
+                    <a class="govuk-header__link" href="<%= page.url %>"><%= page.data.title %></a>
+                  </li>
+                <% end %>
               <% end %>
             </ul>
           </nav>

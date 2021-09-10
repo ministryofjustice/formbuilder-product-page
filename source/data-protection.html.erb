@@ -1,0 +1,46 @@
+---
+title: Data protection
+heading: Data protection
+category: user-guide
+order: 5
+---
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-body">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        <%= partial "user_nav" %>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
+        <!-- START CONTENT -->
+        <p>How to ensure your form meets data protection requirements and keep your users' data secure</p>
+      <section class="content-section content-section--with-top-border">
+        <h2 class="govuk-heading-m">Protecting your users’ information</h2>
+        <p>You have a legal duty to protect any user information that you collect with your forms.</p> 
+        <p>We are responsible for the security of the MoJ Forms platform and take every precaution with user data as users enter it. We encrypt all user data and do not retain any of it after the form has been submitted.</p>
+        <p>You are responsible for:</p>
+        <ul>
+        <li>ensuring that you collect the minimum amount of information necessary</li>
+        <li>making it as easy as possible for users understand why you are collecting information and how you will use it</li>
+        <li>the security of user information after it has been submitted</li>
+        </ul>
+        <p>This includes producing a privacy notice.</p>
+        For more guidance on this topic, see the <a href="https://www.gov.uk/service-manual/design/collecting-personal-information-from-users">Service Manual guidelines on collecting personal information</a>.</p>
+      </section>
+      <section class="content-section content-section--with-top-border">
+        <h2 class="govuk-heading-m">Privacy notices</h2>
+        <p>All forms are created with a privacy page in the footer section which comes pre-populated with a template privacy notice. There are sections in the notice that you must fill in with details specific to your team and form. These are indicated in square brackets - [like this].</p>
+        <p>If you are updating an existing form, you will need to check your privacy notice against the latest version of the template as some sections may have changed.</p>
+        <p><a href="/pdf/Privacy_notice_-_template.pdf">Privacy notice - template</a> (PDF, 0.49MB)<br>
+        Last updated: 11 May 2021</p>
+        <p>We recommend you consult your <a href="https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/information-assurance-roles/">information assurance lead</a> or the data privacy team (<a href="mailto:privacy@justice.gov.uk">privacy@justice.gov.uk</a>) for help completing the template.</p>
+      </section>
+      <section class="content-section content-section--with-top-border">
+        <h2 class="govuk-heading-m">Session duration</h2>
+        <p>To help protect users’ privacy, if they are inactive on a form for 30 minutes the form will reset and any information they have entered up to that point will be cleared. Users are shown a warning and countdown 5 minutes before this happens.</p>
+      </section>
+        <!-- END CONTENT -->
+      </div>
+    </div>
+  </main>
+</div>
