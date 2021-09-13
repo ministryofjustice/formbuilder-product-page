@@ -14,8 +14,18 @@ order: 3
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
         <p>Learn how to start building your first form.</p>
+        <p><a href="#form-name">Your form’s name and URL</a></p>
+        <p><a href="#start-page">The start page</a></p>
+        <p><a href="#required">Required pages</a></p>
+        <p><a href="#adding-pages">Adding pages</a></p>
+        <p><a href="#deleting-pages">Deleting pages</a></p>
+        <p><a href="#page-type">Choosing the type of page</a></p>
+        <p><a href="#question-formats">Choosing which question format to use</a></p>
+        <p><a href="#file-upload">Asking users to submit a file</a></p>
+        <p><a href="#optional">Making a question optional</a></p>
+        <p><a href="#markdown">Formatting content with markdown</a></p>
       <section class="content-section content-section--with-top-border">
-        <h2 class="govuk-heading-m">Your form’s name and URL</h2>
+        <h2 id="form-name" class="govuk-heading-m">Your form’s name and URL</h2>
         <p>When you create a new form, you need to give it a name.</p>
         <p>This name is:</p>
         <ul>
@@ -24,22 +34,25 @@ order: 3
         <li>used in your form’s URL - for example, a name of Apply for a dog licence will produce a form URL of <u>https://apply-for-a-dog-licence.form.service.gov.uk</u></li>
         </ul>
         <p>You can change the name of your form later in the <a href="/settings">settings</a>.</p>
+        <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-        <h2 class="govuk-heading-m">The start page</h2>
+        <h2 id="start-page" class="govuk-heading-m">The start page</h2>
         <p>When you create a new form, you are given a default start page. This will be your form’s home page.</p>
         <p>All forms built using MoJ Forms must have a start page. To find out more about what should go on your start page, read the <a href="https://design-system.service.gov.uk/patterns/start-pages/">Design System guidance</a>.</p>
+        <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-        <h2 class="govuk-heading-m">Required pages</h2>
+        <h2 id="required" class="govuk-heading-m">Required pages</h2>
         <p>For your form to successfully submit the user data it collects, it must have:</p>
         <ul>
         <li>a check answers page - this should come after any question pages</li>
         <li>a confirmation page - this should come immediately after the check answers page</li>
         </ul>
+        <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-        <h2 class="govuk-heading-m">Adding pages</h2>
+        <h2 id="adding-pages" class="govuk-heading-m">Adding pages</h2>
         <p>You can add pages to your form in 2 ways:</p>
         <ul>
         <li>at the end of your form flow, using the ‘add page’ button</li>
@@ -61,13 +74,15 @@ order: 3
         <li>admin</li>
         </ul>
         <p>It is not currently possible to change the name of a page once you have created it.</p>
+        <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-        <h2 class="govuk-heading-m">Deleting pages</h2>
+        <h2 id="deleting-pages" class="govuk-heading-m">Deleting pages</h2>
         <p>You can delete a page from the form flow view by hovering over the page thumbnail to reveal the menu (3 dots in a circle) and selecting ‘delete page’. This cannot be undone.</p>
+        <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-        <h2 class="govuk-heading-m">Choosing the type of page</h2>
+        <h2 id="page-type" class="govuk-heading-m">Choosing the type of page</h2>
         <p>When adding pages, you can choose from the following templates:</p>
         <ul>
         <li>Single question page - as the name suggests, this template allows one question per page. You can choose from several question types:</li>
@@ -85,9 +100,10 @@ order: 3
         <li><b>Confirmation page</b> - use this page after a check answers page to let users know they have completed their task.</li>
         <li><b>Content page</b> - use this page to provide users with information. For example, it can be used in place of a confirmation page if users are not required to submit information. You can <a href="/building-and-editing">format content using markdown</a> - a simple way of indicating things like headings, links and tables using text symbols.</li>
         </ul>
+        <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-        <h2 class="govuk-heading-m">Choosing which question format to use</h2>
+        <h2 id="question-formats" class="govuk-heading-m">Choosing which question format to use</h2>
         <p>You can use the following question types on single and multiple question pages:</p>
         <ul>
         <li><a href="https://design-system.service.gov.uk/components/text-input/">text</a></li>
@@ -99,9 +115,10 @@ order: 3
         </ul>
         <p>The <a href="https://design-system.service.gov.uk/components/file-upload/">file upload</a> question type can be used on a single question page only.</p>
         <p>We will be adding more question types as well as including options for validation and formatting in future updates.</p>
+        <p><a href="#top">Back to top</a></p>
       </section>  
       <section class="content-section content-section--with-top-border">
-        <h2 class="govuk-heading-m">Asking users to submit a file</h2>
+        <h2 id="file-upload" class="govuk-heading-m">Asking users to submit a file</h2>
         <p>The file upload question type allows you to ask users to attach a file to their form. It supports the following file formats up to 7MB in size:</p>
         <ul>
         <li>portable document format (.pdf)</li>
@@ -114,16 +131,18 @@ order: 3
         <li>rich text (.rtf)</li>
         </ul>
         <p>The component allows users to upload only one file per page. To collect additional files, you will need to add extra file upload pages.</p>
+        <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-        <h2 class="govuk-heading-m">Making a question optional</h2>
+        <h2 id="optional" class="govuk-heading-m">Making a question optional</h2>
         <p>All questions are required by default but you can switch this setting off to make a question optional. This can be done with both single question pages and individual questions on multi-question pages.</p>
         <p>To make a question optional, first click in the question title as if you are going to edit it. This highlights the component settings menu (3 dots in a circle). Clicking on the menu will open it.</p>
         <p>For now, there is only one setting, called ‘Required’. Click on this setting to open the options, where you can set it to either ‘yes’ (required) or ‘no’.</p>
         <p>MoJ Forms automatically adds ‘(optional)’ onto the end of the title of any question that isn’t required.</p>
+        <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-        <h2 class="govuk-heading-m">Formatting content with markdown</h2>
+        <h2 id="markdown" class="govuk-heading-m">Formatting content with markdown</h2>
         <p>In most cases, you won’t have to worry about formatting. The page templates include fields for headings, labels and hint text and all you have to do is add your own words.</p>
         <p>Content areas allow you to use markdown to add your own formatting. These are on every content page and can be added to some other page templates as required.</p>
         <p>Markdown is a way of adding formatting to plain text using basic symbols and patterns. With markdown, you can add headings, links, lists, tables and more. For example, to create a bulleted list, you start each item with an asterisk (*). Here is a selection of the most common markdown elements:</p>
@@ -179,6 +198,7 @@ order: 3
 </tbody>
 </table>
 <p>For the full range of markdown options available, see this <a href="https://www.markdownguide.org">markdown guide</a>.</p>
+<p><a href="#top">Back to top</a></p>
 </section>
 
         <!-- END CONTENT -->
