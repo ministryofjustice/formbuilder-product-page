@@ -14,8 +14,10 @@ order: 6
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
         <p>Change your form’s name and configure the email that will be sent when users of your form submit their information.</p>
+        <p><a href="#change-name">Changing your form's name</a></p>
+        <p><a href="#email-settings">Managing the email settings</a></p>
       <section class="content-section content-section--with-top-border">
-        <h2 class="govuk-heading-m">Changing your form's name</h2>
+        <h2 id="change-name" class="govuk-heading-m">Changing your form's name</h2>
         <p>The form details setting enables you to change your form’s name. It will change: 
         <ul>
         <li>the name of your form in the MoJ Forms editor</li>
@@ -23,9 +25,10 @@ order: 6
         <li>your form’s name in the final URL</li>
         </ul>
         <p>If you have already published your form when you change the name, it will remain live on the old URL but you will no longer be able to update it. <a href="/contact">Contact us</a> before you change the name if this will cause you problems.</p> 
+        <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-        <h2 class="govuk-heading-m">Managing the email settings</h2>
+        <h2 id="email-settings" class="govuk-heading-m">Managing the email settings</h2>
         <p>The submission actions setting controls what happens to a user’s data when they submit their form. Currently, the only option is to send it by email as a PDF attachment to an address of your choice. Other options, including API integration, are in development.</p>
         <p>You can specify only a single email address at the moment. We recommend using a group address so that multiple people can access it.</p>
         <p>When you check the ‘send by email’ box, you also need to provide an email address. You do this by selecting ‘configure’, which allows you to customise the email in several ways:</p> 
@@ -37,6 +40,7 @@ order: 6
         <li>PDF attachment subheading - this will appear in the PDF of your user’s answers</li> 
         </ul>
         <p>You need to configure the email settings for both the Test site and Live site separately.<p>
+        <p><a href="#top">Back to top</a></p>
       </settings>
         <!-- END CONTENT -->
       </div>
