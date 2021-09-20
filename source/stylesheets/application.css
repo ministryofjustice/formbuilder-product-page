@@ -1,2 +1,7 @@
 //= link_tree ../../node_modules/govuk-frontend
 //= require screen
+
+.screenshot-image {
+    width: 100%;
+    border: 1px solid #CCC;
+}
