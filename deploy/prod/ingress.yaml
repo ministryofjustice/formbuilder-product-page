@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: formbuilder-product-page
     annotations:
-    external-dns.alpha.kubernetes.io/set-identifier: formbuilder-product-page-prod-formbuilder-product-page-prod-blue
+    external-dns.alpha.kubernetes.io/set-identifier: formbuilder-product-page-formbuilder-product-page-prod-blue
     external-dns.alpha.kubernetes.io/aws-weight: "100"
 spec:
   tls:
