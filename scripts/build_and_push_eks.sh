@@ -16,7 +16,7 @@ sudo curl -L -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-relea
 sudo chmod +x /usr/bin/kubectl
 
 echo -n ${EKS_CLUSTER_CERT} | base64 -d > ./ca.crt
-kubectl config set-cluster ${EKS_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://api.${EKS_CLUSTER_NAME}
+kubectl config set-cluster ${EKS_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://${EKS_CLUSTER_NAME}
 kubectl config set-credentials ${SERVICE_ACCOUNT} --token=${EKS_TOKEN}
 kubectl config set-context ${EKS_CLUSTER_NAME} --cluster=${EKS_CLUSTER_NAME} --user=${SERVICE_ACCOUNT} --namespace=${EKS_NAMESPACE}
 kubectl config use-context ${EKS_CLUSTER_NAME}
