@@ -27,6 +27,21 @@ Any branch except master will deploy to the staging environment. This can be vis
 
 Once a change is pushed or merged to master then production will automatically be deployed.
 
+The environment variables required in Github secrets are found in the `.github/workflows` folder. There are 2 clusters, K8S and EKS.
+The only differing values between the two clusters are:
+- CLUSTER_NAME
+- TOKEN
+- CLUSTER_CERT
+
+To get the correct values we need to ensure we are in the appropriate context, `live` or `live-1`, and then run the following commands:
+
+For the CLUSTER_CERT:
+`kubectl -n <NAMESPACE> get secrets <NAME-OF-GITHUBACTION-SERVICE-ACCOUNT-SECRET> -o json | grep ca.crt`
+
+For the TOKEN:
+`cloud-platform decode-secret -n <NAMESPACE> -s <NAME-OF-GITHUBACTION-SERVICE-ACCOUNT-SECRET> | grep token`
+
+The CLUSTER_NAME is the same as the other apps and can be found by running the `pipeline_variables.sh` script in the `fb-deploy` repo.
 
 ## Making Content Changes without Installing Middleman and Other Tools (well maybe a text editor)
 Add this repo to git desktop
@@ -36,4 +51,3 @@ Add your changes to the branch
 Commit changes and push up
 
 This will trigger an action to build the site in [staging](https://formbuilder-product-page-staging.apps.live-1.cloud-platform.service.justice.gov.uk/).
-
