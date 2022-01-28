@@ -15,9 +15,10 @@ order: 3
         <!-- START CONTENT -->
         <p>Learn how to start building your first form.</p>
         <p><a href="#form-name">Your form’s name and URL</a><br>
-        <a href="#start-page">The start page</a><br>
-        <a href="#required">Required pages</a><br>
+        <a href="#start-page">Starting pages</a><br>
         <a href="#adding-pages">Adding pages</a><br>
+        <a href="#moving-pages">Moving pages</a><br>
+        <a href="#editing-pages">Editing pages</a><br>
         <a href="#deleting-pages">Deleting pages</a><br>
         <a href="#page-type">Choosing the type of page</a><br>
         <a href="#question-formats">Choosing which question format to use</a><br>
@@ -38,32 +39,29 @@ order: 3
         <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-        <h2 id="start-page" class="govuk-heading-m">The start page</h2>
-        <p>When you create a new form, you are given a default start page. This will be your form’s home page.</p>
-        <p>All forms built using MoJ Forms must have a start page. To find out more about what should go on your start page, read the <a href="https://design-system.service.gov.uk/patterns/start-pages/">Design System guidance</a>.</p>
-        <p><a href="#top">Back to top</a></p>
-      </section>
-      <section class="content-section content-section--with-top-border">
-        <h2 id="required" class="govuk-heading-m">Required pages</h2>
-        <p>For your form to successfully submit the user data it collects, it must have:</p>
+        <h2 id="start-page" class="govuk-heading-m">The starting pages</h2>
+        <p>When you create a new form, you are given some default pages to help you structure your form:</p>
         <ul>
-        <li>a check answers page - this should come after any question pages</li>
-        <li>a confirmation page - this should come immediately after the check answers page</li>
+        <li>start page</li>
+        <li>check answers page</li>
+        <li>confirmation page</li>
         </ul>
+        <p>[INSERT NEW IMAGE 1]</p>
+        <p>The start page is your form’s home page and cannot be deleted. To find out more about what should go on your start page, read the <a href="https://design-system.service.gov.uk/patterns/start-pages/">Design System guidance</a>.</p>
+        <p>All your form’s question pages should come after the start page and before the check answers page.</p>
+        <p>For your form to successfully submit the user data it collects, it must have the check answers and confirmation pages. If there is nothing to submit, these pages can be deleted. For example, you could create a form to help users understand a complicated topic, such as <a href"https://www.gov.uk/tell-employer-or-college-about-criminal-record/check-your-conviction-caution">Check when to disclose cautions or convictions</a>.</p>
+        <p>A form can only have one check answers page and one confirmation page.</p>
         <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="adding-pages" class="govuk-heading-m">Adding pages</h2>
-        <p>You can add pages to your form in 2 ways:</p>
+        <p>You can add pages to your form using the connection menu that sits on each arrow.</p>
+        <p>[INSERT NEW IMAGE 2]</p>
+        <p>This menu enables you to select a new page from the range of available templates. See <a href="#page-type">Choosing the type of page</a> for details.</p>
+        <p>When you add a new page, you need to give it a name. This will be the page’s URL slug so should be in lower case with no spaces or special characters. Separate words with hyphens. For example, in the following URL, the page name is ‘your-details’:</p>
+        <p><u>https://apply-for-a-dog-licence.form.service.gov.uk/your-details/u></p>
+        <p>Some names are reserved for global pages and you won’t be able to use them:<p>
         <ul>
-        <li>at the end of your form flow, using the ‘add page’ button</li>
-        <li>after any existing page in your form flow, by hovering over the page thumbnail to reveal the menu (3 dots in a circle) and selecting ‘add page here’</li>
-        </ul>
-        <img src="/images/add-page-options.png" alt="There are 2 ways to add a page to a form: after an existing page using the page menu and at the end of the form using the add page button." class="screenshot-image">
-        <p>When you add a new page, you need to give it a name. This will be the page’s URL slug so should be in lower case with no spaces or special characters. Separate words with hyphens. For example, in the following URL, the page name is ‘your-details’: 
-        <p><u>https://apply-for-a-dog-licence.form.service.gov.uk/your-details</u></p>
-        <p>Some names are reserved for global pages and should not be used:</p>
-        <ul>     
         <li>metrics</li>
         <li>ping</li>
         <li>health</li>
@@ -79,8 +77,28 @@ order: 3
         <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
+        <h2 id="moving-pages" class="govuk-heading-m">Moving pages</h2>
+        <p>It’s not currently possible to move a page directly. We hope to have a move option soon.</p>
+        <p>In the meantime, it’s possible to move pages in a few steps using the <a href="/branching/#change-next-page">‘change next page’</a> option.</p>
+        <p><a href="#top">Back to top</a></p>
+      </section>
+      <section class="content-section content-section--with-top-border">
+      <h2 id="editing-pages" class="govuk-heading-m">Editing pages</h2>
+      <p>You can open a page to edit in 2 ways: 
+      <ul>
+      <li>clicking directly on the page thumbnail</li>
+      <li>hovering over the page thumbnail to reveal the page menu (3 dots in a circle) and selecting ‘edit page’</li>
+      </ul>
+      <p>Most text on a page can be edited. Just click on the text you want to change and start typing.</p> 
+      <p>Some fields are required, like the page title, and others are optional. If a text area says it is optional, you don’t have to delete it. The default text that appears in square brackets will be hidden in preview mode and when published.</p>
+      <p>Most text areas are set to a specific format, such as headings and hints. Text in content areas can be <a href="#markdown">formatted using markdown</a>.</p>
+      <p>Some text areas cannot be edited at the moment, including the buttons.</p>
+      <p><a href="#top">Back to top</a></p>
+    </section>
+      <section class="content-section content-section--with-top-border">
         <h2 id="deleting-pages" class="govuk-heading-m">Deleting pages</h2>
-        <p>You can delete a page from the form flow view by hovering over the page thumbnail to reveal the menu (3 dots in a circle) and selecting ‘delete page’. This cannot be undone.</p>
+        <p>You can delete a page from the form flow view by hovering over the page thumbnail to reveal the page menu (3 dots in a circle) and selecting ‘delete page’. This cannot be undone.</p>
+        <p>If you want to remove a page from your form without deleting it, you can move it to the unconnected pages section using the <a href="/branching/#change-next-page">‘change next page’</a> option.</p>
         <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
@@ -100,8 +118,9 @@ order: 3
           </ul>
         <li><b>Multiple question page</b> - this template allows you to add several question components to a single page. You can use any of the question types available on a single question page except file upload.</li>
         <li><b>Check answers page</b> - use this page to let users check the information they have provided. If your form requires users to submit any information, it will need a check answers page.</li>
-        <li><b>Confirmation page</b> - use this page after a check answers page to let users know they have completed their task.</li>
-        <li><b>Content page</b> - use this page to provide users with information, such as advice about the application process or the task they are trying to accomplish. You can <a href="#markdown">format content using markdown</a> - a simple way of indicating things like headings, links and tables using text symbols.</li>
+        <li><b>Confirmation page</b> - use this page after a check answers page to let users know their data has been sent.</li>
+        <li><b>Content page</b> - use this page to provide users with information without asking any questions, such as advice about the application process or the task they are trying to accomplish. You can <a href="#markdown">format the content using markdown</a> - a simple way of indicating things like headings, links and tables using text symbols.</li>
+        <li><b>Exit page</b> - use this page as the final page of a flow that doesn’t require the user to submit any information. For example, you could tell a user that they are not eligible to continue based on some qualifying questions. As with content pages, you can <a href="#markdown">format the content using markdown</a>. Inserting an exit page will break the flow to any following pages and move them to the unconnected pages section.</li>
         </ul>
         <p><a href="#top">Back to top</a></p>
       </section>
@@ -110,14 +129,14 @@ order: 3
         <p>You can use the following question types on single and multiple question pages:</p>
         <ul>
         <li><a href="https://design-system.service.gov.uk/components/text-input/">text</a></li>
-        <li><a href="https://design-system.service.gov.uk/components/textarea/">text area</a></li>
+        <li><a href="https://design-system.service.gov.uk/components/textarea/">textarea</a></li>
         <li><a href="https://design-system.service.gov.uk/patterns/email-addresses/">email address</a></li>
         <li><a href="https://design-system.service.gov.uk/components/text-input/">number</a></li>
         <li><a href="https://design-system.service.gov.uk/components/date-input/">date</a></li>
         <li><a href="https://design-system.service.gov.uk/components/radios/">radio buttons</a></li>
         <li><a href="https://design-system.service.gov.uk/components/checkboxes/">checkboxes</a></li>
         </ul>
-        <p>The <a href="https://design-system.service.gov.uk/components/file-upload/">file upload</a> question type can be used on a single question page only.</p>
+        <p>The <a href="https://design-system.service.gov.uk/components/file-upload/">file upload</a> question type can be used only on a single question page.</p>
         <p>We will be adding more question types as well as including options for validation and formatting in future updates.</p>
         <p><a href="#top">Back to top</a></p>
       </section>  
@@ -140,7 +159,7 @@ order: 3
       <section class="content-section content-section--with-top-border">
         <h2 id="optional" class="govuk-heading-m">Making a question optional</h2>
         <p>All questions are required by default but you can switch this setting off to make a question optional. This can be done with both single question pages and individual questions on multi-question pages.</p>
-        <p>To make a question optional, first click in the question title as if you are going to edit it. This highlights the component settings menu (3 dots in a circle). Clicking on the menu will open it.</p>
+        <p>To make a question optional, first click in the question title as if you are going to edit it. This highlights the component settings button (3 dots in a circle). Clicking on the button will open the menu.</p>
         <img src="/images/required-or-optional.png" alt="The option to make a question optional is in the component settings menu." class="screenshot-image">
         <p>For now, there is only one setting, called ‘Required’. Click on this setting to open the options, where you can set it to either ‘yes’ (required) or ‘no’.</p>
         <p>MoJ Forms automatically adds ‘(optional)’ onto the end of the title of any question that isn’t required.</p>
