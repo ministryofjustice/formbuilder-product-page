@@ -27,7 +27,7 @@ order: 4
         <h2 id="branching" class="govuk-heading-m">What is branching?</h2>
         <p>Branching is what we call the ability to show users different pages based on their previous answers. You can create multiple routes - branches - through your form so that the people filling it in see only the questions or content that are relevant to them. With branching, a form can be quicker and easier to fill in and the answers given can be more relevant to your needs.</p>
         <p>With MoJ Forms, branching can be set up in minutes without any specialist knowledge of coding or logic. The branches are clearly shown in the form flow view.</p>
-        <p>[INSERT NEW IMAGE 3]</p>
+        <img src="/images/branches-on-flow-view.png" alt=“The branches of a form are indicated in the flow view by arrows.” class="screenshot-image">
         <p>Branching requires 2 things:</p>
         <ul>
         <li>a radio button or checkbox question to base the branching on - these are the only question types that currently support branching</li>
@@ -49,7 +49,7 @@ order: 4
         <h3 class="govuk-heading-s">Configuring the branching point</h3>
         <p>A branching point contains 2 blank branches by default - ‘branch 1’ and ‘otherwise’. You can add as many branches as you need using the ‘add another branch’ option.</p>
         <p>Forms apply branching rules from top to bottom. A user will be routed along the first branch they meet the conditions for, even if they also meet the conditions of other branches. You can’t change the order of branches so you may need to play around with your settings to get them right.</p>
-        <p>[INSERT NEW IMAGE 4]</p>
+        <img src="/images/branching-point-form.png" alt=“A branching point form captures the page that the branch will lead to and the condition that must be met for a user to be routed along the branch.” class="screenshot-image">
         <p>Each branch form (indicated by branch 1, branch 2 and so on) allows you to specify the rules of a branch. These consist of:<p>
         <ul>
         <li>Go to - the page that the branch will lead to</li>
@@ -120,14 +120,14 @@ order: 4
         <p>While there is no specific move functionality in MoJ Forms at the moment, it’s possible to reorder pages in your flow using the ‘Change next page…’ option in the connection menu (the menu on each arrow). The ‘go to’ setting in a branching point has the same effect.</p>
         <p>These options allow you to change the order of your pages in the flow by pointing arrows at different pages. They are also how you bring pages back from the unconnected pages section into the main flow.</p>
         <p>For example, if you had 5 pages like this:</p>
-        <p>[INSERT NEW IMAGE 5]</p>
+        <img src="/images/changing-order-1.png" alt=“5 pages are arranged in order and numbered 1 to 5.” class="screenshot-image">
         <p>You could change the next page after page 2 to be page 4, like this:</p> 
-        <p>[INSERT NEW IMAGE 6]</p>
+        <img src="/images/changing-order-2.png" alt=“When the destination of page 2 is changed to page 4, page 3 becomes unconnected.“ class="screenshot-image">
         <p>Any pages between the current next page and the new next page - such as page 3, in this example - become unconnected. This means there is no possible path to them anymore and they are moved to a separate unconnected pages section below your main flow.</p>
         <p>You can bring unconnected pages back into the flow by changing the next page of one of the pages in the flow. For example, you could change the next page after page 4 to be page 3, like this:</p>
-        <p>[INSERT NEW IMAGE 7]</p>
+        <img src="/images/changing-order-3.png" alt=“When the destination of page 4 is changed to page 3, page 5 becomes unconnected. Page 3 leads back to page 4, creating a loop.” class="screenshot-image">
         <p>Unconnected pages ‘remember’ their next page so when you bring them back into your form flow other pages may be moved as a result. In this example, page 3 still leads to page 4, which has caused a loop. Page 5 has become unconnected. To fix it, simply change page 3’s next page, like this:</p>
-        <p>[INSERT NEW IMAGE 8]</p>
+        <img src="/images/changing-order-4.png" alt=“Pages 1 to 5 are now shown rearranged in order of 1, 2, 4, 3 and 5.” class="screenshot-image">
         <p>In this way, it’s possible to ‘move’ a page in a few steps.</p>
         <p>If the unconnected page you select is connected to other pages, these will also be brought back into the main flow in the same order.</p>
         <p>Editing the ‘go to’ setting in the branching point works in the same way and points the branch’s first arrow at your selected page.</p>
