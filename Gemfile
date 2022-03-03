@@ -15,3 +15,4 @@ gem "middleman-sprockets"
 gem "sprockets", ">= 4.0.0.beta8"
 gem 'sassc'
 gem 'sass'
+gem 'html-proofer'

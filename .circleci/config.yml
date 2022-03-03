@@ -27,6 +27,30 @@ jobs:
           command: |
             htmlproofer ./build --allow-hash-href --check-html \
             --empty-alt-ignore --disable-external
+  build_and_push_staging:
+    docker:
+      - image: 'cimg/ruby:2.7.5-node'
+    steps:
+      - checkout
+      - ruby/install-deps
+      - run:
+          name: Set up custom envirnoment variable
+          command: |
+            echo 'export ENVIRONMENT="staging"' >> $BASH_ENV
+      - run:
+          name: Build and Push
+          command: ./scripts/build_and_push.sh
+
+
+workflows:
+  version: 2
+  build_and_deploy_staging:
+    jobs:
+      - build_and_push_staging
+
+
+
+
 
 
 

@@ -1,60 +1,42 @@
 #!/bin/sh
 set -e
 
-sudo apt-get update
-sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+echo "*** Updating Ubuntu ***"
+sudo apt update
+echo "**********************************"
+echo
+echo "*** Installing kubctl ***"
+sudo apt-get install -y apt-transport-https ca-certificates curl
+sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt update
+sudo apt install -y kubectl
+echo "**********************************"
+echo
+echo "*** Test install kubctl ***"
+kubectl version --client
+echo "**********************************"
+echo
 
-sudo apt-get update && sudo apt-get install -y awscli docker-ce docker-ce-cli \
-  containerd.io ruby-full nodejs
-
-sudo curl -L -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.17.8/bin/linux/amd64/kubectl
-sudo chmod +x /usr/bin/kubectl
-
-echo -n ${K8S_CLUSTER_CERT} | base64 -d > ./ca.crt
-kubectl config set-cluster ${K8S_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://api.${K8S_CLUSTER_NAME}
-kubectl config set-credentials ${SERVICE_ACCOUNT} --token=${K8S_TOKEN}
-kubectl config set-context ${K8S_CLUSTER_NAME} --cluster=${K8S_CLUSTER_NAME} --user=${SERVICE_ACCOUNT} --namespace=${K8S_NAMESPACE}
-kubectl config use-context ${K8S_CLUSTER_NAME}
-
-export AWS_DEFAULT_REGION=eu-west-2
-export AWS_ACCESS_KEY_ID=$(kubectl get secrets -n ${K8S_NAMESPACE} ${ECR_CREDENTIALS_SECRET} -o json | jq -r '.data["access_key"]' | base64 -d)
-export AWS_SECRET_ACCESS_KEY=$(kubectl get secrets -n ${K8S_NAMESPACE} ${ECR_CREDENTIALS_SECRET} -o json | jq -r '.data["secret_access_key"]' | base64 -d)
-export ECR_REPO_URL=$(kubectl get secrets -n ${K8S_NAMESPACE} ${ECR_CREDENTIALS_SECRET} -o json | jq -r '.data["repo_url"]' | base64 -d)
-
-npm install
-
-sudo gem install bundler -v 2.1.4
-bundle install
-bundle exec middleman build
-
-if [ "$ENVIRONMENT" = "staging" ]; then
-  echo 'Adding robots file to staging...'
-  cp ./deploy/templates/staging_robots.txt ./build/robots.txt
-
-  echo 'Adding basic auth secret file to staging...'
-  sed s/%BASIC_AUTH_STAGING%/${BASIC_AUTH_STAGING}/g \
-    ./deploy/templates/staging_secret.yaml > ./deploy/staging/secret.yaml
+if [ "${CIRCLE_BRANCH}" == "main" ]; then
+  echo "PRODUCTION"
+  echo $ENVIRONMENT
+else
+  echo "*** Setting up Kubectl config STAGING ***"
+  echo $ENVIRONMENT
+  echo -n ${EKS_CLUSTER_CERT_STAGING} | base64 -d > ./ca.crt
+  kubectl config set-cluster ${EKS_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://${EKS_CLUSTER_NAME}
+  kubectl config set-credentials ${EKS_SERVICE_ACCOUNT_STAGING} --token=${EKS_TOKEN_STAGING}
+  kubectl config set-context ${EKS_CLUSTER_NAME} --cluster=${EKS_CLUSTER_NAME} --user=${EKS_SERVICE_ACCOUNT_STAGING} --namespace=${EKS_NAMESPACE_STAGING}
+  kubectl config use-context ${EKS_CLUSTER_NAME}
+  echo "**********************************"
+  echo
+  echo "*** Exporting environment variables STAGING ***"
+  export AWS_DEFAULT_REGION=eu-west-2
+  export AWS_ACCESS_KEY_ID=$(kubectl get secrets -n ${EKS_NAMESPACE_STAGING} ${ECR_CREDENTIALS_SECRET_STAGING} -o json | jq -r '.data["access_key"]' | base64 -d)
+  export AWS_SECRET_ACCESS_KEY=$(kubectl get secrets -n ${EKS_NAMESPACE_STAGING} ${ECR_CREDENTIALS_SECRET_STAGING} -o json | jq -r '.data["secret_access_key"]' | base64 -d)
+  export ECR_REPO_URL=$(kubectl get secrets -n ${EKS_NAMESPACE_STAGING} ${ECR_CREDENTIALS_SECRET_STAGING} -o json | jq -r '.data["repo_url"]' | base64 -d)
+  echo "**********************************"
+  echo
 fi
 
-echo  'Building docker image...'
-out=$(docker build -t ${ECR_REPO_URL}:latest .)
-echo $out
-
-echo 'Logging into AWS ECR...'
-out=$(aws ecr get-login-password --region eu-west-2 | docker login --username ${ECR_USERNAME} --password-stdin ${ECR_PASSWORD})
-echo $out
-
-echo 'Pushing docker image...'
-out=$(docker push ${ECR_REPO_URL}:latest)
-echo $out
-
-echo "Applying namespace configuration to ${K8S_NAMESPACE}..."
-kubectl apply --filename "./deploy/${ENVIRONMENT}" -n ${K8S_NAMESPACE}
-
-echo "Restarting pods..."
-kubectl rollout restart deployments -n ${K8S_NAMESPACE}
