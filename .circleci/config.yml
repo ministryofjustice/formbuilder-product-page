@@ -39,6 +39,17 @@ jobs:
       - run:
           name: Build and Push
           command: ./scripts/build_and_push.sh
+  build_and_push_prod:
+    docker:
+      - image: 'cimg/ruby:2.7.5-node'
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - ruby/install-deps
+      - run:
+          name: Build and Push
+          command: ./scripts/build_and_push.sh
 
 
 workflows:
@@ -46,4 +57,20 @@ workflows:
   build_and_test:
     jobs:
      - build
+     - build_and_push_staging:
+        requires:
+          - build
+        filters:
+          branches:
+            ignore:
+              - main
+     - build_and_push_prod:
+        requires:
+          - build
+        filters:
+            branches:
+              only:
+                - main
+
+
 
