@@ -34,10 +34,6 @@ jobs:
       - checkout
       - ruby/install-deps
       - run:
-          name: Set up custom envirnoment variable
-          command: |
-            echo 'export ENVIRONMENT="staging"' >> $BASH_ENV
-      - run:
           name: Build and Push
           command: ./scripts/build_and_push.sh
 

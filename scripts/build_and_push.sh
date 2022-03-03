@@ -1,29 +1,30 @@
 #!/bin/sh
 set -e
 
-echo "*** Updating Ubuntu ***"
-sudo apt update
-echo "**********************************"
-echo
-echo "*** Installing kubctl ***"
-sudo apt-get install -y apt-transport-https ca-certificates curl
-sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-sudo apt update
-sudo apt install -y kubectl
-echo "**********************************"
-echo
-echo "*** Test install kubctl ***"
-kubectl version --client
-echo "**********************************"
-echo
+
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+sudo apt-get update && sudo apt-get install -y awscli docker-ce docker-ce-cli \
+  containerd.io ruby-full nodejs
+
+sudo curl -L -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.17.8/bin/linux/amd64/kubectl
+sudo chmod +x /usr/bin/kubectl
+
 
 if [ "${CIRCLE_BRANCH}" == "main" ]; then
   echo "PRODUCTION"
-  echo $ENVIRONMENT
+  export ENVIRONMENT=prod
+  echo ${ENVIRONMENT}
 else
   echo "*** Setting up Kubectl config STAGING ***"
-  echo $ENVIRONMENT
+  export ENVIRONMENT=staging
+  echo ${ENVIRONMENT}
   echo -n ${EKS_CLUSTER_CERT_STAGING} | base64 -d > ./ca.crt
   kubectl config set-cluster ${EKS_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://${EKS_CLUSTER_NAME}
   kubectl config set-credentials ${EKS_SERVICE_ACCOUNT_STAGING} --token=${EKS_TOKEN_STAGING}
@@ -36,6 +37,68 @@ else
   export AWS_ACCESS_KEY_ID=$(kubectl get secrets -n ${EKS_NAMESPACE_STAGING} ${ECR_CREDENTIALS_SECRET_STAGING} -o json | jq -r '.data["access_key"]' | base64 -d)
   export AWS_SECRET_ACCESS_KEY=$(kubectl get secrets -n ${EKS_NAMESPACE_STAGING} ${ECR_CREDENTIALS_SECRET_STAGING} -o json | jq -r '.data["secret_access_key"]' | base64 -d)
   export ECR_REPO_URL=$(kubectl get secrets -n ${EKS_NAMESPACE_STAGING} ${ECR_CREDENTIALS_SECRET_STAGING} -o json | jq -r '.data["repo_url"]' | base64 -d)
+  echo "**********************************"
+  echo
+fi
+
+echo
+echo "*** npm install ***"
+npm install
+echo "**********************************"
+echo
+echo "*** install bundler correct version and run ***"
+npm install
+sudo gem install bundler -v 2.1.4
+bundle install
+echo "**********************************"
+echo
+echo "*** Build Middleman site ***"
+bundle exec middleman build
+echo "**********************************"
+echo
+
+if [ "$ENVIRONMENT" = "staging" ]; then
+  echo '*** Adding robots file to staging... ***'
+  cp ./deploy-eks/templates/staging_robots.txt ./build/robots.txt
+  echo "** Done **"
+  echo "**********************************"
+  echo
+  echo '*** Adding basic auth secret file to staging... ***'
+  sed s/%BASIC_AUTH_STAGING%/${BASIC_AUTH_STAGING}/g \
+    ./deploy-eks/templates/staging_secret.yaml > ./deploy-eks/staging/secret.yaml
+  echo "** Done **"
+  echo "**********************************"
+  echo
+fi
+
+echo  '*** Building docker image... ***'
+out=$(docker build -t ${ECR_REPO_URL}:latest .)
+echo $out
+echo "**********************************"
+echo
+
+echo  '*** Building docker image... ***'
+login="$(AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION} AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} aws ecr get-login --no-include-email)"
+${login}
+echo "**********************************"
+echo
+
+echo '*** Pushing docker image... ***'
+out=$(docker push ${ECR_REPO_URL}:latest)
+echo $out
+echo "**********************************"
+echo
+
+if [ "$ENVIRONMENT" = "main" ]; then
+  echo '*** main stuff. ***'
+else
+  echo '*** staging ***'
+  echo "*** Applying namespace configuration to ${EKS_NAMESPACE_STAGING}... ***"
+  kubectl apply --filename "./deploy-eks/${ENVIRONMENT}" -n ${EKS_NAMESPACE_STAGING}
+  echo "**********************************"
+  echo
+  echo "*** Restarting pods... ***"
+  kubectl rollout restart deployments -n ${EKS_NAMESPACE_STAGING}
   echo "**********************************"
   echo
 fi
