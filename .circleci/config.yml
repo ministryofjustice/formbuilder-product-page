@@ -9,6 +9,7 @@ jobs:
       - image: 'cimg/ruby:2.7.5-node'
     steps:
       - checkout
+      - setup_remote_docker
       - ruby/install-deps
       - run:
           name: test build site
@@ -32,6 +33,8 @@ jobs:
       - image: 'cimg/ruby:2.7.5-node'
     steps:
       - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
       - ruby/install-deps
       - run:
           name: Build and Push
@@ -40,13 +43,7 @@ jobs:
 
 workflows:
   version: 2
-  build_and_deploy_staging:
+  build_and_test:
     jobs:
-      - build_and_push_staging
-
-
-
-
-
-
+     - build
 

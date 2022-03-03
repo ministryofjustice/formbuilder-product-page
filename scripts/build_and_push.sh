@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-
+echo "*** Updating and installing required software ***"
 sudo apt-get update
 sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -15,12 +15,16 @@ sudo apt-get update && sudo apt-get install -y awscli docker-ce docker-ce-cli \
 
 sudo curl -L -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.17.8/bin/linux/amd64/kubectl
 sudo chmod +x /usr/bin/kubectl
-
+  echo "*** Done ***"
+  echo "**********************************"
+  echo
 
 if [ "${CIRCLE_BRANCH}" == "main" ]; then
   echo "PRODUCTION"
   export ENVIRONMENT=prod
   echo ${ENVIRONMENT}
+
+
 else
   echo "*** Setting up Kubectl config STAGING ***"
   export ENVIRONMENT=staging
@@ -30,6 +34,7 @@ else
   kubectl config set-credentials ${EKS_SERVICE_ACCOUNT_STAGING} --token=${EKS_TOKEN_STAGING}
   kubectl config set-context ${EKS_CLUSTER_NAME} --cluster=${EKS_CLUSTER_NAME} --user=${EKS_SERVICE_ACCOUNT_STAGING} --namespace=${EKS_NAMESPACE_STAGING}
   kubectl config use-context ${EKS_CLUSTER_NAME}
+  echo "*** Done ***"
   echo "**********************************"
   echo
   echo "*** Exporting environment variables STAGING ***"
@@ -37,6 +42,7 @@ else
   export AWS_ACCESS_KEY_ID=$(kubectl get secrets -n ${EKS_NAMESPACE_STAGING} ${ECR_CREDENTIALS_SECRET_STAGING} -o json | jq -r '.data["access_key"]' | base64 -d)
   export AWS_SECRET_ACCESS_KEY=$(kubectl get secrets -n ${EKS_NAMESPACE_STAGING} ${ECR_CREDENTIALS_SECRET_STAGING} -o json | jq -r '.data["secret_access_key"]' | base64 -d)
   export ECR_REPO_URL=$(kubectl get secrets -n ${EKS_NAMESPACE_STAGING} ${ECR_CREDENTIALS_SECRET_STAGING} -o json | jq -r '.data["repo_url"]' | base64 -d)
+  echo "*** Done ***"
   echo "**********************************"
   echo
 fi
