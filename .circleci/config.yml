@@ -1,0 +1,32 @@
+version: 2.1
+orbs:
+  ruby: circleci/ruby@1.4.0
+  kubernetes: circleci/kubernetes@0.12.0
+
+jobs:
+  build:
+    docker:
+      - image: 'cimg/ruby:2.7.5-node'
+    steps:
+      - checkout
+      - ruby/install-deps
+      - run:
+          name: test build site
+          command: ./scripts/build.sh
+  test:
+    docker:
+      - image: 'cimg/ruby:2.7.5-node'
+    steps:
+      - checkout
+      - ruby/install-deps
+      - run:
+          name: test build site
+          command: ./scripts/build.sh
+      - run:
+          name: test build site - htmlproofer
+          command: |
+            htmlproofer ./build --allow-hash-href --check-html \
+            --empty-alt-ignore --disable-external
+
+
+
