@@ -19,13 +19,8 @@ sudo chmod +x /usr/bin/kubectl
   echo "**********************************"
   echo
 
-<<<<<<< HEAD
-if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "main" ] ; then
-  echo "PRODUCTION"
-=======
 if [[ "${CIRCLE_BRANCH}" == "master" || "${CIRCLE_BRANCH}" == "main" ]] ; then
   echo "*** Setting up Kubectl config PROD ***"
->>>>>>> 5348571 (wip)
   export ENVIRONMENT=prod
   echo ${ENVIRONMENT}
   echo -n ${EKS_CLUSTER_CERT_PROD} | base64 -d > ./ca.crt
