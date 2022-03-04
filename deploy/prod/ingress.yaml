@@ -3,17 +3,17 @@ kind: Ingress
 metadata:
   name: formbuilder-product-page
   annotations:
-    external-dns.alpha.kubernetes.io/set-identifier: formbuilder-product-page-formbuilder-product-page-prod-blue
+    external-dns.alpha.kubernetes.io/set-identifier: formbuilder-product-page-formbuilder-product-page-prod-green
     external-dns.alpha.kubernetes.io/aws-weight: "100"
 spec:
   tls:
     - hosts:
-      - formbuilder-product-page.apps.live-1.cloud-platform.service.justice.gov.uk
+      - formbuilder-product-page.apps.live.cloud-platform.service.justice.gov.uk
     - hosts:
       - moj-forms.service.justice.gov.uk
       secretName: moj-forms-product-page-prod-secret
   rules:
-  - host: formbuilder-product-page.apps.live-1.cloud-platform.service.justice.gov.uk
+  - host: formbuilder-product-page.apps.live.cloud-platform.service.justice.gov.uk
     http:
       paths:
       - path: /

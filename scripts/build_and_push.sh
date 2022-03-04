@@ -79,13 +79,13 @@ echo
 
 if [ "$ENVIRONMENT" = "staging" ]; then
   echo '*** Adding robots file to staging... ***'
-  cp ./deploy-eks/templates/staging_robots.txt ./build/robots.txt
+  cp ./deploy/templates/staging_robots.txt ./build/robots.txt
   echo "** Done **"
   echo "**********************************"
   echo
   echo '*** Adding basic auth secret file to staging... ***'
   sed s/%BASIC_AUTH_STAGING%/${BASIC_AUTH_STAGING}/g \
-    ./deploy-eks/templates/staging_secret.yaml > ./deploy-eks/staging/secret.yaml
+    ./deploy/templates/staging_secret.yaml > ./deploy/staging/secret.yaml
   echo "** Done **"
   echo "**********************************"
   echo
@@ -112,7 +112,7 @@ echo
 if [[ "${CIRCLE_BRANCH}" == "master" || "${CIRCLE_BRANCH}" == "main" ]]; then
   echo '*** prod ***'
   echo "*** Applying namespace configuration to ${EKS_NAMESPACE_PROD}... ***"
-  kubectl apply --filename "./deploy-eks/${ENVIRONMENT}" -n ${EKS_NAMESPACE_PROD}
+  kubectl apply --filename "./deploy/${ENVIRONMENT}" -n ${EKS_NAMESPACE_PROD}
   echo "**********************************"
   echo
   echo "*** Restarting pods... ***"
@@ -122,7 +122,7 @@ if [[ "${CIRCLE_BRANCH}" == "master" || "${CIRCLE_BRANCH}" == "main" ]]; then
 else
   echo '*** staging ***'
   echo "*** Applying namespace configuration to ${EKS_NAMESPACE_STAGING}... ***"
-  kubectl apply --filename "./deploy-eks/${ENVIRONMENT}" -n ${EKS_NAMESPACE_STAGING}
+  kubectl apply --filename "./deploy/${ENVIRONMENT}" -n ${EKS_NAMESPACE_STAGING}
   echo "**********************************"
   echo
   echo "*** Restarting pods... ***"
