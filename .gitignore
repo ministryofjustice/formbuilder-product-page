@@ -4,3 +4,6 @@ source/.DS_Store
 node_modules/
 build/
 Makefile
+.bundle/
+.gem-bin/
+.gems/

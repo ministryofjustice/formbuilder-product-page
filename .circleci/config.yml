@@ -63,6 +63,7 @@ workflows:
         filters:
           branches:
             ignore:
+              - master
               - main
      - build_and_push_prod:
         requires:
@@ -70,6 +71,7 @@ workflows:
         filters:
             branches:
               only:
+                - master
                 - main
 
 

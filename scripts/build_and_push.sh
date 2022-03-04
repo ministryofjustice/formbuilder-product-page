@@ -19,12 +19,31 @@ sudo chmod +x /usr/bin/kubectl
   echo "**********************************"
   echo
 
-if [ "${CIRCLE_BRANCH}" == "main" ]; then
+<<<<<<< HEAD
+if [ "${CIRCLE_BRANCH}" == "master" ] || [ "${CIRCLE_BRANCH}" == "main" ] ; then
   echo "PRODUCTION"
+=======
+if [[ "${CIRCLE_BRANCH}" == "master" || "${CIRCLE_BRANCH}" == "main" ]] ; then
+  echo "*** Setting up Kubectl config PROD ***"
+>>>>>>> 5348571 (wip)
   export ENVIRONMENT=prod
   echo ${ENVIRONMENT}
-
-
+  echo -n ${EKS_CLUSTER_CERT_PROD} | base64 -d > ./ca.crt
+  kubectl config set-cluster ${EKS_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://${EKS_CLUSTER_NAME}
+  kubectl config set-credentials ${EKS_SERVICE_ACCOUNT_PROD} --token=${EKS_TOKEN_PROD}
+  kubectl config set-context ${EKS_CLUSTER_NAME} --cluster=${EKS_CLUSTER_NAME} --user=${EKS_SERVICE_ACCOUNT_PROD} --namespace=${EKS_NAMESPACE_PROD}
+  kubectl config use-context ${EKS_CLUSTER_NAME}
+  echo "*** Done ***"
+  echo "**********************************"
+  echo
+  echo "*** Exporting environment variables PROD ***"
+  export AWS_DEFAULT_REGION=eu-west-2
+  export AWS_ACCESS_KEY_ID=$(kubectl get secrets -n ${EKS_NAMESPACE_PROD} ${ECR_CREDENTIALS_SECRET_PROD} -o json | jq -r '.data["access_key"]' | base64 -d)
+  export AWS_SECRET_ACCESS_KEY=$(kubectl get secrets -n ${EKS_NAMESPACE_PROD} ${ECR_CREDENTIALS_SECRET_PROD} -o json | jq -r '.data["secret_access_key"]' | base64 -d)
+  export ECR_REPO_URL=$(kubectl get secrets -n ${EKS_NAMESPACE_PROD} ${ECR_CREDENTIALS_SECRET_PROD} -o json | jq -r '.data["repo_url"]' | base64 -d)
+  echo "*** Done ***"
+  echo "**********************************"
+  echo
 else
   echo "*** Setting up Kubectl config STAGING ***"
   export ENVIRONMENT=staging
@@ -95,8 +114,16 @@ echo $out
 echo "**********************************"
 echo
 
-if [ "$ENVIRONMENT" = "main" ]; then
-  echo '*** main stuff. ***'
+if [[ "${CIRCLE_BRANCH}" == "master" || "${CIRCLE_BRANCH}" == "main" ]]; then
+  echo '*** prod ***'
+  echo "*** Applying namespace configuration to ${EKS_NAMESPACE_PROD}... ***"
+  kubectl apply --filename "./deploy-eks/${ENVIRONMENT}" -n ${EKS_NAMESPACE_PROD}
+  echo "**********************************"
+  echo
+  echo "*** Restarting pods... ***"
+  kubectl rollout restart deployments -n ${EKS_NAMESPACE_PROD}
+  echo "**********************************"
+  echo
 else
   echo '*** staging ***'
   echo "*** Applying namespace configuration to ${EKS_NAMESPACE_STAGING}... ***"
