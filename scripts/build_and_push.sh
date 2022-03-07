@@ -19,7 +19,7 @@ sudo chmod +x /usr/bin/kubectl
   echo "**********************************"
   echo
 
-if [[ "${CIRCLE_BRANCH}" == "master" || "${CIRCLE_BRANCH}" == "main" ]] ; then
+if [ $CIRCLE_BRANCH == "master" ] ;  then
   echo "*** Setting up Kubectl config PROD ***"
   export ENVIRONMENT=prod
   echo ${ENVIRONMENT}
@@ -77,7 +77,7 @@ bundle exec middleman build
 echo "**********************************"
 echo
 
-if [ "$ENVIRONMENT" = "staging" ]; then
+if [ "$ENVIRONMENT" == "staging" ]; then
   echo '*** Adding robots file to staging... ***'
   cp ./deploy/templates/staging_robots.txt ./build/robots.txt
   echo "** Done **"
@@ -109,7 +109,7 @@ echo $out
 echo "**********************************"
 echo
 
-if [[ "${CIRCLE_BRANCH}" == "master" || "${CIRCLE_BRANCH}" == "main" ]]; then
+if [ $CIRCLE_BRANCH == "master" ] ;  then
   echo '*** prod ***'
   echo "*** Applying namespace configuration to ${EKS_NAMESPACE_PROD}... ***"
   kubectl apply --filename "./deploy/${ENVIRONMENT}" -n ${EKS_NAMESPACE_PROD}
