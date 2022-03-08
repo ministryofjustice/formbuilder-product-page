@@ -20,7 +20,7 @@ order: 4
         <a href="#edit-branching">Editing branching</a><br>
         <a href="#delete-branching">Deleting branching</a><br>
         <a href="#unconnected">What are unconnected pages?</a><br>
-        <a href="#manage-unconnected">Managing unconnected pages</a><br>
+        <a href="#reconnect-unconnected">Reconnecting unconnected pages</a><br>
         <a href="#change-next-page">Changing the order of pages</a></p>
 
       <section class="content-section content-section--with-top-border">
@@ -100,19 +100,26 @@ order: 4
       <section class="content-section content-section--with-top-border">
         <h2 id="unconnected" class="govuk-heading-m">What are unconnected pages?</h2>
         <p>Unconnected pages are pages that have no other pages leading to them. When this happens, they become detached from your main form flow and stored in a separate section.</p> 
-        <p>Pages may become unconnected in a number of ways:</p>
+        <p>Pages (and branching points) may become unconnected in a number of ways:</p>
         <ul>
         <li>when you create a branch and set the ‘go to’ page, any pages between the branching point and the ‘go to’ page may become unconnected</li>
         <li>when you use ‘change next page’ to change the order of your pages in the flow, any pages that are bypassed by the new flow may become unconnected</li>
         <li>when you add an exit page, any pages that come after the new page may become unconnected</li>
         </ul>
         </p>
+        <p<You can edit, preview and delete unconnected pages as you would any other page in your form. To do so, hover over the thumbnail to reveal the page menu (3 dots in a circle).</p>
+        <p>Unconnected pages will be published with the rest of your form but remain invisible to users. They can only be accessed by someone with the specific page URL.</p>
         <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-        <h2 id="manage-unconnected" class="govuk-heading-m">Managing unconnected pages</h2>
-        <p>You can edit, preview and delete unconnected pages as you would any other page in your form. To do so, hover over the thumbnail to reveal the page menu (3 dots in a circle).</p>
-        <p>Unconnected pages can be brought back into your main form from the point where you’d like to insert them. See <a href="#change-next-page">Changing the order of pages</a> for details.</p>
+        <h2 id="reconnect-unconnected" class="govuk-heading-m">Reconnecting unconnected pages</h2>
+        <p>Unconnected pages can be brought back into your main form from the point where you’d like to insert them:
+        <ul>
+        <li>immediately after a branching point - by selecting them as the 'go to' page in the branching point form</li>
+        <li>after another page - by selecting them using 'change next page' in the connection menu</li>
+        </ul>
+        <p>If the unconnected page is linked to any others, they will all be moved back into your main form together.</p>
+        <p>See <a href="#change-next-page">Changing the order of pages</a> for details.</p>
         <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
