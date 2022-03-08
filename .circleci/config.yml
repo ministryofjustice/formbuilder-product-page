@@ -1,0 +1,78 @@
+version: 2.1
+orbs:
+  ruby: circleci/ruby@1.4.0
+  kubernetes: circleci/kubernetes@0.12.0
+
+jobs:
+  build:
+    docker:
+      - image: 'cimg/ruby:2.7.5-node'
+    steps:
+      - checkout
+      - setup_remote_docker
+      - ruby/install-deps
+      - run:
+          name: test build site
+          command: bash build.sh
+  test:
+    docker:
+      - image: 'cimg/ruby:2.7.5-node'
+    steps:
+      - checkout
+      - ruby/install-deps
+      - run:
+          name: test build site
+          command: bash build.sh
+      - run:
+          name: test build site - htmlproofer
+          command: |
+            htmlproofer ./build --allow-hash-href --check-html \
+            --empty-alt-ignore --disable-external
+  build_and_push_staging:
+    docker:
+      - image: 'cimg/ruby:2.7.5-node'
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - ruby/install-deps
+      - run:
+          name: Build and Push
+          command: bash scripts/build_and_push.sh
+  build_and_push_prod:
+    docker:
+      - image: 'cimg/ruby:2.7.5-node'
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - ruby/install-deps
+      - run:
+          name: Build and Push
+          command: bash scripts/build_and_push.sh
+
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+     - build
+     - build_and_push_staging:
+        requires:
+          - build
+        filters:
+          branches:
+            ignore:
+              - master
+              - main
+     - build_and_push_prod:
+        requires:
+          - build
+        filters:
+            branches:
+              only:
+                - master
+                - main
+
+
+

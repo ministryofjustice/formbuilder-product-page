@@ -21,27 +21,13 @@ following commands from the root of this project:
 
 ## Deployment
 
-Deployments are handled by [Github Actions](https://github.com/ministryofjustice/formbuilder-product-page/actions).
+Deployments are handled by [CircleCI](https://github.com/ministryofjustice/formbuilder-product-page/blob/master/.circleci/config.yml).
 
 Any branch except master will deploy to the staging environment. This can be visited [here](https://formbuilder-product-page-staging.apps.live-1.cloud-platform.service.justice.gov.uk/)
 
 Once a change is pushed or merged to master then production will automatically be deployed.
 
-The environment variables required in Github secrets are found in the `.github/workflows` folder. There are 2 clusters, K8S and EKS.
-The only differing values between the two clusters are:
-- CLUSTER_NAME
-- TOKEN
-- CLUSTER_CERT
-
-To get the correct values we need to ensure we are in the appropriate context, `live` or `live-1`, and then run the following commands:
-
-For the CLUSTER_CERT:
-`kubectl -n <NAMESPACE> get secrets <NAME-OF-GITHUBACTION-SERVICE-ACCOUNT-SECRET> -o json | grep ca.crt`
-
-For the TOKEN:
-`cloud-platform decode-secret -n <NAMESPACE> -s <NAME-OF-GITHUBACTION-SERVICE-ACCOUNT-SECRET> | grep token`
-
-The CLUSTER_NAME is the same as the other apps and can be found by running the `pipeline_variables.sh` script in the `fb-deploy` repo.
+The environment variables required in CircleCI - check the [Tech Docs](https://ministryofjustice.github.io/moj-forms-tech-docs/#runbooks) for more infomation.
 
 ## Making Content Changes without Installing Middleman and Other Tools (well maybe a text editor)
 Add this repo to git desktop

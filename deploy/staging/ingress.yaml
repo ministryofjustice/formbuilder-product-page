@@ -5,14 +5,14 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/auth-type: basic
     nginx.ingress.kubernetes.io/auth-secret: basic-auth
-    external-dns.alpha.kubernetes.io/set-identifier: formbuilder-product-page-staging-formbuilder-product-page-staging-blue
+    external-dns.alpha.kubernetes.io/set-identifier: formbuilder-product-page-staging-formbuilder-product-page-staging-green
     external-dns.alpha.kubernetes.io/aws-weight: "100"
 spec:
   tls:
     - hosts:
-        - formbuilder-product-page-staging.apps.live-1.cloud-platform.service.justice.gov.uk
+        - formbuilder-product-page-staging.apps.live.cloud-platform.service.justice.gov.uk
   rules:
-  - host: formbuilder-product-page-staging.apps.live-1.cloud-platform.service.justice.gov.uk
+  - host: formbuilder-product-page-staging.apps.live.cloud-platform.service.justice.gov.uk
     http:
       paths:
       - path: /
