@@ -36,4 +36,4 @@ Open the files in source/ and update the html
 Add your changes to the branch
 Commit changes and push up
 
-This will trigger an action to build the site in [staging](https://formbuilder-product-page-staging.apps.live-1.cloud-platform.service.justice.gov.uk/).
+This will trigger an action to build the site in [staging](https://formbuilder-product-page-staging.apps.live.cloud-platform.service.justice.gov.uk/).
