@@ -24,6 +24,7 @@ order: 3
         <a href="#question-formats">Choosing which question format to use</a><br>
         <a href="#file-upload">Asking users to submit a file</a><br>
         <a href="#optional">Making a question optional</a><br>
+        <a href="#validation">Validating user answers</a><br>
         <a href="#markdown">Formatting content with markdown</a></p>
       <section class="content-section content-section--with-top-border">
         <h2 id="form-name" class="govuk-heading-m">Your form’s name and URL</h2>
@@ -162,18 +163,75 @@ order: 3
       </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="optional" class="govuk-heading-m">Making a question optional</h2>
+        <p>When a question is required, the form will check that the user has provided an answer before moving to the next page. If they haven’t, it will show an error message and prompt the user to complete the question.</p>
         <p>All questions are required by default but you can switch this setting off to make a question optional. This can be done with both single question pages and individual questions on multi-question pages.</p>
         <p>To make a question optional, first click in the question title as if you are going to edit it. This highlights the component settings button (3 dots in a circle). Clicking on the button will open the menu.</p>
         <img src="/images/required-or-optional.png" alt="The option to make a question optional is in the component settings menu." class="screenshot-image">
-        <p>For now, there is only one setting, called ‘Required’. Click on this setting to open the options, where you can set it to either ‘yes’ (required) or ‘no’.</p>
+        <p>Click on the 'Required' setting to open the options, where you can set it to either ‘yes’ (required) or ‘no’.</p>
         <p>MoJ Forms automatically adds ‘(optional)’ onto the end of the title of any question that isn’t required.</p>
         <p><a href="#top">Back to top</a></p>
       </section>
+      <section class="content-section content-section--with-top-border">
+      <h2 id="validation" class="govuk-heading-m">Validating user answers</h2>
+      <p>You can set validation criteria to a range of components, allowing you to specify things like the length or limits of an answer. When validation is present, the form will check the user’s answers before moving to the next page and show an appropriate error if required.</p>
+      <p>The full range of options available are shown in this table:</p>
+      <h3 id="validation" class="govuk-heading-s">Table: validation options</h3>
+      <table style="font-family: Arial, Helvetica, sans-serif; text-align: left; border:1px solid #dee0e2;" border="1">
+      <thead>
+        <tr>
+          <th>Validation</th>
+          <th>Available with</th>
+          <th>What it does</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Minimum answer length</td>
+          <td>Text<br>Text area</td>
+          <td>Sets the minimum number of characters (or words with text area) that will be accepted</td>
+        </tr>
+        <tr>
+          <td>Maximum answer length</td>
+          <td>Text<br>Text area</td>
+          <td>Sets the maximum number of characters (or words with text area) that will be accepted</td>
+        </tr>
+        <tr>
+          <td>Minimum answer value</td>
+          <td>Number</td>
+          <td>Sets the lowest number that will be accepted</td>
+        </tr>
+        <tr>
+          <td>Maximum answer value</td>
+          <td>Number</td>
+          <td>Sets the highest number that will be accepted</td>
+        </tr>
+        <tr>
+          <td>Earliest date</td>
+          <td>Date</td>
+          <td>Sets the earliest date that will be accepted</td>
+        </tr>
+        <tr>
+          <td>Latest date</td>
+          <td>Date</td>
+          <td>Sets the latest data that will be accepted</td>
+        </tr>
+      </tbody>
+      </table>
+      <p>To set validation:</p>
+      <ul>
+      <li>click in the question title to highlight the component settings button (3 dots in a circle) and click to open the menu</li>
+      <li>select ‘Validation’ to expand the menu and show the types of validation available with that question type</li>
+      <li>select the type of validation you want to show the validation settings</li>
+      <li>enter your preferred settings and select ‘Update’ to save</li>
+      </ul>
+      <p><a href="#top">Back to top</a></p>
+    </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="markdown" class="govuk-heading-m">Formatting content with markdown</h2>
         <p>In most cases, you won’t have to worry about formatting. The page templates include fields for headings, labels and hint text and all you have to do is add your own words.</p>
         <p>Content areas allow you to use markdown to add your own formatting. These are on every content page and can be added to some other page templates as required.</p>
         <p>Markdown is a way of adding formatting to plain text using basic symbols and patterns. With markdown, you can add headings, links, lists, tables and more. For example, to create a bulleted list, you start each item with an asterisk (*). Here is a selection of the most common markdown elements:</p>
+        <h3 id="validation" class="govuk-heading-s">Table: markdown formatting</h3>
         <table style="font-family: Arial, Helvetica, sans-serif; text-align: left; border:1px solid #dee0e2;" border="1">
 <thead>
   <tr>
