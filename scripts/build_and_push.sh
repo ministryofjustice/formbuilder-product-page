@@ -110,7 +110,7 @@ echo "**********************************"
 echo
 
 if [ $CIRCLE_BRANCH == "master" ] ;  then
-  echo '*** prod ***'
+  echo '*** prod branches ***'
   echo "*** Applying namespace configuration to ${EKS_NAMESPACE_PROD}... ***"
   kubectl apply --filename "./deploy/${ENVIRONMENT}" -n ${EKS_NAMESPACE_PROD}
   echo "**********************************"
@@ -120,7 +120,7 @@ if [ $CIRCLE_BRANCH == "master" ] ;  then
   echo "**********************************"
   echo
 else
-  echo '*** staging ***'
+  echo '*** staging branches ***'
   echo "*** Applying namespace configuration to ${EKS_NAMESPACE_STAGING}... ***"
   kubectl apply --filename "./deploy/${ENVIRONMENT}" -n ${EKS_NAMESPACE_STAGING}
   echo "**********************************"
