@@ -1,6 +1,6 @@
-var moj = moj || {};
+var mojforms = mojforms || {};
 
-moj.cookiepolicy = new (function() {
+mojforms.cookiepolicy = new (function() {
   var COOKIE_POLICY = "mojforms_cookies_policy";
   var ANALYTICS = "analytics";
   var ACCEPTED = "accepted";
@@ -23,13 +23,12 @@ moj.cookiepolicy = new (function() {
   this.accept = function() {
     setAnalyticsCookie(ACCEPTED);
     showBannerMessage(ACCEPTED);
-    injectGoogleAnalytics(); // This should be inside the layout
+    this.reload(); // Reload but this time with Analytics activated
   }
 
   this.reject = function() {
     setAnalyticsCookie(REJECTED);
-    rejectGoogleAnalytics(); // This should be inside the layout
-    removeAnalyticsCookies();
+    removeAnalytics();
     showBannerMessage(REJECTED);
   }
 
@@ -46,19 +45,33 @@ moj.cookiepolicy = new (function() {
     return preference(ANALYTICS) == ACCEPTED;
   }
 
+  /* Attempt to turn off/deny analytics based code and/or cookies
+   * @ga (String) Google analytics ID
+   **/
+  this.rejectAnalytics = function(ga) {
+    removeAnalyticsCookies();
+
+    window.ga = function() { /* disabled */ }
+    window.gtag = function() { /* disabled */ }
+    window.GoogleAnalyticsObject = "";
+    window.dataLayer = {};
+    window['ga-disable-' + ga] = true;
+  }
+
+
   function preference(name) {
-    var preferences = moj.cookie.get(COOKIE_POLICY);
+    var preferences = mojforms.cookie.get(COOKIE_POLICY);
     return JSON.parse(preferences || "{}")[name];
   }
 
   function setAnalyticsCookie (value) {
-    var preferences = moj.cookie.get(COOKIE_POLICY) || {};
+    var preferences = mojforms.cookie.get(COOKIE_POLICY) || {};
     preferences[ANALYTICS] = value;
     updatePolicyCookie(JSON.stringify(preferences));
   }
 
   function updatePolicyCookie(value) {
-    moj.cookie.set(COOKIE_POLICY, value, new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 365).toUTCString());
+    mojforms.cookie.set(COOKIE_POLICY, value, new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 365).toUTCString());
   }
 
   // Closes all Cookie Banner message leaving only
@@ -88,7 +101,7 @@ TEMPORARILY DISABLED DUE TO USE OF ES6 CAUSING ISSUE WITH BUILD
       for (const cookiePrefix of cookiePrefixes) {
         const cookieName = cookie.split('=')[0].trim();
         if (cookieName.startsWith(cookiePrefix)) {
-          moj.cookie.remove(cookieName);
+          mojforms.cookie.remove(cookieName);
         }
       }
     }

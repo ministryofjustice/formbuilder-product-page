@@ -1,6 +1,6 @@
-var moj = moj || {};
+var mojforms = mojforms || {};
 
-moj.cookie = new (function() {
+mojforms.cookie = new (function() {
 
   this.set = function(name, value, expiry) {
     var expires = "";

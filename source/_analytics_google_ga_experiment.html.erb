@@ -1,5 +1,11 @@
 <script>
-  function injectGoogleAnalytics() {
+
+  // If we already know the user has accepted, run the Google Analytics code.
+  // If they only accept (with Cookie banner) after this point, we'll call it
+  // with the mojforms.cookiepolicy.accept() function that reloads the page.
+  if(mojforms.cookiepolicy.analyticsAllowed()) {
+    console.log("TEMP DEV ONLY: google loading...");
+
     // Start: Google Analytics
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -13,24 +19,8 @@
     ga('send', 'pageview');
     // End: Google Analytics
   }
-
-  function rejectGoogleAnalytics() {
-    window.ga = function() { /* disabled */ }
-    window.gtag = function() { /* disabled */ }
-    window.GoogleAnalyticsObject = "";
-    window.dataLayer = {};
-    window['ga-disable-' + '<%= config.analytics %>'] = true;
-  }
-
-  // If we already know the user has accepted, run the Google Analytics code.
-  // If they only accept (with Cookie banner) after this point, we'll call it
-  // with the moj.cookiepolicy.accept() function instead.
-  if(moj.cookiepolicy.analyticsAllowed()) {
-    console.log("TEMP DEV ONLY: google loading...");
-    injectGoogleAnalytics();
-  }
   else {
-    rejectGoogleAnalytics();
     console.log("TEMP DEV ONLY: google denied!!");
+    mojforms.rejectAnalytics();
   }
 </script>
