@@ -23,7 +23,7 @@ mojforms.cookiepolicy = new (function() {
   this.accept = function() {
     setPolicyCookie(ACCEPTED);
     showBannerMessage(ACCEPTED);
-    this.reload(); // Reload but this time with Analytics activated
+    location.reload(); // Reload but this time with Analytics activated
   }
 
   this.reject = function() {
