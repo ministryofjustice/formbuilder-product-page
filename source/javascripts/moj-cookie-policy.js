@@ -92,6 +92,6 @@ TEMPORARILY DISABLED DUE TO USE OF ES6 CAUSING ISSUE WITH BUILD
         }
       }
     }
-  }
 */
+  }
 });

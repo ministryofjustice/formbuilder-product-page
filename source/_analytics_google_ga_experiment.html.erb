@@ -6,7 +6,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', <%= config.analytics %> + '', 'auto');
+    ga('create', '<%= config.analytics %>', 'auto');
     ga('set', 'anonymizeIp', true);
     ga('set', 'displayFeaturesTask', null);
     ga('set', 'transport', 'beacon');
@@ -19,7 +19,7 @@
     window.gtag = function() { /* disabled */ }
     window.GoogleAnalyticsObject = "";
     window.dataLayer = {};
-    window['ga-disable-' + <%= config.analytics %>] = true;
+    window['ga-disable-' + '<%= config.analytics %>'] = true;
   }
 
   // If we already know the user has accepted, run the Google Analytics code.
