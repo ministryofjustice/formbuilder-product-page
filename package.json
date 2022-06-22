@@ -15,6 +15,6 @@
   "homepage": "https://github.com/alphagov/product-page-example#readme",
   "dependencies": {
     "gaap-analytics": "^2.2.1",
-    "govuk-frontend": "^4.1.0"
+    "govuk-frontend": "^3.0.0"
   }
 }

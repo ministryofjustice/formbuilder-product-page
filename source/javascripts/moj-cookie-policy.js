@@ -58,7 +58,7 @@ moj.cookiepolicy = new (function() {
   }
 
   function updatePolicyCookie(value) {
-    moj.cookie.set(COOKIE_POLICY, value, `${new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 365).toUTCString()}`);
+    moj.cookie.set(COOKIE_POLICY, value, new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 365).toUTCString());
   }
 
   // Closes all Cookie Banner message leaving only
@@ -81,6 +81,8 @@ moj.cookiepolicy = new (function() {
    * Does this  work?
    **/
   function removeAnalyticsCookies() {
+/*
+TEMPORARILY DISABLED DUE TO USE OF ES6 CAUSING ISSUE WITH BUILD
     const cookiePrefixes = ['_ga', '_gid', '_gat_gtag_', '_hj', '_utma', '_utmb', '_utmc', '_utmz'];
     for (const cookie of document.cookie.split(';')) {
       for (const cookiePrefix of cookiePrefixes) {
@@ -91,5 +93,5 @@ moj.cookiepolicy = new (function() {
       }
     }
   }
-
+*/
 });
