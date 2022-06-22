@@ -21,13 +21,13 @@ mojforms.cookiepolicy = new (function() {
   }
 
   this.accept = function() {
-    setAnalyticsCookie(ACCEPTED);
+    setPolicyCookie(ACCEPTED);
     showBannerMessage(ACCEPTED);
     this.reload(); // Reload but this time with Analytics activated
   }
 
   this.reject = function() {
-    setAnalyticsCookie(REJECTED);
+    setPolicyCookie(REJECTED);
     removeAnalytics();
     showBannerMessage(REJECTED);
   }
@@ -64,14 +64,10 @@ mojforms.cookiepolicy = new (function() {
     return JSON.parse(preferences || "{}")[name];
   }
 
-  function setAnalyticsCookie (value) {
+  function setPolicyCookie(value) {
     var preferences = mojforms.cookie.get(COOKIE_POLICY) || {};
     preferences[ANALYTICS] = value;
-    updatePolicyCookie(JSON.stringify(preferences));
-  }
-
-  function updatePolicyCookie(value) {
-    mojforms.cookie.set(COOKIE_POLICY, value, new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 365).toUTCString());
+    mojforms.cookie.set(COOKIE_POLICY, JSON.stringify(preferences), new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 365).toUTCString());
   }
 
   // Closes all Cookie Banner message leaving only
