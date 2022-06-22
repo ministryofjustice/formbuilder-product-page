@@ -21,6 +21,6 @@
   }
   else {
     console.log("TEMP DEV ONLY: google denied!!");
-    mojforms.rejectAnalytics();
+    mojforms.cookiepolicy.rejectAnalytics('<%= config.analytics %>');
   }
 </script>
