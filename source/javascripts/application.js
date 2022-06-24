@@ -1,4 +1,5 @@
 //= require build/gaap-analytics.min
 //= require start-modules
-//= require moj-cookie
-//= require moj-cookie-policy
+//= require mojforms-cookie
+//= require mojforms-analytics
+//= require mojforms-cookie-policy

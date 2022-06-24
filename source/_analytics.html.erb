@@ -1,7 +1,7 @@
 <script>
-  if(mojforms.analytics.allowed()) {
+  if(mojforms.cookiepolicy.analytics()) {
     console.log("TEMP DEV ONLY: google loading...");
-    mpojforms.analytics.add('<%= config.analytics %>');
+    mojforms.analytics.add('<%= config.analytics %>');
   }
   else {
     console.log("TEMP DEV ONLY: google denied!!");
