@@ -1,3 +1,4 @@
+# coding: utf-8
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -65,7 +66,11 @@ configure :build do
   # activate :minify_css
 
   # Minify Javascript on build
-  activate :minify_javascript
+  #
+  # "UglifyJS only works with ES5. If you need to compress ES6, ruby-terser is a better option."
+  # - https://github.com/lautis/uglifier
+  #
+  # activate :minify_javascript
 
   # Hash assets on build
   activate :asset_hash
