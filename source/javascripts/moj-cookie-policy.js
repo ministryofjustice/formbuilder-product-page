@@ -89,8 +89,6 @@ mojforms.cookiepolicy = new (function() {
    * Does this  work?
    **/
   function removeAnalyticsCookies() {
-/*
-TEMPORARILY DISABLED DUE TO USE OF ES6 CAUSING ISSUE WITH BUILD
     const cookiePrefixes = ['_ga', '_gid', '_gat_gtag_', '_hj', '_utma', '_utmb', '_utmc', '_utmz'];
     for (const cookie of document.cookie.split(';')) {
       for (const cookiePrefix of cookiePrefixes) {
@@ -100,6 +98,5 @@ TEMPORARILY DISABLED DUE TO USE OF ES6 CAUSING ISSUE WITH BUILD
         }
       }
     }
-*/
   }
 });
