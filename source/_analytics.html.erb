@@ -1,10 +1,12 @@
 <script>
+  mojforms.analytics.setGoogleMeasurementId('<%= config.analytics %>');
+
   if(mojforms.cookiepolicy.analytics()) {
     console.log("TEMP DEV ONLY: google loading...");
-    mojforms.analytics.add('<%= config.analytics %>');
+    mojforms.analytics.add();
   }
   else {
     console.log("TEMP DEV ONLY: google denied!!");
-    mojforms.analytics.remove('<%= config.analytics %>');
+    mojforms.analytics.remove();
   }
 </script>
