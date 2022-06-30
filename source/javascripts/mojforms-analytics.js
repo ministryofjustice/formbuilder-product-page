@@ -2,12 +2,13 @@ var mojforms = mojforms || {};
 
 mojforms.analytics = new (function() {
 
-  this.add = function(gaid) {
-    enableGogleAnalytics(gaid);
+  this.add = function(ga_id) {
+//    enableGogleAnalytics(ga_id);
+    enableGoogleG4Analytics(ga_id);
   }
 
-  this.remove = function() {
-    disableGoogleAnalytics();
+  this.remove = function(ga_id) {
+    disableGoogleAnalytics(ga_id);
     removeAnalyticsCookies();
   }
 
@@ -27,14 +28,37 @@ mojforms.analytics = new (function() {
     ga('send', 'pageview');
   }
 
+  /* Experiment to get G4 analytics working
+   **/
+  function enableGoogleG4Analytics(account) {
+    (function(i,s,o,g,r,a,m){
+      i['dataLayer'] = i.dataLayer || [];
+      i['gtag'] = function(){i.dataLayer.push(arguments);}
+      a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g+r;m.parentNode.insertBefore(a,m);
+    })(window, document, 'script', 'https://www.googletagmanager.com/gtag/js?id=', account);
+
+    gtag('js', new Date());
+    gtag('config', account);
+/*
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FWVT6GV20"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3FWVT6GV20');
+</script>
+*/
+  }
+
   /* Attempt to turn off/deny Google analytics based code.
    * @account (String) Google analytics ID
    **/
   function disableGoogleAnalytics(account) {
-    window.ga = function() { /* disabled */ }
-    window.gtag = function() { /* disabled */ }
-    window.GoogleAnalyticsObject = "";
-    window.dataLayer = {};
+    delete window.ga;
+    delete window.gtag;
+    delete window.GoogleAnalyticsObject;
+    delete window.dataLayer;
     window['ga-disable-' + account] = true;
   }
 
