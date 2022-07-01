@@ -1,5 +1,5 @@
 <script>
-  mojforms.analytics.setGoogleMeasurementId('<%= config.analytics %>');
+  mojforms.analytics.setGoogleMeasurementId('<%= config[:analytics] %>');
 
   if(mojforms.cookiepolicy.analytics()) {
     console.log("TEMP DEV ONLY: google loading...");
