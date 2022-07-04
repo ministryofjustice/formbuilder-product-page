@@ -1,14 +1,19 @@
 var mojforms = mojforms || {};
 
 mojforms.analytics = new (function() {
+  var measurementId = '';
 
-  this.add = function(ga_id) {
-    enableGoogleAnalytics(ga_id);
+  this.add = function() {
+    enableGoogleAnalytics();
   }
 
-  this.remove = function(ga_id) {
-    disableGoogleAnalytics(ga_id);
+  this.remove = function() {
+    disableGoogleAnalytics();
     removeAnalyticsCookies();
+  }
+
+  this.setGoogleMeasurementId = function(id) {
+    measurementId = id;
   }
 
   /* Attempt to turn on Google analytics based code.
@@ -26,26 +31,26 @@ mojforms.analytics = new (function() {
    * </script>
    *
    **/
-  function enableGogleAnalytics(account) {
+  function enableGogleAnalytics() {
     (function(i,s,o,g,r,a,m){
       i['dataLayer'] = i.dataLayer || [];
       i['gtag'] = function(){i.dataLayer.push(arguments);}
       a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g+r;m.parentNode.insertBefore(a,m);
-    })(window, document, 'script', 'https://www.googletagmanager.com/gtag/js?id=', account);
+    })(window, document, 'script', 'https://www.googletagmanager.com/gtag/js?id=', measurementId);
 
     gtag('js', new Date());
-    gtag('config', account);
+    gtag('config', measurementId);
   }
 
   /* Attempt to turn off/deny Google analytics based code.
    * @account (String) Google analytics ID
    **/
-  function disableGoogleAnalytics(account) {
+  function disableGoogleAnalytics() {
     delete window.ga;
     delete window.gtag;
     delete window.GoogleAnalyticsObject;
     delete window.dataLayer;
-    window['ga-disable-' + account] = true;
+    window['ga-disable-' + measurementId] = true;
   }
 
   /* Existing function pulled from fb-runner code
