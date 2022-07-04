@@ -26,22 +26,18 @@ end
 
 # Google analytics
 # Analytics ID must be inside the single quotes as it’s string
+# Note: Not sure how this is supposed to work in Middleman but
+# not having :development scope results in nothing output in
+# code. Expect that not to work in Staging/Live, so assuming
+# at this point, based on original code, they need to be inside
+# the :build scoped section.
 configure :development do
-  #set :analytics, 'UA-XXXXXXXX-X'
-  set :analytics, 'G-XXXXXXXXXX'
+  set :analytics_live, 'G-88QF0HDDSM'
+  set :analytics_staging, 'G-3FWVT6GV20'
 end
-
-configure :staging do
-  set :analytics, 'G-3FWVT6GV20'
-end
-
-configure :prod do
-  set :analytics, 'G-4W5030F7DJ'
-end
-
-# Insert your Google Analytics ID below
 configure :build do
-#  set :analytics, 'UA-162688961-1'
+  set :analytics_live, 'G-88QF0HDDSM'
+  set :analytics_staging, 'G-3FWVT6GV20'
 end
 
 ###

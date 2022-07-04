@@ -1,12 +1,15 @@
 <script>
-  mojforms.analytics.setGoogleMeasurementId('<%= config[:analytics] %>');
+  if(location.hostname == 'moj-forms.service.justice.gov.uk') {
+    mojforms.analytics.setGoogleMeasurementId('<%= config.analytics_live %>');
+  }
+  else {
+    mojforms.analytics.setGoogleMeasurementId('<%= config.analytics_staging %>');
+  }
 
   if(mojforms.cookiepolicy.analytics()) {
-    console.log("TEMP DEV ONLY: google loading...");
     mojforms.analytics.add();
   }
   else {
-    console.log("TEMP DEV ONLY: google denied!!");
     mojforms.analytics.remove();
   }
 </script>
