@@ -32,12 +32,12 @@ end
 # at this point, based on original code, they need to be inside
 # the :build scoped section.
 configure :development do
-  set :analytics_live, 'G-88QF0HDDSM'
-  set :analytics_staging, 'G-3FWVT6GV20'
+  set :analytics_live, 'G-4W5030F7DJ'
+  set :analytics_staging, 'G-88QF0HDDSM'
 end
 configure :build do
-  set :analytics_live, 'G-88QF0HDDSM'
-  set :analytics_staging, 'G-3FWVT6GV20'
+  set :analytics_live, 'G-4W5030F7DJ'
+  set :analytics_staging, 'G-88QF0HDDSM'
 end
 
 ###
