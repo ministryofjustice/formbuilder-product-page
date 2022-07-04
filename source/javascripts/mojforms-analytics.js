@@ -31,7 +31,7 @@ mojforms.analytics = new (function() {
    * </script>
    *
    **/
-  function enableGogleAnalytics() {
+  function enableGoogleAnalytics() {
     (function(i,s,o,g,r,a,m){
       i['dataLayer'] = i.dataLayer || [];
       i['gtag'] = function(){i.dataLayer.push(arguments);}
