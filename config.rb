@@ -1,3 +1,4 @@
+# coding: utf-8
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -25,14 +26,20 @@ end
 
 # Google analytics
 # Analytics ID must be inside the single quotes as it’s string
+# Note: Not sure how this is supposed to work in Middleman but
+# not having :development scope results in nothing output in
+# code. Expect that not to work in Staging/Live, so assuming
+# at this point, based on original code, they need to be inside
+# the :build scoped section.
 configure :development do
-  set :analytics, ""
-#   set :analytics, "'UA-XXXXXXXX-X'"
+  set :analytics_live, 'G-4W5030F7DJ'
+  set :analytics_staging, 'G-88QF0HDDSM'
 end
 
 # Insert your Google Analytics ID below
 configure :build do
-  set :analytics, "'UA-162688961-1'"
+  set :analytics_live, 'G-4W5030F7DJ'
+  set :analytics_staging, 'G-88QF0HDDSM'
 end
 
 ###
@@ -65,7 +72,11 @@ configure :build do
   # activate :minify_css
 
   # Minify Javascript on build
-  activate :minify_javascript
+  #
+  # "UglifyJS only works with ES5. If you need to compress ES6, ruby-terser is a better option."
+  # - https://github.com/lautis/uglifier
+  #
+  # activate :minify_javascript
 
   # Hash assets on build
   activate :asset_hash

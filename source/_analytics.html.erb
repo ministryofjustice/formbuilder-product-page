@@ -1,0 +1,17 @@
+<script>
+  // Determine test/live account usage
+  if(location.hostname == 'moj-forms.service.justice.gov.uk') {
+    mojforms.analytics.setGoogleMeasurementId('<%= config.analytics_live %>');
+  }
+  else {
+    mojforms.analytics.setGoogleMeasurementId('<%= config.analytics_staging %>');
+  }
+
+  // Control analytics on/off
+  if(mojforms.cookiepolicy.analytics()) {
+    mojforms.analytics.add();
+  }
+  else {
+    mojforms.analytics.remove();
+  }
+</script>
