@@ -13,28 +13,32 @@ order: 7
       <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
-        <p>Change your form’s name and configure the email that will be sent when users of your form submit their information.</p>
+        <p>Change your form’s name and configure how you receive information when users submit their forms.</p>
         <p><a href="#change-name">Changing your form's name</a><br>
-        <a href="#email-settings">Managing the email settings</a></p>
+        <a href="#email-settings">Collecting information</a></p>
       <section class="content-section content-section--with-top-border">
         <h2 id="change-name" class="govuk-heading-m">Changing your form's name</h2>
         <p>We are making some changes to the form settings and it is not currently possible to change your form’s name in the editor. <a href="/contact">Contact us</a> whenever you want to change the name.</p> 
         <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-        <h2 id="email-settings" class="govuk-heading-m">Managing the email settings</h2>
-        <p>The submission actions setting controls what happens to a user’s data when they submit their form. Currently, the only option is to send it by email as a PDF attachment to an address of your choice. Other options, including API integration, are in development.</p>
-        <p><a href="https://moj-forms-editor.service.justice.gov.uk/sample.pdf">See a sample PDF</a></p>
-        <p>You can specify only a single email address at the moment. We recommend using a group address so that multiple people can access it.</p>
-        <p>When you check the ‘send by email’ box, you also need to provide an email address. You do this by selecting ‘configure’, which allows you to customise the email in several ways:</p> 
+        <h2 id="email-settings" class="govuk-heading-m">Collecting information</h2>
+        <p>You can configure how you collect the information submitted by users of your form through the submission settings. Currently, the only option is to receive it by email to an address of your choice. Other options, including API integration, are in development.</p>
+        <h3 class="govuk-heading-s">Collecting information by email</h3>
+        <p>Under submission settings, select ‘send data by email’. On this page, you can enable sending data by email on the Test site and on the Live site. You need to enable and configure the settings for both sites separately. The answers are attached in a PDF and can be additionally attached in a CSV.</p>
+        <p>To enable the setting on a site, check the 'send by email' box.</p>
+        <p>You also need to provide an email address. You can specify only a single email address at the moment. We recommend using a group address so that multiple people can access it.</p>
+        <p>To add the email address, select 'configure', which allows you to customise the email in several ways:</p> 
         <ul>
         <li>send email to - the email address you want the emails sent to</li>
         <li>email subject - the subject line of the email</li>
         <li>email text - any specific text you want in the body of the email</li>
         <li>PDF attachment heading - this will appear in the PDF of your user’s answers</li> 
-        <li>PDF attachment subheading - this will appear in the PDF of your user’s answers</li> 
+        <li>PDF attachment subheading - this will appear in the PDF of your user’s answers</li>
+        <li>CSV attachment - selecting this option will send a separate email with the information attached in CSV format</li> 
         </ul>
-        <p>You need to configure the email settings for both the Test site and Live site separately.<p>
+        <p><a href="https://moj-forms-editor.service.justice.gov.uk/sample.pdf">See a sample PDF</a></p>
+        <p><a href="https://moj-forms-editor.service.justice.gov.uk/sample.pdf">See a sample CSV</a></p>
         <p><a href="#top">Back to top</a></p>
       </settings>
         <!-- END CONTENT -->
