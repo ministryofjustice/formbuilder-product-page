@@ -13,14 +13,42 @@ order: 7
       <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
-        <p>Change your form’s name and configure how you receive information when users submit their forms.</p>
+        <p>Change your form’s name, enable Google Analytics and configure how you receive information when users submit their forms.</p>
         <p><a href="#change-name">Changing your form's name</a><br>
+        <a href="#google-analytics">Setting up Google Analytics</a><br>
         <a href="#email-settings">Collecting information</a></p>
       <section class="content-section content-section--with-top-border">
         <h2 id="change-name" class="govuk-heading-m">Changing your form's name</h2>
         <p>We are making some changes to the form settings and it is not currently possible to change your form’s name in the editor. <a href="/contact">Contact us</a> whenever you want to change the name.</p> 
         <p><a href="#top">Back to top</a></p>
       </section>
+      <section class="content-section content-section--with-top-border">
+      <h2 id="google-analytics" class="govuk-heading-m">Setting up Google Analytics</h2>
+      <p>MoJ Forms allows you to link your form with a Google Analytics account and monitor your form’s performance.</p>
+      <p>You will need:</p>
+      <ul>
+      <li>a Google Analytics account - if you don’t have one already, talk to your local digital team about setting one up</li>
+      <li>your analytics tracking ID - see ‘Configuring Google Analytics’ for details</li>
+      </ul>
+      <p>You can enable analytics on your Test and Live sites independently and add different tracking IDs. This allows you to test your analytics first and prevent test activity from being recorded in your live data.</p>
+      <p>To comply with data protection regulations, users are given the option of accepting or rejecting analytics cookies when they first visit your site. This means you will only receive data for the users that actively opt-in to analytics.</p>
+      <h3 class="govuk-heading-s">Configuring Google Analytics</h3>
+      <p>After clicking to enable analytics on a site, the ‘configure’ settings will expand to show space for 3 types of tracking IDs. The tracking ID is what links your form to your Google Analytics account. You must enter at least 1 tracking ID and can potentially enter all 3.</p>
+      <p>MoJ Forms supports 3 types of tracking ID:</p>
+      <ul>
+      <li>Universal Analytics Tracking ID - for Google’s legacy analytics service which will be retired in July 2023. This starts with UA, for example: UA-000000-2.</li>
+      <li>Google Analytics 4 Measurement ID - for Google’s latest analytics service, which we recommend for all new forms. This starts with G, for example: G-0000004.</li>
+      <li>Google Tag Manager Container ID - for Google Tag Manager, which is an alternative way of adding analytics code to a form. This starts with GTM, for example: GTM-000003.</li>
+      </ul>
+      <p><a href="https://support.google.com/analytics/answer/9539598">How to find your Universal Analytics or Google Analytics 4 ID</a></p>
+      <p><a href="https://support.google.com/tagmanager/answer/6103696?hl=en">How to find your Google Tag Manager ID</a></p>
+      <p>You will need to publish your form for the changes to take effect.</p>
+      <h3 class="govuk-heading-s">Updating your cookie statement</h3>
+      <p>When you enable analytics, you must also update your cookies statement to list the analytics cookies used by your form.</p>
+      <p>The cookies statement is listed in your form flow view under ‘form footer’. The default page already lists some analytics cookies used by the MoJ Forms platform. You must not remove these.</p> 
+      <p>Add any additional analytics cookies to the table using the appropriate <a href="/building-and-editing/#markdown">markdown for tables</a>.</p> 
+      <p><a href="#top">Back to top</a></p>
+    </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="email-settings" class="govuk-heading-m">Collecting information</h2>
         <p>You can configure how you collect the information submitted by users of your form through the submission settings. Currently, the only option is to receive it by email to an address of your choice.</p>
