@@ -8,6 +8,7 @@ metadata:
     external-dns.alpha.kubernetes.io/set-identifier: formbuilder-product-page-staging-formbuilder-product-page-staging-green
     external-dns.alpha.kubernetes.io/aws-weight: "100"
 spec:
+  ingressClassName: default
   tls:
     - hosts:
         - formbuilder-product-page-staging.apps.live.cloud-platform.service.justice.gov.uk
