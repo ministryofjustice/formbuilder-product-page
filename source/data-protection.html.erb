@@ -13,61 +13,64 @@ order: 6
       <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
-        <p>How to ensure your form is compliant with MoJ data protection policies and procedures and how we keep your users’ data secure.</p>
-        <p><a href="#whentocontact">When to contact the data protection team</a></br>
-        <a href="#responsibilities">Your data protection responsibilities</a></br>
+        <p>How to ensure your form is compliant with data protection policies and procedures and keep your users’ data secure.</p>
+        <p><a href="#responsibilities">Your data protection responsibilities</a></br>
+        <a href="#registeractivity">Registering your data processing activity</a></br>
         <a href="#designingtheform">Designing and building your form</a></br>
-        <a href="#privacynotice">Completing the privacy notice</a></br>
+        <a href="#privacynotice">Preparing a privacy notice</a></br>
         <a href="#formsecurity">How your forms are secured</a></br>
         <a href="#sessionduration">Session duration</a></p>
-       <section class="content-section content-section--with-top-border">
-        <h2 id="whentocontact" class="govuk-heading-m">When to contact the data protection team</h2>
-        <p>Any form that is likely to involve processing of personal data should go through a DPIA screening in the first instance to determine if a full <a href="https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/privacy-reform/data-protection-impact-assessments-dpias/">data protection impact assessment (DPIA)</a> might be required. This helps identify and minimise any data protection risks involved.</p>
-        <p>You will need to contact your <a href="https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/information-assurance-roles/">information assurance lead</a> or the data protection team (<a href="mailto:dataprotection@justice.gov.uk">dataprotection@justice.gov.uk</a>) to initiate this process. Contact them as early as possible in your planning process for:</p>
+        <section class="content-section content-section--with-top-border">
+        <h2 id="responsibilities" class="govuk-heading-m">Your data protection responsibilities</h2>
+        <p>As you design a new form or make any substantial changes to an existing form, you will need to:</p>
+        <ol>
+        <li><a href="#registeractivity">register your data processing activity</a> with the appropriate data protection team</li>
+        <li><a href="#designingtheform">think about how and why you are asking for personal information</a></li> 
+        <li><a href="#privacynotice">prepare a privacy notice</a> to include in the footer of your form</li>
+        </ol>
+        <p>These steps will help ensure that you comply with standards and best practice around the lawful capture and ongoing protection of any personal data that you collect with your forms. Your responsibilities include:</p>
         <ul>
-        <li>any new form that will collect personal information from users (e.g. names, addresses, prison numbers)</li>
-        <li>a change to an existing form that involves collecting new types of information or changing how it is processed</li>
+        <li>ensuring that you only collect the minimum amount of personal data necessary and relevant for the purposes of the activity</li>
+        <li>making it as easy as possible for users to understand why you are collecting personal data and how you will use it</li>
+        <li>establishing the most appropriate lawful basis for the personal data capture</li>
+        <li>the security and safe storage of the personal data captured after it has been submitted and who is authorised to view or access it</li>
+        <li>ensuring that the personal data is only used for the purposes for which it is captured</li>
+        <li>destroying or de-identifying the personal data once the purpose for which it has been captured expires, in line with your organisation's retention schedules</li>
         </ul>
+        <p>For more information on your responsibilities, read the guide to <a href="https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/privacy-reform/">data protection</a> on the MoJ intranet or contact your organisation's data protection team.</p>
+        <p><a href="#top">Back to top</a></p>
+      </section>
+       <section class="content-section content-section--with-top-border">
+        <h2 id="registeractivity" class="govuk-heading-m">Registering your data processing activity</h2>
+        <p>If you are planning on using a form to collect personal information, you also need to consider how you will use and manage that information. Collectively, this is known as a data processing activity.</p>
+        </p>All data processing activities should go through a data protection impact assessment (DPIA) screening. This will help identify and minimise any data protection risks involved and ensure that the activity is registered with the data protection team.</p>
+        <p>You should do this if you are making significant changes to an existing data processing activity as well when establishing a new one.</p>
+        <p>If MoJ is your data controller, you will need to contact your <a href="https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/information-assurance-roles/">information assurance lead</a> or the data protection team (<a href="mailto:dataprotection@justice.gov.uk">dataprotection@justice.gov.uk</a>) to initiate this process.</p>
+        <p>The process may vary in departments and agencies that use a different data controller. Contact your organisation’s data protection team for guidance.</p>
         <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-      <h2 id="responsibilities" class="govuk-heading-m">Your data protection responsibilities</h2>
-      <p>You are responsible for the lawful capture and ongoing protection of any personal data that you collect with your forms. This includes:</p>
-      <ul>
-      <li>ensuring that you only collect the minimum amount of personal data necessary and relevant for the purposes of the activity</li>
-      <li>making it as easy as possible for users to understand why you are collecting personal data and how you will use it</li>
-      <li>establishing the most appropriate lawful basis for the personal data capture</li>
-      <li>the security and safe storage of the personal data captured after it has been submitted and who is authorised to view or access it</li>
-      <li>ensuring that the personal data is only used for the purposes for which it is captured</li>
-      <li>destroying or de-identifying the personal data once the purpose for which it has been captured expires, and in line with MoJ retention schedules</li>
-      </ul>
-      <p>When you contact the data protection team, they will help you with these points.</p>
-      <p>For more information on your responsibilities, read the guide to <a href="https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/privacy-reform/">data protection</a> on the MoJ intranet.</p>
-      </p>
-      <p><a href="#top">Back to top</a></p>
-    </section>
-    <section class="content-section content-section--with-top-border">
     <h2 id="designingtheform" class="govuk-heading-m">Designing and building your form</h2>
     <p>When designing your form, ensure that:</p>
     </ul>
-    <li>you only ask for the information you need to perform your service</li>
+    <li>you only ask for the information you need to perform your activity - for example, to perform a data protection check or contact the user in the event of a query</li>
     <li>you are clear with users why you are asking for something</li>
     <li>users can understand what you will do with their information</li>
     </ul>
     <p>To help you work out what to ask, you can carry out a <a href="https://www.uxmatters.com/mt/archives/2010/06/the-question-protocol-how-to-make-sure-every-form-field-is-necessary.php">question protocol</a>.</p>
-    <p>You should also <a href="#privacynotice">complete the privacy notice</a>.</p>
-    <p>Refer to the <a href="https://www.gov.uk/service-manual/design/collecting-personal-information-from-users">Service Manual guidelines on collecting personal information</a> for more guidance on designing and building your form.</p>
+    <p>You should also <a href="#privacynotice">prepare a privacy notice</a>.</p>
+    <p>For more guidance on designing and building your form, read the <a href="https://www.gov.uk/service-manual/design/collecting-personal-information-from-users">Service Manual guidelines on collecting personal information</a>.</p>
     <p><a href="#top">Back to top</a></p>
   </section>
-
   <section class="content-section content-section--with-top-border">
-  <h2 id="privacynotice" class="govuk-heading-m">Completing the privacy notice</h2>
+  <h2 id="privacynotice" class="govuk-heading-m">Preparing a privacy notice</h2>
   <p>All forms are created with a privacy page in the footer section which comes pre-populated with a template privacy notice. There are sections in the notice that you must fill in with details specific to your team and form. These are indicated in square brackets - [like this].</p>
   <p>If you are updating an existing form, you will need to check your privacy notice against the latest version of the template as some sections may have changed.</p>
   <p><a href="/pdf/Privacy_notice_-_template.pdf">Privacy notice - template</a> (PDF, 0.49MB)</br>
   Last updated: July 2021</p>
-  <p>Talk to your information assurance lead or data protection team contact if you need help completing the template.</p>
-  <p>If your form is for law enforcement processing, you will need a different template, available via the <a href="https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/privacy-reform/">Transparency Toolkit</a> on the intranet.</p>
+  <p>This notice is based on the MoJ template for general processing from the <a href="https://intranet.justice.gov.uk/guidance/knowledge-information/protecting-information/privacy-reform/">Transparency Toolkit</a> on the intranet. It is for any department or agency that uses MoJ as data controller.</p>
+  <p>The Toolkit also includes a different privacy notice template for law enforcement processing as well as guidance notes on preparing your notice.</p>
+  <p>If you work in a department or agency with a different data controller, your privacy notice will need to include different details and may need a different template. Contact your organisation’s data protection team for guidance.</p>
   <p><a href="#top">Back to top</a></p>
 </section>
   <section class="content-section content-section--with-top-border">
