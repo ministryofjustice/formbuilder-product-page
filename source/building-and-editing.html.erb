@@ -16,12 +16,14 @@ order: 3
         <p>Learn how to start building your first form.</p>
         <p><a href="#form-name">Your form’s name and URL</a><br>
         <a href="#start-page">Starting pages</a><br>
+        <a href="#preview">Previewing your pages<a/><br>
         <a href="#adding-pages">Adding pages</a><br>
         <a href="#moving-pages">Moving pages</a><br>
         <a href="#editing-pages">Editing pages</a><br>
         <a href="#deleting-pages">Deleting pages</a><br>
         <a href="#page-type">Choosing the type of page</a><br>
         <a href="#question-formats">Choosing which question format to use</a><br>
+        <a href="#autocomplete">Presenting users with a long list of options</a><br>
         <a href="#file-upload">Asking users to submit a file</a><br>
         <a href="#optional">Making a question optional</a><br>
         <a href="#validation">Validating user answers</a><br>
@@ -35,13 +37,14 @@ order: 3
         <li>the title that will appear on your form to users</li>
         <li>used in your form’s URL - for example, a name of Apply for a dog licence will produce a form URL of <u>https://apply-for-a-dog-licence.form.service.gov.uk</u></li>
         </ul>
-        <p>The title can contain lowercase and uppercase letters, hypens and apostrophes. No other special characters are allowed.</p>
+        <p>The title can contain lowercase and uppercase letters, hypens and apostrophes. No other special characters are allowed. The name cannot start with a number but you could write it out - for example, 'two' instead of '2'.</p>
         <p>We are making some changes in this area and it is not currently possible to change your form's name in the editor. <a href="/contact">Contact us</a> whenever you want to change the name</a>.</p>
         <p><a href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="start-page" class="govuk-heading-m">The starting pages</h2>
-        <p>When you create a new form, you are given some default pages to help you structure your form:</p>
+        <p>When you create a new form, you are taken to your form’s ‘pages flow’ or flow view. This shows how all the pages link together and is where you will build and edit your form. Most actions, such as adding and deleting pages, editing pages and creating branching, are launched from the flow view.</p>
+        <p>You are given some default pages to help you structure your form:</p>
         <ul>
         <li>start page</li>
         <li>check answers page</li>
@@ -50,10 +53,24 @@ order: 3
         <img src="/images/start-pages.png" alt="A new form is created with a start page, check answers page and confirmation page." class="screenshot-image">
         <p>The start page is your form’s home page and cannot be deleted. To find out more about what should go on your start page, read the <a href="https://design-system.service.gov.uk/patterns/start-pages/">Design System guidance</a>.</p>
         <p>All your form’s question pages should come after the start page and before the check answers page.</p>
-        <p>For your form to successfully submit the user data it collects, it must have the check answers and confirmation pages. If there is nothing to submit, these pages can be deleted. For example, you could create a form to help users understand a complicated topic, such as <a href"https://www.gov.uk/tell-employer-or-college-about-criminal-record/check-your-conviction-caution">Check when to disclose cautions or convictions</a>.</p>
+        <p>For your form to successfully submit the user data it collects, it must have the check answers and confirmation pages. If there is nothing to submit, these pages can be deleted. You would only do this if you were creating a 'smart answers' form such as <a href="https://check-how-to-get-repairs-done-in-your-rented-home.form.service.justice.gov.uk/">Check how to get repairs done in your rented home</a>.
+        
+        
+        For example, you could create a form to help users understand a complicated topic, such as <a href"https://www.gov.uk/tell-employer-or-college-about-criminal-record/check-your-conviction-caution">Check when to disclose cautions or convictions</a>.</p>
         <p>A form can only have one check answers page and one confirmation page.</p>
         <p><a href="#top">Back to top</a></p>
       </section>
+      <section class="content-section content-section--with-top-border">
+      <h2 id="preview" class="govuk-heading-m">Previewing your form</h2>
+      <p>The flow view includes a ‘Preview’ button in the top right-hand corner.</p>
+      <p>Previewing your form is a quick way to check how the form will look and work without needing to publish it. Most things in preview will behave identically to the final published form but there are a few limitations:</p> 
+      <ul>
+      <li>a form in preview mode will not save any information entered into it or send any emails</li>
+      <li>preview links cannot be shared and will work only for you</li>
+      </ul>
+      </p>
+      <p><a href="#top">Back to top</a></p>
+    </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="adding-pages" class="govuk-heading-m">Adding pages</h2>
         <p>You can add pages to your form using the connection menu (+) that sits on each arrow.</p>
@@ -119,9 +136,10 @@ order: 3
           <li><b>date</b></li>
           <li><b>radio buttons</b></li>
           <li><b>checkboxes</b></li>
-          <li><b>file upload</b></li>
+          <li><b><a href="#autocomplete">autcomplete</a></b></li>
+          <li><b><a href="#file-upload">file upload</a></b></li>
           </ul>
-        <li><b>Multiple question page</b> - this template allows you to add several question components to a single page. You can use any of the question types available on a single question page except file upload.</li>
+        <li><b>Multiple question page</b> - this template allows you to add several question components to a single page. You can use any of the question types available on a single question page except autocomplete and file upload.</li>
         <li><b>Check answers page</b> - use this page to let users check the information they have provided. If your form requires users to submit any information, it will need a check answers page.</li>
         <li><b>Confirmation page</b> - use this page after a check answers page to let users know their data has been sent.</li>
         <li><b>Content page</b> - use this page to provide users with information without asking any questions, such as advice about the application process or the task they are trying to accomplish. You can <a href="#markdown">format the content using markdown</a> - a simple way of indicating things like headings, links and tables using text symbols.</li>
@@ -133,18 +151,29 @@ order: 3
         <h2 id="question-formats" class="govuk-heading-m">Choosing which question format to use</h2>
         <p>You can use the following question types on single and multiple question pages:</p>
         <ul>
-        <li><a href="https://design-system.service.gov.uk/components/text-input/">text</a></li>
-        <li><a href="https://design-system.service.gov.uk/components/textarea/">textarea</a></li>
-        <li><a href="https://design-system.service.gov.uk/patterns/email-addresses/">email address</a></li>
-        <li><a href="https://design-system.service.gov.uk/components/text-input/">number</a></li>
-        <li><a href="https://design-system.service.gov.uk/components/date-input/">date</a></li>
-        <li><a href="https://design-system.service.gov.uk/components/radios/">radio buttons</a></li>
-        <li><a href="https://design-system.service.gov.uk/components/checkboxes/">checkboxes</a></li>
+        <li>text</li>
+        <li>textarea</li>
+        <li>email address</li>
+        <li>number</li>
+        <li>date</li>
+        <li>radio buttons</li>
+        <li>checkboxes</li>
         </ul>
-        <p>The <a href="https://design-system.service.gov.uk/components/file-upload/">file upload</a> question type can be used only on a single question page.</p>
+        <p>The autocomplete and file upload question type can be used only on a single question page.</p>
+        <p>Most MoJ Forms question types follow the <a href="https://design-system.service.gov.uk/">GOV.UK Design system</a> which includes useful tips on when and how to use each type.
         <p>We will be adding more question types and formatting options in future updates.</p>
         <p><a href="#top">Back to top</a></p>
       </section>  
+
+
+      <section class="content-section content-section--with-top-border">
+      <h2 id="autocomplete" class="govuk-heading-m">Presenting users with a long list of options</h2>
+      <p></p>
+      <p><a href="#top">Back to top</a></p>
+    </section> 
+
+
+
       <section class="content-section content-section--with-top-border">
         <h2 id="file-upload" class="govuk-heading-m">Asking users to submit a file</h2>
         <p>The file upload question type allows you to ask users to attach a file to their form. It supports the following file formats up to 7MB in size:</p>
