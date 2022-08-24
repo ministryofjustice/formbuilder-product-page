@@ -13,15 +13,15 @@ order: 4
       <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
-        
+
         <p>Use advanced features to create and manage more complex forms.</p>
-        <p><a href="#branching">What is branching?</a><br>
-        <a href="#add-branching">Adding branching</a><br>
-        <a href="#edit-branching">Editing branching</a><br>
-        <a href="#delete-branching">Deleting branching</a><br>
-        <a href="#unconnected">What are unconnected pages?</a><br>
-        <a href="#reconnect-unconnected">Reconnecting unconnected pages</a><br>
-        <a href="#change-next-page">Changing the order of pages</a></p>
+        <p><a class="govuk-link" href="#branching">What is branching?</a><br>
+        <a class="govuk-link" href="#add-branching">Adding branching</a><br>
+        <a class="govuk-link" href="#edit-branching">Editing branching</a><br>
+        <a class="govuk-link" href="#delete-branching">Deleting branching</a><br>
+        <a class="govuk-link" href="#unconnected">What are unconnected pages?</a><br>
+        <a class="govuk-link" href="#reconnect-unconnected">Reconnecting unconnected pages</a><br>
+        <a class="govuk-link" href="#change-next-page">Changing the order of pages</a></p>
 
       <section class="content-section content-section--with-top-border">
         <h2 id="branching" class="govuk-heading-m">What is branching?</h2>
@@ -34,7 +34,7 @@ order: 4
         <li>a destination page for each of the branches you want to create</li>
         </ul>
         <p>It’s not currently possible to set conditions at a component level on a single page. So, for example, if you wanted to change only one thing on a page for different users, you would need to create 2 versions of that page on different branches.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
 
       <section class="content-section content-section--with-top-border">
@@ -43,7 +43,7 @@ order: 4
         <p>Before you add branching, consider 2 things:</p>
         <ol>
         <li>What questions are you basing your branching on? Your form should contain at least one radio button or checkbox question for this. You can use a single question or combine multiple questions to create as many branches as you need.</li>
-        <li>What pages will your branches lead to? You can create these pages first or point all your branches to the same page (for example, the check answers page) and add extra pages later. If you intend any of your branches to end in an <a href="/building-and-editing/#page-type">exit page</a> - for example, to disqualify certain users from progressing through the form - it’s easier to do this after setting up the branching point.</li>
+        <li>What pages will your branches lead to? You can create these pages first or point all your branches to the same page (for example, the check answers page) and add extra pages later. If you intend any of your branches to end in an <a class="govuk-link" href="/building-and-editing/#page-type">exit page</a> - for example, to disqualify certain users from progressing through the form - it’s easier to do this after setting up the branching point.</li>
         </ol>
         <p>Don’t worry if you haven’t worked out all the details of your branches up front. It's easy to change and expand your branches as you go.</p>
         <h3 class="govuk-heading-s">Configuring the branching point</h3>
@@ -57,7 +57,7 @@ order: 4
         </ul>
         <p>There are several elements to a condition. The options will vary depending on whether you are using a radio button or checkbox question but they generally include:</p>
         <ul>
-        <li>the question</li> 
+        <li>the question</li>
         <li>an operator - such as ‘is’ or ‘is not’</li>
         <li>the user's answer</li>
         </ul>
@@ -68,14 +68,14 @@ order: 4
         <p>The 'otherwise' branch is a final branch to capture any users that don't meet the conditions of your other branches. It is set to the next page in the flow when the branching point is first created but can be changed to another page.</p>
         <p>This final branch can't be deleted so it's helpful to consider it when planning your form. For example, if you know that there are only 2 possible routes for your users (such as with a 'yes' or 'no' question), you only need to define a branch for one of those routes and allow other users to route along the 'otherwise' branch.</p>
         <h3 class="govuk-heading-s">Adjusting the flow view</h3>
-        <p>After saving your branching point, your new branches will be reflected in the flow view. Your pages will be rearranged and new arrows drawn to indicate the paths a user could take when completing your form. You may need to make some adjustments at this point for a few reasons: 
+        <p>After saving your branching point, your new branches will be reflected in the flow view. Your pages will be rearranged and new arrows drawn to indicate the paths a user could take when completing your form. You may need to make some adjustments at this point for a few reasons:
         <ol>
         <li>If you chose to point all of your branches to the same page, you can now start adding pages to build out your branches.</li>
         <li>If you created the pages you wanted your branches to lead to first, they will still be linked to each other. This may or may not be correct for your form.</li>
-        <li>Any pages that were between the branching point and the ‘go to’ page of a particular branch when you set up the branching point will become unconnected and be moved to the unconnected pages section (see <a href="#unconnected">What are unconnected pages?</a> for details).</li>
+        <li>Any pages that were between the branching point and the ‘go to’ page of a particular branch when you set up the branching point will become unconnected and be moved to the unconnected pages section (see <a class="govuk-link" href="#unconnected">What are unconnected pages?</a> for details).</li>
         </ol>
-        <p>These issues can be fixed quickly and easily. See <a href="#change-next-page">Changing the order of pages</a> for details.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p>These issues can be fixed quickly and easily. See <a class="govuk-link" href="#change-next-page">Changing the order of pages</a> for details.</p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="edit-branching" class="govuk-heading-m">Editing branching</h2>
@@ -84,7 +84,7 @@ order: 4
         <li>clicking directly on the branching point diamond</li>
         <li>hovering over the diamond to reveal the branching point menu (3 dots in a circle) and selecting ‘edit branching’</li>
         </ul>
-        <p><a href="#top">Back to top</a></p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="delete-branching" class="govuk-heading-m">Deleting branching</h2>
@@ -96,11 +96,11 @@ order: 4
         <p>When you delete a branching point, you are able to select which branch you want to retain as your main path.</p>
         <p>Any pages no longer linked in your form flow after the deletion will be moved to the unconnected pages section.</p>
         <p>Deleting a branch or branching point is permanent and cannot be undone.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="unconnected" class="govuk-heading-m">What are unconnected pages?</h2>
-        <p>Unconnected pages are pages that have no other pages leading to them. When this happens, they become detached from your main form flow and stored in a separate section.</p> 
+        <p>Unconnected pages are pages that have no other pages leading to them. When this happens, they become detached from your main form flow and stored in a separate section.</p>
         <p>Pages (and branching points) may become unconnected in a number of ways:</p>
         <ul>
         <li>when you create a branch and set the ‘go to’ page, any pages between the branching point and the ‘go to’ page may become unconnected</li>
@@ -110,20 +110,20 @@ order: 4
         </p>
         <p<You can edit, preview and delete unconnected pages as you would any other page in your form. To do so, hover over the thumbnail to reveal the page menu (3 dots in a circle).</p>
         <p>Unconnected pages will be published with the rest of your form but remain invisible to users. They can only be accessed by someone with the specific page URL.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="reconnect-unconnected" class="govuk-heading-m">Reconnecting unconnected pages</h2>
         <p>Unconnected pages can be brought back into your main form in a number of ways.<p>
-        <p>In most cases, the easiest ways is with <a href="/building-and-editing/#moving-pages">'move page'</a> - this option allows you to move one page at a time to anywhere in the flow. To move an unconected page, hover over the thumbnail to open the page menu (3 dots in a circle) and select 'move page'.
+        <p>In most cases, the easiest ways is with <a class="govuk-link" href="/building-and-editing/#moving-pages">'move page'</a> - this option allows you to move one page at a time to anywhere in the flow. To move an unconected page, hover over the thumbnail to open the page menu (3 dots in a circle) and select 'move page'.
         <p>A group of unconnected pages can be brought back into your main flow in one go from the point where you’d like to insert them:
         <ul>
         <li>immediately after a branching point - by editing the branching point to set the first page as the 'go to' page</li>
         <li>after another page - by using 'change next page' in the connection menu (+) to set the first page as the next page</li>
         </ul>
         <p>The group of unconnected pages will all be moved back into your main form together.</p>
-        <p>See <a href="#change-next-page">Changing the order of pages</a> for details.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p>See <a class="govuk-link" href="#change-next-page">Changing the order of pages</a> for details.</p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="change-next-page" class="govuk-heading-m">Changing the order of pages</h2>
@@ -131,7 +131,7 @@ order: 4
         <p>These options allow you to change the order of your pages in the flow by pointing arrows at different pages. They are also how you bring pages back from the unconnected pages section into the main flow.</p>
         <p>For example, if you had 5 pages like this:</p>
         <img src="/images/changing-order-1.png" alt=“5 pages are arranged in order and numbered 1 to 5.” class="screenshot-image">
-        <p>You could change the next page after page 2 to be page 4, like this:</p> 
+        <p>You could change the next page after page 2 to be page 4, like this:</p>
         <img src="/images/changing-order-2.png" alt=“When the destination of page 2 is changed to page 4, page 3 becomes unconnected.“ class="screenshot-image">
         <p>Any pages between the current next page and the new next page - such as page 3, in this example - become unconnected. This means there is no possible path to them anymore and they are moved to a separate unconnected pages section below your main flow.</p>
         <p>You can bring unconnected pages back into the flow by changing the next page of one of the pages in the flow. For example, you could change the next page after page 4 to be page 3, like this:</p>
@@ -140,7 +140,7 @@ order: 4
         <img src="/images/changing-order-4.png" alt=“Pages 1 to 5 are now shown rearranged in order of 1, 2, 4, 3 and 5.” class="screenshot-image">
         <p>If the unconnected page you select is connected to other pages, these will also be brought back into the main flow in the same order.</p>
         <p>Editing the ‘go to’ setting in the branching point works in the same way and points the branch’s first arrow at your selected page.</p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
         <!-- END CONTENT -->
       </div>
