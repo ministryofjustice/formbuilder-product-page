@@ -14,20 +14,20 @@ order: 7
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
         <p>Change your form’s name, enable Google Analytics and configure how you receive information when users submit their forms.</p>
-        <p><a href="#change-name">Changing your form's name</a><br>
-        <a href="#google-analytics">Setting up Google Analytics</a><br>
-        <a href="#email-settings">Collecting information</a></p>
+        <p><a class="govuk-link" href="#change-name">Changing your form's name</a><br>
+        <a class="govuk-link" href="#google-analytics">Setting up Google Analytics</a><br>
+        <a class="govuk-link" href="#email-settings">Collecting information</a></p>
       <section class="content-section content-section--with-top-border">
         <h2 id="change-name" class="govuk-heading-m">Changing your form's name</h2>
-        <p>We are making some changes to the form settings and it is not currently possible to change your form’s name in the editor. <a href="/contact">Contact us</a> whenever you want to change the name.</p> 
-        <p><a href="#top">Back to top</a></p>
+        <p>We are making some changes to the form settings and it is not currently possible to change your form’s name in the editor. <a class="govuk-link" href="/contact">Contact us</a> whenever you want to change the name.</p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
       <h2 id="google-analytics" class="govuk-heading-m">Setting up Google Analytics</h2>
       <p>MoJ Forms allows you to link your form with a Google Analytics account and monitor your form’s performance.</p>
       <p>You will need:</p>
       <ul>
-      <li>a Google Analytics account - if you don’t have one already, talk to <a href="https://justiceuk.sharepoint.com/sites/DemandandBusinessRelationshipManagement/SitePages/Business-Relationship-Management.aspx">Technology Services Business Relationship Management</a> about raising a service request</li>
+      <li>a Google Analytics account - if you don’t have one already, talk to <a class="govuk-link" href="https://justiceuk.sharepoint.com/sites/DemandandBusinessRelationshipManagement/SitePages/Business-Relationship-Management.aspx">Technology Services Business Relationship Management</a> about raising a service request</li>
       <li>your analytics tracking ID - see ‘Configuring Google Analytics’</li>
       </ul>
       <p>You can enable analytics on your Test and Live sites independently and add different tracking IDs. This allows you to test your analytics first and prevent test activity from being recorded in your live data.</p>
@@ -40,37 +40,37 @@ order: 7
       <li>Google Analytics 4 Measurement ID - for Google’s latest analytics service, which we recommend for all new forms. This starts with G, for example: G-0000004.</li>
       <li>Google Tag Manager Container ID - for Google Tag Manager, which is an alternative way of adding analytics code to a form. This starts with GTM, for example: GTM-000003.</li>
       </ul>
-      <p><a href="https://support.google.com/analytics/answer/9539598">How to find your Universal Analytics or Google Analytics 4 ID</a></p>
-      <p><a href="https://support.google.com/tagmanager/answer/6103696?hl=en">How to find your Google Tag Manager ID</a></p>
+      <p><a class="govuk-link" href="https://support.google.com/analytics/answer/9539598">How to find your Universal Analytics or Google Analytics 4 ID</a></p>
+      <p><a class="govuk-link" href="https://support.google.com/tagmanager/answer/6103696?hl=en">How to find your Google Tag Manager ID</a></p>
       <p>You will need to publish your form for the changes to take effect.</p>
-      
+
       <h3 class="govuk-heading-s">About cookies</h3>
       <p>To comply with data protection regulations, all our forms include a default cookies statement in the footer section, along with accessibility and privacy.</p>
       <p>If you are using either Universal Analytics or Google Analytics 4, this should be sufficient to cover their use of cookies and will not require any additional work.</p>
-      <p>The cookies page is temporarily uneditable while we make some changes to how our footer pages work. If you plan to use Google Tag Manager for any marketing or analytics tools other than Universal Analytics or Google Analytics 4, <a href="/contact/">contact us to discuss it</a>.</p>
-      <p><a href="#top">Back to top</a></p>
+      <p>The cookies page is temporarily uneditable while we make some changes to how our footer pages work. If you plan to use Google Tag Manager for any marketing or analytics tools other than Universal Analytics or Google Analytics 4, <a class="govuk-link" href="/contact/">contact us to discuss it</a>.</p>
+      <p><a class="govuk-link" href="#top">Back to top</a></p>
     </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="email-settings" class="govuk-heading-m">Collecting information</h2>
         <p>You can configure how you collect the information submitted by users of your form through the submission settings. Currently, the only option is to receive it by email to an address of your choice.</p>
-        <p>The answers are attached to emails in PDF and can be additionally attached in comma separated values (CSV) format. CSV files list the answers in plain text, separated by commas. They can be imported into spreadsheets and other applications, making it easier to handle and process the information you receive. For example, you could <a href="https://support.microsoft.com/en-us/office/import-data-from-a-folder-with-multiple-files-power-query-94b8023c-2e66-4f6b-8c78-6a00041c90e4">import data from multiple CSV files into Microsoft Excel</a> at once.</p>
+        <p>The answers are attached to emails in PDF and can be additionally attached in comma separated values (CSV) format. CSV files list the answers in plain text, separated by commas. They can be imported into spreadsheets and other applications, making it easier to handle and process the information you receive. For example, you could <a class="govuk-link" href="https://support.microsoft.com/en-us/office/import-data-from-a-folder-with-multiple-files-power-query-94b8023c-2e66-4f6b-8c78-6a00041c90e4">import data from multiple CSV files into Microsoft Excel</a> at once.</p>
         <p>Other options, including API integration, are in development.</p>
         <h3 class="govuk-heading-s">Collecting information by email</h3>
         <p>Under submission settings, select ‘send data by email’. On this page, you can enable sending data by email on the Test site and on the Live site. You need to enable and configure the settings for both sites separately. The answers are attached in a PDF and can be additionally attached in a CSV.</p>
         <p>To enable the setting on a site, check the 'send by email' box.</p>
         <p>You also need to provide an email address. You can specify only a single email address at the moment. We recommend using a group address so that multiple people can access it.</p>
-        <p>To add the email address, select 'configure', which allows you to customise the email in several ways:</p> 
+        <p>To add the email address, select 'configure', which allows you to customise the email in several ways:</p>
         <ul>
         <li>send email to - the email address you want the emails sent to</li>
         <li>email subject - the subject line of the email</li>
         <li>email text - any specific text you want in the body of the email</li>
-        <li>PDF attachment heading - this will appear in the PDF of your user’s answers</li> 
+        <li>PDF attachment heading - this will appear in the PDF of your user’s answers</li>
         <li>PDF attachment subheading - this will appear in the PDF of your user’s answers</li>
-        <li>CSV attachment - selecting this option will send a separate email with the information attached in CSV format</li> 
+        <li>CSV attachment - selecting this option will send a separate email with the information attached in CSV format</li>
         </ul>
-        <p><a href="https://moj-forms-editor.service.justice.gov.uk/sample.pdf">See a sample PDF</a></p>
-        <p><a href="https://moj-forms-editor.service.justice.gov.uk/sample.csv">See a sample CSV</a></p>
-        <p><a href="#top">Back to top</a></p>
+        <p><a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.pdf">See a sample PDF</a></p>
+        <p><a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.csv">See a sample CSV</a></p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
       </settings>
         <!-- END CONTENT -->
       </div>

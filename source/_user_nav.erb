@@ -3,7 +3,7 @@
     <% if current_page.data.heading == page.data.heading %>
     <p class="sub-navigation__item  sub-navigation__item--active "><%= page.data.heading %></p>
     <% else %>
-      <p class="sub-navigation__item "><%= link_to page.data.heading, page.url %></p>
+      <p class="sub-navigation__item "><%= link_to page.data.heading, page.url, class: 'govuk-link' %></p>
     <% end %>
   <% end %>
 
