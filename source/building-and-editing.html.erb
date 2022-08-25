@@ -53,10 +53,7 @@ order: 3
         <img src="/images/start-pages.png" alt="A new form is created with a start page, check answers page and confirmation page." class="screenshot-image">
         <p>The start page is your form’s home page and cannot be deleted. To find out more about what should go on your start page, read the <a href="https://design-system.service.gov.uk/patterns/start-pages/">Design System guidance</a>.</p>
         <p>All your form’s question pages should come after the start page and before the check answers page.</p>
-        <p>For your form to successfully submit the user data it collects, it must have the check answers and confirmation pages. If there is nothing to submit, these pages can be deleted. You would only do this if you were creating a 'smart answers' form such as <a href="https://check-how-to-get-repairs-done-in-your-rented-home.form.service.justice.gov.uk/">Check how to get repairs done in your rented home</a>.
-        
-        
-        For example, you could create a form to help users understand a complicated topic, such as <a href"https://www.gov.uk/tell-employer-or-college-about-criminal-record/check-your-conviction-caution">Check when to disclose cautions or convictions</a>.</p>
+        <p>For your form to successfully submit the user data it collects, it must have the check answers and confirmation pages. If there is nothing to submit, these pages can be deleted. You would only do this if you were creating a 'smart answers' form such as <a href="https://check-how-to-get-repairs-done-in-your-rented-home.form.service.justice.gov.uk/">Check how to get repairs done in your rented home</a>.</p>
         <p>A form can only have one check answers page and one confirmation page.</p>
         <p><a href="#top">Back to top</a></p>
       </section>
@@ -164,17 +161,63 @@ order: 3
         <p>We will be adding more question types and formatting options in future updates.</p>
         <p><a href="#top">Back to top</a></p>
       </section>  
-
-
       <section class="content-section content-section--with-top-border">
       <h2 id="autocomplete" class="govuk-heading-m">Presenting users with a long list of options</h2>
-      <p></p>
-      <p><a href="#top">Back to top</a></p>
+      <p>The autocomplete question type allows you to specify a large range of options for the user to choose from, such as a list of courts or locations. It looks like a text field with a black triangle, indicating a dropdown. When the user clicks into it the list of options appears. The user can scroll through the list to select their answer or start typing to filter the options. The form will only accept answers from the options specified.</p>
+      <p>INSERT GIF HERE</p>
+      <p>This format is best when there are a lot of options to choose from. Smaller numbers of options are better presented using radio buttons.</p>
+      <h3 id="validation" class="govuk-heading-s">Formatting your autocomplete options</h3>
+      <p>Your autocomplete options must be uploaded to MoJ Forms in a comma-separated values (CSV) file. This is a plain text format that many applications use for exporting data.</p>
+      <p>The easiest way to create your autocomplete options is with a spreadsheet such as Microsoft Excel or Google Sheets. List your options in a column with a heading of ‘Text’, like this:</p>
+      <table>
+      <tr>
+          <th>Text</th>
+      </tr>
+      <tr>
+          <td>Glasgow</td>
+      </tr>
+      <tr>
+          <td>London Gatwick</td>
+      </tr>
+      <tr>
+          <td>London Heathrow</td>
+      </tr>
+      </table>
+      <p>You can also include a second column of information with a heading of ‘Value’. For example, you might want to associate a code or number with each option. This won’t be shown in the question but will be shown instead of the text in the PDF and CSV submitted at the end. (If you don’t provide values, the PDF and CSV will contain the text.) For example:</p>
+      <table>
+    <tr>
+        <th>Text</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>Glasgow</td>
+        <td>GLA</td>
+    </tr>
+    <tr>
+        <td>London Gatwick</td>
+        <td>LGW</td>
+    </tr>
+    <tr>
+        <td>London Heathrow</td>
+        <td>LHR</td>
+    </tr>
+    </table>
+    <p>When entering your options, ensure that:</p>
+    <ul>
+    <li>you have either one or 2 columns of information</li>
+    <li>the headings are exactly as shown here</li>
+    <li>the options are ordered alphabetically</li>
+    <li>there are no blank cells</li>
+    </ul>
+    <p>Remember to save your options as CSV when you are ready to upload them to your form. There is a maximum file size of 1Mb.</p>
+    <h3 id="validation" class="govuk-heading-s">Uploading your autocomplete options</h3>
+    <p>To upload your options, open your autocomplete page in edit mode. Click in the question title to show the component menu (...) and select ‘Autocomplete options’.</p>
+    <p>INSERT IMAGE HERE</p>
+    <p>The page includes a blue warning message to indicate whether any options have been uploaded. After uploading, you won’t be able to see your options on the page. You will need to save your changes and test them either in preview mode or after publishing to Test.</p>
+    <p>It’s not currently possible to edit your options once they have been uploaded. To change the options, you will need to upload a new file.</p>
+    <p><a href="#top">Back to top</a></p>
     </section> 
-
-
-
-      <section class="content-section content-section--with-top-border">
+    <section class="content-section content-section--with-top-border">
         <h2 id="file-upload" class="govuk-heading-m">Asking users to submit a file</h2>
         <p>The file upload question type allows you to ask users to attach a file to their form. It supports the following file formats up to 7MB in size:</p>
         <ul>
