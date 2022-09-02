@@ -19,11 +19,11 @@
  *        <p class="hero__description">
  *          Lorem ipsum dolor sit amet, consectetur adipisicing elit
  *        </p>
- *        <a href="#" role="button" class="hero-button">
+ *        <a class="govuk-link" href="#" role="button" class="hero-button">
  *          Do this thing
  *        </a>
  *        <span class="hero-alternative-action">
- *          or <a href="#">do another thing</a> because reasons
+ *          or <a class="govuk-link" href="#">do another thing</a> because reasons
  *        </span>
  *        <p>Pellentesque commodo arcu in sollicitudin lacinia. Vivamus lacus nibh, maximus nec laoreet eget, condimentum vel mi.</p>
  *      </div>
@@ -51,7 +51,7 @@
   .govuk-breadcrumbs__list-item::before {
     border-color: govuk-colour('white');
   }
-  
+
   .govuk-link:link,
   .govuk-link:visited {
     color: govuk-colour('white');
