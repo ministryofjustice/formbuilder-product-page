@@ -8,11 +8,12 @@ menuindex: 2
 <main class="govuk-main-wrapper govuk-body" id="main-content" role="main">
   <div class="govuk-width-container">
   <h1 class="govuk-heading-l"><%= current_page.data.heading%></h1>
-
   <section class="content-section">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-    <p>4 August 2022 - <a class="govuk-link" href="#csvoutput-04082022"</a>Collecting information in CSV</a></br>
+    <p>2 September 2022 - <a class="govuk-link" href="#autocomplete-02092022">Presenting users with a long list of options</a></br>
+    22 August 2022 - <a class="govuk-link" href="#analytics-22082022">Monitor your form’s performance with Google Analytics</a></br>
+    4 August 2022 - <a class="govuk-link" href="#csvoutput-04082022"</a>Collecting information in CSV</a></br>
     30 June 2022 - <a "class=govuk-link" href="#textareacounter-30062022">Textareas now include a counter</a></br>
     30 May 2022 - <a class="govuk-link" href="#validation-30052022">How to check answers as users enter them</a></br>
     11 May 2022 - <a class="govuk-link" href="#test-policy-11052022">Usernames and passwords now needed for all Test forms</a></br>
@@ -34,10 +35,39 @@ menuindex: 2
     </div>
   </div>
   </section>
-
-
-
   <section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>2 September 2022</p>
+    <h2 id="autocomplete-02092022" class="govuk-heading-m">Presenting users with a long list of options</h2>
+    <p>A <a class="govuk-link" href="/building-and-editing/#autocomplete">new question type called autocomplete</a> enables you to specify a large range of options for the user to choose from, such as a list of courts or locations.</p>
+    <p>An autocomplete question presents the options in a dropdown menu while also allowing the user to type ahead to find matching entries.</p>
+    <img src="/images/autocomplete-example.gif" alt="This short animation shows an autocomplete question being filled in. The question is "Which airport did you fly from?" and there is a blank text field beneath it. The cursor moves to the text field and a dropdown appears listing UK airports. The options are filtered as the letters "l o n" are typed into the field and London Heathrow is selected." class="screenshot-image">
+    <p>This format is best when there are a lot of options to choose from. Smaller numbers of options are better presented using radio buttons.</p> 
+    <p>The options must be uploaded to MoJ Forms in comma-separated values (CSV) format.</p> 
+    <p>For more information on using autocomplete and formatting and uploading your options, check out the <a class="govuk-link" href="/building-and-editing/#autocomplete">user guide</a>.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+<section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>22 August 2022</p>
+    <h2 id="analytics-22082022" class="govuk-heading-m">Monitor your form’s performance with Google Analytics</h2>
+    <p>You can now <a class="govuk-link" href="/settings/#google-analytics">link your form to a Google Analytics account</a> to get real-time insights on your form’s performance and the people using it.</p>
+    <p>The new feature, under the settings tab, requires that you have an existing Google Analytics account. To enable it, simply add your tracking ID. You can use:</p>
+    <ul>
+    <li>Universal Analytics - Google’s legacy analytics service which will be retired in July 2023</li>
+    <li>Google Analytics 4 - Google’s latest analytics service, which we recommend for all new forms</li>
+    <li>Google Tag Manager - an alternative way of adding analytics to a form without needing to edit the code</li>
+    </ul>
+    <p>To comply with data protection regulations, users are given the option of accepting or rejecting analytics cookies when they first visit your site. This means you will only receive data for the users that actively opt-in to analytics.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+<section class="content-section content-section--with-top-border">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
     <p>4 August 2022</p>
