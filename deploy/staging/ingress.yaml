@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: formbuilder-product-page-staging
@@ -17,6 +17,9 @@ spec:
     http:
       paths:
       - path: /
+        pathType: ImplementationSpecific
         backend:
-          serviceName: formbuilder-product-page-staging
-          servicePort: 4567
+          service:
+            name: formbuilder-product-page-staging
+            port:
+              number: 4567
