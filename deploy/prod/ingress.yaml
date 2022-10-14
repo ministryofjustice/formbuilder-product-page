@@ -18,9 +18,12 @@ spec:
     http:
       paths:
       - path: /
+        pathType: ImplementationSpecific
         backend:
-          serviceName: formbuilder-product-page
-          servicePort: 4567
+          service:
+            name: formbuilder-product-page
+            port:
+              number: 4567
   - host: moj-forms.service.justice.gov.uk
     # New Product name URL
     http:
