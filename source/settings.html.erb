@@ -16,7 +16,8 @@ order: 7
         <p>Change your form’s name, enable Google Analytics and configure how you receive information when users submit their forms.</p>
         <p><a class="govuk-link" href="#change-name">Changing your form's name</a><br>
         <a class="govuk-link" href="#google-analytics">Setting up Google Analytics</a><br>
-        <a class="govuk-link" href="#email-settings">Collecting information</a></p>
+        <a class="govuk-link" href="#email-settings">Collecting information by email</a><br>
+        <a class="govuk-link" href="#from-address">Setting the address that emails come from</a></p>
       <section class="content-section content-section--with-top-border">
         <h2 id="change-name" class="govuk-heading-m">Changing your form's name</h2>
         <p>We are making some changes to the form settings and it is not currently possible to change your form’s name in the editor. <a class="govuk-link" href="/contact">Contact us</a> whenever you want to change the name.</p>
@@ -33,7 +34,9 @@ order: 7
       <p>You can enable analytics on your Test and Live sites independently and add different tracking IDs. This allows you to test your analytics first and prevent test activity from being recorded in your live data.</p>
       <p>To comply with data protection regulations, users are given the option of accepting or rejecting analytics cookies when they first visit your site. This means you will only receive data for the users that actively opt-in to analytics.</p>
       <h3 class="govuk-heading-s">Configuring Google Analytics</h3>
-      <p>After clicking to enable analytics on a site, the ‘configure’ settings will expand to show space for 3 types of tracking IDs. The tracking ID is what links your form to your Google Analytics account. You must enter at least 1 tracking ID and can potentially enter all 3.</p>
+      <p>Go to: Settings > Google Analytics</p>
+      <p>On this page, you can enable Google Analytics on the Test site and on the Live site. You need to enable and configure the settings for both sites separately.</p>
+      <p>To enable Google Analytics on a site, check the 'Enable analytics' box. The ‘configure’ settings will then expand to show space for 3 types of tracking IDs. The tracking ID is what links your form to your Google Analytics account. You must enter at least 1 tracking ID and can potentially enter all 3.</p>
       <p>MoJ Forms supports 3 types of tracking ID:</p>
       <ul>
       <li>Universal Analytics Tracking ID - for Google’s legacy analytics service which will be retired in July 2023. This starts with UA, for example: UA-000000-2.</li>
@@ -51,27 +54,43 @@ order: 7
       <p><a class="govuk-link" href="#top">Back to top</a></p>
     </section>
       <section class="content-section content-section--with-top-border">
-        <h2 id="email-settings" class="govuk-heading-m">Collecting information</h2>
+        <h2 id="email-settings" class="govuk-heading-m">Collecting information by email</h2>
         <p>You can configure how you collect the information submitted by users of your form through the submission settings. Currently, the only option is to receive it by email to an address of your choice.</p>
         <p>The answers are attached to emails in PDF and can be additionally attached in comma separated values (CSV) format. CSV files list the answers in plain text, separated by commas. They can be imported into spreadsheets and other applications, making it easier to handle and process the information you receive. For example, you could <a class="govuk-link" href="https://support.microsoft.com/en-us/office/import-data-from-a-folder-with-multiple-files-power-query-94b8023c-2e66-4f6b-8c78-6a00041c90e4">import data from multiple CSV files into Microsoft Excel</a> at once.</p>
         <p>Other options, including API integration, are in development.</p>
-        <h3 class="govuk-heading-s">Collecting information by email</h3>
-        <p>Under submission settings, select ‘send data by email’. On this page, you can enable sending data by email on the Test site and on the Live site. You need to enable and configure the settings for both sites separately. The answers are attached in a PDF and can be additionally attached in a CSV.</p>
-        <p>To enable the setting on a site, check the 'send by email' box.</p>
-        <p>You also need to provide an email address. You can specify only a single email address at the moment. We recommend using a group address so that multiple people can access it.</p>
-        <p>To add the email address, select 'configure', which allows you to customise the email in several ways:</p>
+        <h3 class="govuk-heading-s">Setting up the emails</h3>
+        <p>Go to: Settings > Submission settings > Collect information by email</p>
+        <p>On this page, you can enable collecting information by email on the Test site and on the Live site. You need to enable and configure the settings for both sites separately. The answers are attached in a PDF and can be additionally attached in a CSV.</p>
+        <p>To enable the setting on a site, check the 'Enable email' box. The 'configure' settings will then expand and allow you to enter the email address you want the emails sent to. This address should be a team email account with several authorised users to ensure you can maintain your service in the event of team changes or absences. Currently you can send the form to only one address.</p>
+        <p>There are a number of other email configuration options:</p>
         <ul>
-        <li>send email to - the email address you want the emails sent to</li>
-        <li>email subject - the subject line of the email</li>
-        <li>email text - any specific text you want in the body of the email</li>
-        <li>PDF attachment heading - this will appear in the PDF of your user’s answers</li>
-        <li>PDF attachment subheading - this will appear in the PDF of your user’s answers</li>
-        <li>CSV attachment - selecting this option will send a separate email with the information attached in CSV format</li>
+        <li>From - the email address that the emails will come from (see <a class="govuk-link" href="#from-address">Setting the address that emails come from</a>)
+        <li>Subject - the subject line of the email</li>
+        <li>Message - the body text of the email</li>
+        <li>PDF heading - in the attachment containing user answers (<a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.pdf">see a sample PDF</a>)</li>
+        <li>PDF subheading - in the attachment containing user answers (<a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.pdf">see a sample PDF</a>)</li>
+        <li>CSV attachment - opt to receive an additional email with user answers in CSV format (<a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.csv">see a sample CSV</a>)</li>
         </ul>
-        <p><a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.pdf">See a sample PDF</a></p>
-        <p><a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.csv">See a sample CSV</a></p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
-      </settings>
+      </section>
+      <section class="content-section content-section--with-top-border">
+        <h2 id="from-address" class="govuk-heading-m">Setting the address that emails come from</h2>
+        <p>You need to set a team email address for your form to send emails from - the 'from' address. Any emails sent by your form will show as coming from this address.</p>
+        <p>By default, this is set to no-reply-moj-forms@digital.justice.gov.uk and you can test your form using this address on the Test site. However, you will need to set and validate your own address before you can publish to Live. This is so that:</p>
+        <ul>
+        <li>you have visibility of all error responses and replies</li>
+        <li>users do not accidentally share personal information beyond your team</li>
+        </ul>
+        <p>As a security measure, your 'from' address must be an MoJ email address or other approved address. Any email address that has the same domain as the one you use to sign in to MoJ Forms is approved. For other addresses, you may be prompted to contact us.</p>
+        <p>Your 'from' address should be a team email account with several authorised users to ensure you can maintain your service in the event of team changes or absences.</p>
+        <h3 class="govuk-heading-s">Updating your 'from' address</h3>
+        <p>Go to: Settings > Submissing settings > 'From' address</p>
+        <p>In the form field, enter and save your team email address.<p>
+        <p>If you entered an approved address, this will send an email to it containing a validation link. The email will show as coming from Amazon Web Services. You must click the link in the email within 24 hours to validate the address.</p>
+        <p>If the email address is not an approved address, you will be prompted to contact us to get it approved.</p>
+        <p>You can return to the 'from' address settings page at any time to resend the validation link if you encounter any problems.</p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
+      </section>
         <!-- END CONTENT -->
       </div>
     </div>
