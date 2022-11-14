@@ -14,7 +14,7 @@ order: 3
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
         <p>Learn how to start building your first form.</p>
-        <p><a class="govuk-link" href="#form-name">Your form’s name and URL</a><br>
+        <p><a class="govuk-link" href="#form-name">Your form's name and URL</a><br>
         <a class="govuk-link" href="#start-page">Starting pages</a><br>
         <a class="govuk-link" href="#preview">Previewing your pages<a/><br>
         <a class="govuk-link" href="#adding-pages">Adding pages</a><br>
@@ -29,13 +29,13 @@ order: 3
         <a class="govuk-link" href="#validation">Validating user answers</a><br>
         <a class="govuk-link" href="#markdown">Formatting content with markdown</a></p>
       <section class="content-section content-section--with-top-border">
-        <h2 id="form-name" class="govuk-heading-m">Your form’s name and URL</h2>
+        <h2 id="form-name" class="govuk-heading-m">Your form's name and URL</h2>
         <p>When you create a new form, you need to give it a name.</p>
         <p>This name is:</p>
         <ul>
         <li>what your form will be listed as in the MoJ Forms editor</li>
         <li>the title that will appear on your form to users</li>
-        <li>used in your form’s URL - for example, a name of Apply for a dog licence will produce a form URL of <u>https://apply-for-a-dog-licence.form.service.gov.uk</u></li>
+        <li>used in your form's URL - for example, a name of Apply for a dog licence will produce a form URL of <u>https://apply-for-a-dog-licence.form.service.gov.uk</u></li>
         </ul>
         <p>The title can contain lowercase and uppercase letters, hypens and apostrophes. No other special characters are allowed. The name cannot start with a number but you could write it out - for example, 'two' instead of '2'.</p>
         <p>We are making some changes in this area and it is not currently possible to change your form's name in the editor. <a href="/contact">Contact us</a> whenever you want to change the name</a>.</p>
@@ -43,7 +43,7 @@ order: 3
       </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="start-page" class="govuk-heading-m">The starting pages</h2>
-        <p>When you create a new form, you are taken to your form’s ‘pages flow’ or flow view. This shows how all the pages link together and is where you will build and edit your form. Most actions, such as adding and deleting pages, editing pages and creating branching, are launched from the flow view.</p>
+        <p>When you create a new form, you are taken to your form's 'pages flow' or flow view. This shows how all the pages link together and is where you will build and edit your form. Most actions, such as adding and deleting pages, editing pages and creating branching, are launched from the flow view.</p>
         <p>You are given some default pages to help you structure your form:</p>
         <ul>
         <li>start page</li>
@@ -51,15 +51,19 @@ order: 3
         <li>confirmation page</li>
         </ul>
         <img src="/images/start-pages.png" alt="A new form is created with a start page, check answers page and confirmation page." class="screenshot-image">
-        <p>The start page is your form’s home page and cannot be deleted. To find out more about what should go on your start page, read the <a class="govuk-link" href="https://design-system.service.gov.uk/patterns/start-pages/">Design System guidance</a>.</p>
-        <p>All your form’s question pages should come after the start page and before the check answers page.</p>
-        <p>For your form to successfully submit the user data it collects, it must have the check answers and confirmation pages. If there is nothing to submit, these pages can be deleted. You would only do this if you were creating a 'smart answers' form such as <a class="govuk-link" href="https://check-how-to-get-repairs-done-in-your-rented-home.form.service.justice.gov.uk/">Check how to get repairs done in your rented home</a>.</p>
-        <p>A form can only have one check answers page and one confirmation page.</p>
+        <p>The start page is your form's home page and cannot be deleted. To find out more about what should go on your start page, read the <a class="govuk-link" href="https://design-system.service.gov.uk/patterns/start-pages/">Design System guidance</a>.</p>
+        <p>All your form's question pages should come after the start page and before the check answers page.</p>
+        <h3 id="check-confirm" class="govuk-heading-s">Check answers and confirmation pages</h3>
+        <p>For your form to successfully submit the user data it collects, it must have a check answers page and a confirmation page. In addition:
+        <ul>
+        <li>a form can only have one check answers page and one confirmation page</li>
+        <li>a form cannot be published to Live without both these pages</ul>
+        </li>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
       <h2 id="preview" class="govuk-heading-m">Previewing your form</h2>
-      <p>The flow view includes a ‘Preview’ button in the top right-hand corner.</p>
+      <p>The flow view includes a 'Preview' button in the top right-hand corner.</p>
       <p>Previewing your form is a quick way to check how the form will look and work without needing to publish it. Most things in preview will behave identically to the final published form but there are a few limitations:</p> 
       <ul>
       <li>a form in preview mode will not save any information entered into it or send any emails</li>
@@ -73,9 +77,9 @@ order: 3
         <p>You can add pages to your form using the connection menu (+) that sits on each arrow.</p>
         <img src="/images/connection-menu.png" alt="The connection menu allows you to insert a range of new pages between existing pages." class="screenshot-image">
         <p>This menu enables you to select a new page from the range of available templates. See <a class="govuk-link" href="#page-type">Choosing the type of page</a> for details.</p>
-        <p>When you add a new page, you need to give it a name. This will be the page’s URL slug so should be in lower case with no spaces or special characters. Separate words with hyphens. For example, in the following URL, the page name is ‘your-details’:</p>
+        <p>When you add a new page, you need to give it a name. This will be the page's URL slug so should be in lower case with no spaces or special characters. Separate words with hyphens. For example, in the following URL, the page name is 'your-details':</p>
         <p><u>https://apply-for-a-dog-licence.form.service.gov.uk/your-details</u></p>
-        <p>Some names are reserved for global pages and you won’t be able to use them:<p>
+        <p>Some names are reserved for global pages and you won't be able to use them:<p>
         <ul>
         <li>metrics</li>
         <li>ping</li>
@@ -95,10 +99,15 @@ order: 3
         <h2 id="moving-pages" class="govuk-heading-m">Moving pages</h2>
         <p>To move a page:</p>
         <ul>
-        <li>hover over the page thumbnail to reveal the page menu (3 dots in a circle) and select ‘move page’</li>
+        <li>hover over the page thumbnail to reveal the page menu (3 dots in a circle) and select 'move page'</li>
         <li>in the modal that appears, select another page from the drop-down list - your page will be moved to directly after this selected page</li>
         </ul>
-        <p>You can move most pages in this way, including pages that have become unconnected. Branching points, check answers and confirmation pages can’t be moved. In these cases, the move page option is not shown in the menu.</p>
+        <p>You can move most pages in this way, including pages that have become unconnected. Branching points, check answers and confirmation pages can't be moved. In these cases, the move page option is not shown in the menu.</p>
+        <h3 id="undo-move" class="govuk-heading-s">Undoing a page move</h3>
+        <p>When you move a page, an undo button will appear alongside the preview button. Clicking this button will reverse the page move.</p>
+        <p>If you undo the page move, a redo button will appear allowing you to repeat the original page move.</p>
+        <p>If you perform any other action on your form, the button will disappear and you will no longer be able to undo or redo the page move.</p>
+        <img src="/images/undo-move-page.png" alt="Screengrab showing the MoJ Forms flow view. A button labelled Undo move page is visible alongside the Preview button." class="screenshot-image">
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
@@ -106,18 +115,18 @@ order: 3
       <p>You can open a page to edit in 2 ways:
       <ul>
       <li>clicking directly on the page thumbnail</li>
-      <li>hovering over the page thumbnail to reveal the page menu (3 dots in a circle) and selecting ‘edit page’</li>
+      <li>hovering over the page thumbnail to reveal the page menu (3 dots in a circle) and selecting 'edit page'</li>
       </ul>
       <p>Most text on a page can be edited. Just click on the text you want to change and start typing.</p>
-      <p>Some fields are required, like the page title, and others are optional. If a text area says it is optional, you don’t have to delete it. The default text that appears in square brackets will be hidden in preview mode and when published.</p>
+      <p>Some fields are required, like the page title, and others are optional. If a text area says it is optional, you don't have to delete it. The default text that appears in square brackets will be hidden in preview mode and when published.</p>
       <p>Most text areas are set to a specific format, such as headings and hints. Text in content areas can be <a class="govuk-link" href="#markdown">formatted using markdown</a>.</p>
       <p>Some text areas cannot be edited at the moment, including the buttons.</p>
       <p><a class="govuk-link" href="#top">Back to top</a></p>
     </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="deleting-pages" class="govuk-heading-m">Deleting pages</h2>
-        <p>You can delete a page from the form flow view by hovering over the page thumbnail to reveal the page menu (3 dots in a circle) and selecting ‘delete page’. This cannot be undone.</p>
-        <p>If you want to remove a page from your form without deleting it, you can move it to the unconnected pages section using the <a class="govuk-link" href="/branching/#change-next-page">‘change next page’</a> option.</p>
+        <p>You can delete a page from the form flow view by hovering over the page thumbnail to reveal the page menu (3 dots in a circle) and selecting 'delete page'. This cannot be undone.</p>
+        <p>If you want to remove a page from your form without deleting it, you can move it to the unconnected pages section using the <a class="govuk-link" href="/branching/#change-next-page">'change next page'</a> option.</p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
@@ -140,7 +149,7 @@ order: 3
         <li><b>Check answers page</b> - use this page to let users check the information they have provided. If your form requires users to submit any information, it will need a check answers page.</li>
         <li><b>Confirmation page</b> - use this page after a check answers page to let users know their data has been sent.</li>
         <li><b>Content page</b> - use this page to provide users with information without asking any questions, such as advice about the application process or the task they are trying to accomplish. You can <a class="govuk-link" href="#markdown">format the content using markdown</a> - a simple way of indicating things like headings, links and tables using text symbols.</li>
-        <li><b>Exit page</b> - use this page as the final page of a flow that doesn’t require the user to submit any information. For example, you could tell a user that they are not eligible to continue based on some qualifying questions. As with content pages, you can <a class="govuk-link" href="#markdown">format the content using markdown</a>. Inserting an exit page will break the flow to any following pages and move them to the unconnected pages section.</li>
+        <li><b>Exit page</b> - use this page as the final page of a flow that doesn't require the user to submit any information. For example, you could tell a user that they are not eligible to continue based on some qualifying questions. As with content pages, you can <a class="govuk-link" href="#markdown">format the content using markdown</a>. Inserting an exit page will break the flow to any following pages and move them to the unconnected pages section.</li>
         </ul>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
@@ -168,7 +177,7 @@ order: 3
       <p>This format is best when there are a lot of options to choose from. Smaller numbers of options are better presented using radio buttons.</p>
       <h3 id="validation" class="govuk-heading-s">Formatting your autocomplete options</h3>
       <p>Your autocomplete options must be uploaded to MoJ Forms in a comma-separated values (CSV) file. This is a plain text format that many applications use for exporting data.</p>
-      <p>The easiest way to create your autocomplete options is with a spreadsheet such as Microsoft Excel or Google Sheets. List your options in a column with a heading of ‘Text’, like this:</p>
+      <p>The easiest way to create your autocomplete options is with a spreadsheet such as Microsoft Excel or Google Sheets. List your options in a column with a heading of 'Text', like this:</p>
       <table>
       <tr>
           <th>Text</th>
@@ -183,7 +192,7 @@ order: 3
           <td>London Heathrow</td>
       </tr>
       </table>
-      <p>You can also include a second column of information with a heading of ‘Value’. For example, you might want to associate a code or number with each option. This won’t be shown in the question but will be shown instead of the text in the PDF and CSV submitted at the end. (If you don’t provide values, the PDF and CSV will contain the text.) For example:</p>
+      <p>You can also include a second column of information with a heading of 'Value'. For example, you might want to associate a code or number with each option. This won't be shown in the question but will be shown instead of the text in the PDF and CSV submitted at the end. (If you don't provide values, the PDF and CSV will contain the text.) For example:</p>
       <table>
     <tr>
         <th>Text</th>
@@ -211,10 +220,10 @@ order: 3
     </ul>
     <p>Remember to save your options as CSV when you are ready to upload them to your form. (If your application gives you a choice of CSV types, use the standard “Comma-separated Values (.csv)” option.) There is a maximum file size of 1Mb.</p>
     <h3 id="validation" class="govuk-heading-s">Uploading your autocomplete options</h3>
-    <p>To upload your options, open your autocomplete page in edit mode. Click in the question title to show the component menu (...) and select ‘Autocomplete options’.</p>
+    <p>To upload your options, open your autocomplete page in edit mode. Click in the question title to show the component menu (...) and select 'Autocomplete options'.</p>
     <img src="/images/autocomplete-editor.png" alt="Screenshot of an autocomplete question being edited in MoJ Forms. The component menu is open and the autocomplete options link is highlighted." class="screenshot-image">
-    <p>The page includes a blue warning message to indicate whether any options have been uploaded. After uploading, you won’t be able to see your options on the page. You will need to save your changes and test them either in <a class="govuk-link" href="#preview">preview mode</a> or after <a class="govuk-link" href="/testing-and-publishing/#test">publishing to Test</a>.</p>
-    <p>It’s not currently possible to edit your options once they have been uploaded. To change the options, you will need to upload a new file.</p>
+    <p>The page includes a blue warning message to indicate whether any options have been uploaded. After uploading, you won't be able to see your options on the page. You will need to save your changes and test them either in <a class="govuk-link" href="#preview">preview mode</a> or after <a class="govuk-link" href="/testing-and-publishing/#test">publishing to Test</a>.</p>
+    <p>It's not currently possible to edit your options once they have been uploaded. To change the options, you will need to upload a new file.</p>
     <p><a class="govuk-link" href="#top">Back to top</a></p>
     </section> 
     <section class="content-section content-section--with-top-border">
@@ -235,17 +244,17 @@ order: 3
       </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="optional" class="govuk-heading-m">Making a question optional</h2>
-        <p>When a question is required, the form will check that the user has provided an answer before moving to the next page. If they haven’t, it will show an error message and prompt the user to complete the question.</p>
+        <p>When a question is required, the form will check that the user has provided an answer before moving to the next page. If they haven't, it will show an error message and prompt the user to complete the question.</p>
         <p>All questions are required by default but you can switch this setting off to make a question optional. This can be done with both single question pages and individual questions on multi-question pages.</p>
         <p>To make a question optional, first click in the question title as if you are going to edit it. This highlights the component settings button (3 dots in a circle). Clicking on the button will open the menu.</p>
         <img src="/images/required-or-optional.png" alt="The option to make a question optional is in the component settings menu." class="screenshot-image">
-        <p>Click on the 'Required' setting to open the options, where you can set it to either ‘yes’ (required) or ‘no’.</p>
-        <p>MoJ Forms automatically adds ‘(optional)’ onto the end of the title of any question that isn’t required.</p>
+        <p>Click on the 'Required' setting to open the options, where you can set it to either 'yes' (required) or 'no'.</p>
+        <p>MoJ Forms automatically adds '(optional)' onto the end of the title of any question that isn't required.</p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
       <h2 id="validation" class="govuk-heading-m">Validating user answers</h2>
-      <p>You can set validation criteria for a range of question types, allowing you to specify things like the length or limits of an answer. When validation is present, the form will check the user’s answers before moving to the next page and show an appropriate error if required.</p>
+      <p>You can set validation criteria for a range of question types, allowing you to specify things like the length or limits of an answer. When validation is present, the form will check the user's answers before moving to the next page and show an appropriate error if required.</p>
       <p>The full range of options available are shown in this table:</p>
       <h3 id="validation" class="govuk-heading-s">Table: validation options</h3>
       <table style="font-family: Arial, Helvetica, sans-serif; text-align: left; border:1px solid #dee0e2;" border="1">
@@ -295,7 +304,7 @@ order: 3
     </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="markdown" class="govuk-heading-m">Formatting content with markdown</h2>
-        <p>In most cases, you won’t have to worry about formatting. The page templates include fields for headings, labels and hint text and all you have to do is add your own words.</p>
+        <p>In most cases, you won't have to worry about formatting. The page templates include fields for headings, labels and hint text and all you have to do is add your own words.</p>
         <p>Content areas allow you to use markdown to add your own formatting. These are on every content page and can be added to some other page templates as required.</p>
         <p>Markdown is a way of adding formatting to plain text using basic symbols and patterns. With markdown, you can add headings, links, lists, tables and more. For example, to create a bulleted list, you start each item with an asterisk (*). Here is a selection of the most common markdown elements:</p>
         <h3 id="validation" class="govuk-heading-s">Table: markdown formatting</h3>
@@ -340,12 +349,12 @@ order: 3
   </tr>
   <tr>
     <td>Email links</td>
-    <td>Put ‘less than’ and ‘greater than’ signs around the email address.</td>
+    <td>Put 'less than' and 'greater than' signs around the email address.</td>
     <td>&lt;email@address.com&gt;</td>
   </tr>
   <tr>
     <td>Tables</td>
-    <td>Use dividers (or ‘pipes’) to split your content into columns and start each row on a new line. Make sure each row has the same number of columns. Put hyphens in the second row to make the first row a header row. Leave blank lines at the beginning and end of the table.</td>
+    <td>Use dividers (or 'pipes') to split your content into columns and start each row on a new line. Make sure each row has the same number of columns. Put hyphens in the second row to make the first row a header row. Leave blank lines at the beginning and end of the table.</td>
     <td>2 columns: <br>| Header 1 | Header 2 |<br>| -------- | -------- |<br>| Cell | Cell |<br>| Cell | Cell |<br>3 columns: <br>| Header 1 | Header 2 | Header 3 |<br>| -------- | -------- | -------- |<br>| Cell | Cell | Cell |<br>| Cell | Cell | Cell |</td>
   </tr>
   <tr>
