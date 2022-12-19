@@ -49,7 +49,6 @@ order: 7
       <p><a class="govuk-link" href="https://support.google.com/analytics/answer/9539598">How to find your Universal Analytics or Google Analytics 4 ID</a></p>
       <p><a class="govuk-link" href="https://support.google.com/tagmanager/answer/6103696?hl=en">How to find your Google Tag Manager ID</a></p>
       <p>You will need to publish your form for the changes to take effect.</p>
-
       <h3 class="govuk-heading-s">About cookies</h3>
       <p>To comply with data protection regulations, all our forms include a default cookies statement in the footer section, along with accessibility and privacy.</p>
       <p>If you are using either Universal Analytics or Google Analytics 4, this should be sufficient to cover their use of cookies and will not require any additional work.</p>
@@ -142,6 +141,7 @@ order: 7
     <section class="content-section content-section--with-top-border">
       <h2 id="payment-links" class="govuk-heading-m">Taking payments through GOV.UK Pay</h2>
       <p>If you have a GOV.UK Pay account and are set up to take payments through a payment link, MoJ Forms can help you join up form submissions with payments.</p>
+      <img src="/images/confirmation-page-to-gov-uk-pay.png" alt="Two screenshots are shown alongside each other to illustrate how MoJ Forms can join up with GOV.UK Pay. The first screenshot is the confirmation page of a form titled "apply for a licence". A large blue box includes the words "you still need to pay" and a reference number. Beneath the box is a button labelled "continue to pay". A blue arrow suggests that a user would go from this page to the next screenshot which is a GOV.UK payment page. It is titled "pay for a licence application" and includes the same reference number shown on the first screenshot." class="screenshot-image">
       <p>How it works:</p>
       <ul>
       <li>In GOV.UK Pay, you <a class="govuk-link" href="https://www.payments.service.gov.uk/govuk-payment-pages/">create a payment link</a>.</li>
@@ -159,6 +159,7 @@ order: 7
       </ul>
       <p>Then enter your GOV.UK Pay payment link URL into the field provided. You get this from your GOV.UK Pay account and it should start with "https://gov.uk". When setting this up, ensure you select 'yes' when asked if your users already have a payment reference. This is the field that will be pre-filled for your users with the MoJ Forms reference number.</p>
       <p>This will then insert placeholders for the payment link into your confirmation page and confirmation email templates (for both Test and Live sites). It will also insert separate placeholders for the reference number in several places. (See <a class="govuk-link" href="#references">Providing users with reference numbers</a>.)</p>
+      <img src="/images/payment-link-email-template.png" alt="A screenshot from the MoJ Forms editor shows the settings page for a confirmation email. The message includes placeholder text indicating where the payment link will be inserted." class="screenshot-image">
       <p>You can edit the email content and use the placeholder {{payment_link}} wherever you want the payment link to appear.</p>
       <p>When you enable or disable payment links it will overwrite any custom text in your email templates and reset them to default text. You may therefore want to take a copy of your emails before changing this setting.</p>
       <p><a class="govuk-link" href="#top">Back to top</a></p>
