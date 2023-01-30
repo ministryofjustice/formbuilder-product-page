@@ -57,13 +57,19 @@ order: 7
     </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="email-settings" class="govuk-heading-m">Collecting information by email</h2>
-        <p>You can configure how you collect the information submitted by users of your form through the submission settings. Currently, the only option is to receive it by email to an address of your choice.</p>
-        <p>The answers are attached to emails in PDF and can be additionally attached in comma separated values (CSV) format. CSV files list the answers in plain text, separated by commas. They can be imported into spreadsheets and other applications, making it easier to handle and process the information you receive. For example, you could <a class="govuk-link" href="https://support.microsoft.com/en-us/office/import-data-from-a-folder-with-multiple-files-power-query-94b8023c-2e66-4f6b-8c78-6a00041c90e4">import data from multiple CSV files into Microsoft Excel</a> at once.</p>
-        <p>Other options, including API integration, are in development.</p>
+        <p>When a user completes your form, you can have their form submission emailed to you.</p>
+        <p>The email address you use must be an approved MoJ address. This is to help protect user data and ensure it isn't unknowingly sent outside of the organisation.</p>
+        <p>The answers are attached to the emails in PDF and can be additionally attached in comma separated values (CSV) format. CSV files list the answers in plain text, separated by commas. They can be imported into spreadsheets and other applications, making it easier to handle and process the information you receive. For example, you could <a class="govuk-link" href="https://support.microsoft.com/en-us/office/import-data-from-a-folder-with-multiple-files-power-query-94b8023c-2e66-4f6b-8c78-6a00041c90e4">import data from multiple CSV files into Microsoft Excel</a> at once.</p>
+        <p>Currently, email is the only way to collect the information your users submit. We plan to introduce other options, such as API integration, at a later time.</p>
         <h3 class="govuk-heading-s">Setting up the emails</h3>
         <p>Go to: Settings > Submission settings > Collect information by email</p>
         <p>On this page, you can enable collecting information by email on the Test site and on the Live site. You need to enable and configure the settings for both sites separately. The answers are attached in a PDF and can be additionally attached in a CSV.</p>
-        <p>To enable the setting on a site, check the 'Enable email' box. The 'configure' settings will then expand and allow you to enter the email address you want the emails sent to. This address should be a team email account with several authorised users to ensure you can maintain your service in the event of team changes or absences. Currently you can send the form to only one address.</p>
+        <p>To enable the setting on a site, check the 'Enable email' box. The 'configure' settings will then expand and allow you to enter the email address you want the emails sent to. This address should be:</p>
+        <ul>
+        <li>an MoJ email address, such as @justice.gov.uk or @digital.justice.gov.uk, or other approved address - if the address you want to use isn't accepted, <a class="govuk-link" href="/contact">contact us</a> to discuss your requirements</li>
+        <li>a team email account with several authorised users to ensure you can maintain your service in the event of team changes or absences</li>
+        </ul>
+        <p>Currently you can send the form to only one address.</p>
         <p>There are a number of other email configuration options:</p>
         <ul>
         <li>From - the email address that the emails will come from (see <a class="govuk-link" href="#from-address">Setting the address that emails come from</a>)
