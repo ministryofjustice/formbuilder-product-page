@@ -14,61 +14,104 @@ order: 8
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
         <p>How to test your form and share it securely with colleagues before publishing the final version.</p>
-        <p><a class="govuk-link" href="#ready-to-publish">When you are ready to publish</a><br>
-        <a class="govuk-link" href="#publishing-process">Understanding the publishing process</a><br>
+        <p><a class="govuk-link" href="#publishing-process">Understanding the publishing process</a><br>
+        <a class="govuk-link" href="#before-publishing">Things to check before publishing</a><br>
         <a class="govuk-link" href="#test">Publishing to Test</a><br>
-        <a class="govuk-link" href="#live">Publishing to Live</a></p>
-        <section class="content-section content-section--with-top-border">
-        <h2 id="ready-to-publish" class="govuk-heading-m">When you are ready to publish</h2>
-        <p>When you are happy with your form, use our publishing checklist to make sure you have taken care of everything and are ready to go live.</p>
-        <p><a class="govuk-link" href="/pdf/MoJ_Forms_publishing_checklist.pdf">Publishing checklist</a> (PDF, 0.49MB)</br>
-        Last updated: 28 January 2022 </p>
-        <p>You may see alerts on the publishing page to prompt you about a number of potentially overlooked settings:</p>
-        <ul>
-        <li>if your form is missing a check answers page or confirmation page</li>
-        <li>if your form is missing submission settings on either Test or Live sites</li>
-        </ul>
-        <p>You will need to fix these issues if you want the data a user submits to go anywhere.</p>
-        <p><a class="govuk-link" href="#top">Back to top</a></p>
+        <a class="govuk-link" href="#test-checks">What to look for when testing</a><br>
+        <a class="govuk-link" href="#live">Publishing to Live</a></br>
+        <a class="govuk-link" href="#live-checks">What to check on Live</a></br>
+        <a class="govuk-link" href="#govuk">Getting your form on GOV.UK</a></p>
         <section class="content-section content-section--with-top-border">
         <h2 id="publishing-process" class="govuk-heading-m">Understanding the publishing process</h2>
-        <p>MoJ Forms comes with both a Test site and Live site.<p>
+        <p>To see a fully working form that you can fill in and share with others, you have to publish it. MoJ Forms comes with both a Test site and Live site so that you can work on your form and only push changes live when you are happy with them. All changes made in the editor, including to settings, have to be published for them to take effect.<p>
         <p>The Test site is for checking your form, sharing it with colleagues and stakeholders and gathering feedback. You can make multiple changes and updates to the Test site without needing to publish to Live. All test forms are protected by username and password, which you set when publishing.</p>
-        <p>The Live site is where your final form will live. You only need to publish to Live when you are happy with your form on the Test site. Live forms can be protected with a username and password if required.</p>
+        <p>The Live site is where your final form will live. This version can be shared with users and linked to from GOV.UK. You only need to publish to Live when you are happy with your form on the Test site. Live forms can be protected with a username and password if required.</p>
         <p>Test forms have the URL: your-form-name.dev.form.service.justice.gov.uk<br>
         Live forms have the URL: your-form-name.form.service.justice.gov.uk</p>
-
         <p>Both the Test and Live sites:</p>
         <ul>
         <li>are on the internet, so there are no restrictions on who you can share the links with</li>
         <li>will not be found and listed on search engines</li>
         </ul>
-        <p>We recommend you always publish and test your form on the Test site before publishing to Live.</p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
+      </section>
+      <section class="content-section content-section--with-top-border">
+        <h2 id="before-publishing" class="govuk-heading-m">Things to check before publishing</h2>
+        <p>The publishing page will check your form and warn you about some of the most common issues. Any warning messages appear above the publishing buttons.</p>
+        <p>SCREENSHOT</p>
+        <p>These checks include:</p> 
+        <ul>
+        <li>Whether you have enabled <a class="govuk-link" href="/settings/#email-settings">collecting information by email</a>. This is required if you want to receive any submissions from your form. It is also required if you want your form to send confirmation emails.</li>
+        <li>Whether your form contains a <a class="govuk-link" href="/building-and-editing/#check-confirm">check answers page and a confirmation page</a>. These are required if you want to receive any submissions from your form.</li>
+        <li>Whether you have <a class="govuk-link" href="/settings/#from-address">set and validated your 'from' address</a> for emails. This determines the address that submission and confirmation emails come from and where replies go to.</li>
+        <li>Whether you form includes any <a class="govuk-link" href="/building-and-editing/#autocomplete">autocomplete questions</a> without options. This means users will be unable to complete the question and could prevent them from completing your form.</li>
+        </ul>
+        <p>You will be able to publish your form to Test even with these issues but some features won't work.</p>
+        <p>However, you will not be able to publish to Live with any of these issues to prevent a broken form from being made public. The button will be inactive (grey and unclickable) until the issues have been resolved.</p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="test" class="govuk-heading-m">Publishing to Test</h2>
-        <p>To publish your form to the Test site, go to the publishing page and select ‘publish to Test’. This will publish the latest version of your form in the editor to the Test site. You can see when your form was last updated by checking the ‘version’ date and time at the top of the page.</p>
-        <p>You will be asked to set a username and password for your form which will be required to view the form. All forms on the Test site are protected in this way. You will need to share these credentials with anyone you want to view the form.</p>
+        <p>To publish your form to the Test site, go to the publishing page and select 'publish to Test'. This will publish the version of your form in the editor to the Test site. You can see when your form was last updated by checking the 'version' date and time at the top of the page.</p>
+        <p>You will be asked to set a username and password for your form which will be required to view the form. All forms on the Test site are protected in this way. You will need to share these credentials with anyone you want to view the form. Currently, Test forms can't be opened in Edge on DOM1 machines so you will need to use a different computer or browser.</p>
         <p>If you forget what username and password you set, you can simply re-publish your form and set new details. These will replace your previous username and password.</p>
-        <p>After publishing to Test, your form’s URL will be available from the publishing page.</p>
+        <p>After publishing to Test, your form's URL will be available from the publishing page.</p>
         <p>It can take up to 15 minutes for the form to be visible the first time you publish it to Test. Updates are much quicker and should publish within a minute or less. (You may need to refresh your browser or clear your cache.)</p>
         <img src="/images/publish-to-test.png" alt="The URL of a form is displayed on the publishing page after the form has been published." class="screenshot-image">
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
+        <h2 id="test-checks" class="govuk-heading-m">What to look for when testing</h2>
+        <p>We recommend you always publish and test your form on the Test site before publishing to Live. Some of the things to look for are:</p>
+        <ul>
+        <li>any markdown you have used to format content is displaying correctly and any links are working as expected</li>
+        <li>questions are correctly flagged as optional or required</li>
+        <li>any branching within your form is working as expected</li>
+        <li>your form includes a check answers page and confirmation page if you want it to submit the data it collects</li>
+        <li>you are able to complete and submit a form using the Test URL</li>
+        <li>the submitted form content is going to the right email address</li>
+        <li>confirmation emails are being sent correctly if you have enabled this setting</li>
+        <li>your Google Analytics account is collecting data if you have enabled this setting (this can take up to 48 hours in Google Analytics 4)</li>
+        </ul>
+        <p>This is the time you should also start thinking about:</p> 
+        <ul>
+        <li>completing your <a class="govuk-link" href="/data-protection/#privacynotice">privacy notice template</a></li>
+        <li>conducting a <a class="govuk-link" href="/accessibility/#checks">basic accessibility check</a> and completing your <a class="govuk-link" href="/accessibility/#statement">accessibility statement</a></li>
+        </ul>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
+      </section>
+      <section class="content-section content-section--with-top-border">
         <h2 id="live" class="govuk-heading-m">Publishing to Live</h2>
-        <p>To publish your form to the Live site, go to the publishing page and select ‘publish to Live’. This will publish the latest version of your form in the editor to the Live site. You can see when your form was last updated by checking the ‘version’ date and time at the top of the page.</p>
-        <p>After selecting ‘publish to Live’, you will be presented with 2 options:</p>
+        <p>To publish your form to the Live site, go to the publishing page and select 'publish to Live'.</p>
+        <p>The button should be blue. If it is inactive (grey and unclickable) this means there are issues with your form that you will need to resolve before you can publish. See <a class="govuk-link" href="#before-publishing">things to check before publishing</a> for details.
+        <p>Publishing will promote the latest version of your form in the editor to the Live site. You can see when your form was last edited by checking the 'version' date and time at the top of the page.</p>
+        <p>After selecting 'publish to Live', you will be presented with 2 options:</p>
         <ul>
         <li>allow anyone with the link to view</li>
         <li>set a username and password</li>
         </ul>
-        <p>If you set a username and password, you will need to share these with anyone you want to view the form. If you forget what username and password you set, you can simply re-publish your form and set new details. These will replace your previous username and password.</p>
-        <p>After publishing to Live, your form’s URL will be available from the publishing page.</p>
+        <p>If you set a username and password, you will need to share these with anyone you want to view the form. If you forget what username and password you set, you can simply re-publish your form and set new details. These will replace your previous username and password. Currently password-protected forms can't be opened in Edge on DOM1 machines.</p>
+        <p>After publishing to Live, your form's URL will be available from the publishing page.</p>
         <p>It can take up to 15 minutes for the form to be visible the first time you publish it to Live. Updates are much quicker and should appear within a minute or less. (You may need to refresh your browser or clear your cache.)</p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
+      <section class="content-section content-section--with-top-border">
+        <h2 id="live-checks" class="govuk-heading-m">What to check on Live</h2>
+        <p>Always check your live form is working as expected before sharing with users. Some things to look for are:</p>
+        <ul>
+        <li>you are able to complete and submit a form using the Live URL</li>
+        <li>you are not asked for a username and password to view the form</li>
+        <li>the submitted form content is going to the right email address</li>
+        <li>you have completed your privacy notice and accessibility statement</li>
+        </ul>
+        <a class="govuk-link" href="/contact">Contact us</a> when your form is live so we can set up monitoring.</p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
+      </section>
+      <section class="content-section content-section--with-top-border">
+      <h2 id="govuk" class="govuk-heading-m">Getting your form on GOV.UK</h2>
+      <p>If you want to put your form on GOV.UK, you will need to talk to your local comms team. They will help you decide where the form should sit and help you with any guidance content that may be required around it.</p>
+      <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </section>
         <!-- END CONTENT -->
       </div>
     </div>
