@@ -13,25 +13,70 @@ order: 2
       <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-l"><%= current_page.data.heading%></h1>
         <!-- START CONTENT -->
-        <p>Find out what MoJ Forms can do and how you can get started creating your own forms and services.</p>
-        <p><a class="govuk-link" href="#access">Getting access and logging in</a><br>
-        <a class="govuk-link" href="#planning">Planning your first form</a></p>
+        <p>Everything you need to know about getting started with MoJ Forms and planning a form.</p>
+        <p><a class="govuk-link" href="#good-forms">What makes a good form</a></br>
+        <a class="govuk-link" href="#timescales">Timescales and engagement</a></br>
+        <a class="govuk-link" href="#planning">Planning your form</a></p>
       <section class="content-section content-section--with-top-border">
-          <h2 id="access" class="govuk-heading-m">Getting access and logging in</h2>
-        <p>To get access, <a class="govuk-link" href="/contact">contact us</a> to discuss your requirements. As MoJ Forms is in private beta, we need your consent to take part in ongoing research. </p>
-        <p>You will need an email address ending in one of these domains:</p>
+          <h2 id="good-forms" class="govuk-heading-m">What makes a good form</h2>
+        <p>Forms built with MoJ Forms should aim to meet the GOV.UK <a class="govuk-link" href="https://www.gov.uk/service-manual/service-standard">Service Standard</a>. This is a set of principles that helps government teams create and run high-quality services.</p> 
+        <p>Not all of the principles will be relevant and some of them have been taken care of by MoJ Forms but you should still consider how they can be applied to your project. In particular, it is important that you:</p>
         <ul>
-        <li>@digital.justice.gov.uk</li>
-        <li>@justice.gov.uk</li>
-        <li>@cica.gov.uk</li>
+        <li>understand your users' needs</li>
+        <li>make your form simple to use</li>
+        <li>make sure everyone can use your form</li>
         </ul>
-        <p>MoJ Forms shares a login with your primary work email address so you don't need to remember a separate username or password.</p>
+        <p>The <a class="govuk-link" href="https://www.gov.uk/service-manual">Service Manual</a> includes a lot of simple, clear advice to help you create a form that meets the Service Standard. The section on <a class="govuk-link" href="https://www.gov.uk/service-manual/design/form-structure">structuring forms</a> will be particularly useful.</p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
-      <section class="content-section content-section--with-top-border">
-        <h2 id="planning" class="govuk-heading-m">Planning your first form</h2>
-        <p>We have designed MoJ Forms to be quick and easy to use but it helps to plan out your form in advance. For help with this, read the <a class="govuk-link" href="https://www.gov.uk/service-manual/design/form-structure">Service Manual chapter on structuring forms</a>.</p>
-        <p>You should also refer to the <a class="govuk-link" href="https://design-system.service.gov.uk/">Design System</a> for advice and guidance on putting the various form components and patterns to use.</p>
+    <section class="content-section content-section--with-top-border">
+      <h2 id="timescales" class="govuk-heading-m">Timescales and engagement</h2>
+    <p>It's possible to build a test form in minutes using MoJ Forms but getting a form ready for live can take a lot longer. As well as the usual time it might take to review and sign off your form, there are a number of things we recommend you consider and plan in advance.</p>
+    <h3 class="govuk-heading-s">Data protection</h3>
+    </p>You should contact your information assurance lead or local data protection team as early as possible to discuss whether your form requires a data protection impact assessment (DPIA). This will help identify and minimise any data protection risks involved and ensure that the activity is registered with the data protection team.</p>
+    <p>Nearer to your publication date, you will also need to prepare a privacy notice.</p>
+    <p>See the section on <a class="govuk-link" href="/data-protection">data protection and privacy</a> for details.</p>
+    <h3 class="govuk-heading-s">Accessibility</h3>
+    <p>Public sector accessibility regulations require all forms to be accessible and have an accessibility statement. This means making your content and design clear and simple enough so that most people can use it without needing to adapt it, while supporting those who do need to adapt things.</p>
+    <p>We have taken care of a lot of the requirements for you by making MoJ page designs fully accessible and providing a template for your accessibility statement. But you will still need to conduct a basic accessibility check and complete the statement with your own details.</p>
+    <p>Learn more in the <a class="govuk-link" href="/accessibility">accessibility</a> section.</p>
+    <h3 class="govuk-heading-s">Taking payments</h3>
+    <p>MoJ Forms can help you take payments from users by connecting your form with GOV.UK Pay using <a class="govuk-link" href="/settings/#payment-links">payment links</a>. If you are new to GOV.UK Pay, this will take time to set up.</p>
+    <p>You can create a GOV.UK Pay account and set up a test payment link in just a few minutes but it may be several months before you are ready to take payments. This depends on the payment service provider arrangements in your area. For example, MoJ, HMCTS and HMPPS all have separate agreements with the Government Banking Service.</p>
+    <h3 class="govuk-heading-s">Email accounts</h3>
+    <p>You may need to set up several new team email accounts for use with MoJ Forms:</p>
+    <ul>
+    <li>to collect submissions from your form</li>
+    <li>to use as the reply address on confirmation emails</li>
+    </ul>
+    <p>These can be the same or different and will need to be verified as you are building and setting up your form.</p>
+    <h3 class="govuk-heading-s">Getting assessed</h3>
+    <p>Government digital services usually go through a service assessment. This is a process managed by the Central Digital and Data Office (CDDO) and each government department to ensure all government services are built to the same standard.</p>
+    <p>Forms built with a form-building service like MoJ Forms are an exception. Your form will only need to go through a service assessment if one or more of the following apply:</p> 
+    <ul>
+    <li>it’s likely to handle more than 10,000 transactions per year</li>
+    <li>it supports vulnerable people, people in danger or responses to natural disasters</li>
+    <li>it helps keep government accountable, and is required by law or regulation</li>
+    <li>it’s likely to transfer more than £1 million each year to members of the public or organisations</li>
+    </ul>
+    <p>If you think any of these might apply to your service, contact your local service assessment lead. See <a class="govuk-link" href="https://www.gov.uk/service-manual/service-assessments/check-if-need-to-meet-service-standard">Check if you need to meet the Service Standard or get an assessment</a> for details.</p>
+    <p>If none of these apply, you won't need a service assessment.</p>
+    <h3 class="govuk-heading-s">Getting on GOV.UK</h3>
+    <p>If you want to put your form on GOV.UK, you will need to talk to your local comms team. They will help you decide where the form should sit and help you with any guidance content that may be required around it. If your form is aimed at members of the public and will sit under services and information (sometimes called 'mainstream' content), they will need to raise a request with GDS to make the necessary changes. This could take more time.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+  </section>
+<section class="content-section content-section--with-top-border">
+        <h2 id="planning" class="govuk-heading-m">Planning your form</h2>
+        <p>We have designed MoJ Forms to be quick and easy to use but it helps to plan your form in advance. Before you start building your form, think about:</p>
+        <ul>
+        <li>what information you need to ask for - creating a <a class="govuk=link" href="https://www.uxmatters.com/mt/archives/2010/06/the-question-protocol-how-to-make-sure-every-form-field-is-necessary.php">question protocol</a> can help you with this</li>
+        <li>how to order your questions - for example, put questions that help users work out if they are eligible for your service at the beginning</li>
+        <li>how to group your questions - forms work best when you ask <a class="govuk-link" href="https://designnotes.blog.gov.uk/2015/07/03/one-thing-per-page/">one thing per page</a></li>
+        <li>which <a class="govuk-link" href="/building-and-editing/#page-type">question format</a> to use for each question</li>
+        <li>where you might need branches to divert users around questions they don't need to answer</li>
+        </ul>
+        <p>For more help with planning, read the <a class="govuk-link" href="https://www.gov.uk/service-manual/design/form-structure">Service Manual chapter on structuring forms</a>.</p>
+        <p>Also refer to the <a class="govuk-link" href="https://design-system.service.gov.uk/">GOV.UK Design System</a> for advice and guidance on how best to use the specific question formats.</p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
         <!-- END CONTENT -->
