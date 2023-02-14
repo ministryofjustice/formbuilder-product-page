@@ -1,12 +1,12 @@
 version: 2.1
 orbs:
-  ruby: circleci/ruby@1.4.0
+  ruby: circleci/ruby@2.0.0
   kubernetes: circleci/kubernetes@0.12.0
 
 jobs:
   build:
     docker:
-      - image: 'cimg/ruby:2.7.5-node'
+      - image: 'cimg/ruby:3.0.5-node'
     steps:
       - checkout
       - setup_remote_docker
@@ -16,7 +16,7 @@ jobs:
           command: bash build.sh
   test:
     docker:
-      - image: 'cimg/ruby:2.7.5-node'
+      - image: 'cimg/ruby:3.0.5-node'
     steps:
       - checkout
       - ruby/install-deps
@@ -30,7 +30,7 @@ jobs:
             --empty-alt-ignore --disable-external
   build_and_push_staging:
     docker:
-      - image: 'cimg/ruby:2.7.5-node'
+      - image: 'cimg/ruby:3.0.5-node'
     steps:
       - checkout
       - setup_remote_docker:
@@ -41,7 +41,7 @@ jobs:
           command: bash scripts/build_and_push.sh
   build_and_push_prod:
     docker:
-      - image: 'cimg/ruby:2.7.5-node'
+      - image: 'cimg/ruby:3.0.5-node'
     steps:
       - checkout
       - setup_remote_docker:
