@@ -37,7 +37,7 @@ order: 3
         <li>the title that will appear on your form to users</li>
         <li>used in your form's URL - for example, a name of Apply for a dog licence will produce a form URL of <u>https://apply-for-a-dog-licence.form.service.gov.uk</u></li>
         </ul>
-        <p>The title can contain lowercase and uppercase letters, hypens and apostrophes. No other special characters are allowed. The name cannot start with a number but you could write it out - for example, 'two' instead of '2'.</p>
+        <p>The title can contain lowercase and uppercase letters, hyphens and apostrophes. No other special characters are allowed. The name cannot start with a number but you could write it out - for example, 'two' instead of '2'.</p>
         <p>We are making some changes in this area and it is not currently possible to change your form's name in the editor. <a href="/contact">Contact us</a> whenever you want to change the name</a>.</p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
@@ -69,7 +69,7 @@ order: 3
       <li>a form in preview mode will not save any information entered into it or send any emails</li>
       <li>preview links cannot be shared and will work only for you</li>
       </ul>
-      </p>
+      <p>You can also preview individual pages without needing to go through the whole form page-by-page. To do this, hover over the page thumbnail to reveal the page menu (...) and select 'Preview page'.</p>
       <p><a class="govuk-link" href="#top">Back to top</a></p>
     </section>
       <section class="content-section content-section--with-top-border">
@@ -132,50 +132,109 @@ order: 3
       <section class="content-section content-section--with-top-border">
         <h2 id="page-type" class="govuk-heading-m">Choosing the type of page</h2>
         <p>When adding pages, you can choose from the following templates:</p>
-        <ul>
-        <li>Single question page - as the name suggests, this template allows one question per page. You can choose from several question types:</li>
-          <ul>
-          <li><b>text</b></li>
-          <li><b>text area</b></li>
-          <li><b>email address</b></li>
-          <li><b>number</b></li>
-          <li><b>date</b></li>
-          <li><b>radio buttons</b></li>
-          <li><b>checkboxes</b></li>
-          <li><b><a class="govuk-link" href="#autocomplete">autcomplete</a></b></li>
-          <li><b><a href="#file-upload">file upload</a></b></li>
-          </ul>
-        <li><b>Multiple question page</b> - this template allows you to add several question components to a single page. You can use any of the question types available on a single question page except autocomplete and file upload.</li>
-        <li><b>Check answers page</b> - use this page to let users check the information they have provided. If your form requires users to submit any information, it will need a check answers page.</li>
-        <li><b>Confirmation page</b> - use this page after a check answers page to let users know their data has been sent.</li>
-        <li><b>Content page</b> - use this page to provide users with information without asking any questions, such as advice about the application process or the task they are trying to accomplish. You can <a class="govuk-link" href="#markdown">format the content using markdown</a> - a simple way of indicating things like headings, links and tables using text symbols.</li>
-        <li><b>Exit page</b> - use this page as the final page of a flow that doesn't require the user to submit any information. For example, you could tell a user that they are not eligible to continue based on some qualifying questions. As with content pages, you can <a class="govuk-link" href="#markdown">format the content using markdown</a>. Inserting an exit page will break the flow to any following pages and move them to the unconnected pages section.</li>
-        </ul>
+        <h3 id="page-templates" class="govuk-heading-s">Table: MoJ Forms page templates</h3>
+        <table style="font-family: Arial, Helvetica, sans-serif; text-align: left; border:1px solid #dee0e2;" border="1">
+        <table>
+        <thead>
+          <tr>
+            <th>Type of page</th>
+            <th>What it's for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Single question page</td>
+            <td>Allows only one question per page. All <a class="govuk-link" href="#question-formats">question types</a> are available.</td>
+          </tr>
+          <tr>
+            <td>Multiple question page</td>
+            <td>Allows any number of questions on a page. Most <a class="govuk-link" href="#question-formats">question types</a> are available.</td>
+          </tr>
+          <tr>
+            <td>Content page</td>
+            <td>Use to provide users with information without asking any questions, such as advice about the application process or the task they are trying to accomplish. Allows text and <a class="govuk-link" href="#markdown">markdown formatting</a> but no questions.</td>
+          </tr>
+          <tr>
+            <td>Exit page</td>
+            <td>Use to tell users they do not need to continue with the form, for example if they are ineligible for your service. Allows text and <a class="govuk-link" href="#markdown">markdown formatting</a> but no questions. There is no continue button. Inserting an exit page will break the flow to any following pages and move them to the unconnected pages section.</td>
+          </tr>
+          <tr>
+            <td>Check answers page</td>
+            <td>A page that allows users to check their answers before they submit them. You will only see this option if you deleted your <a class="govuk-link" href="#check-confirm">starting check answers page<a>. A form can have only one check answers page.</td>
+          </tr>
+          <tr>
+            <td>Confirmation page</td>
+            <td>The final page of a form which lets the user know they have finished. You will only see this option if you deleted your <a class="govuk-link" href="#check-confirm">starting confirmation page<a>. A form can have only one confirmation page.</td>
+          </tr>
+        </tbody>
+        </table>
+        <p></p>
+        <h3 id="page-single-multiple" class="govuk-heading-s">Single question or multiple question page?</h3>
+        <p>GOV.UK forms and services are built around the principle of <a class="govuk-link" href="https://www.gov.uk/service-manual/design/form-structure#start-with-one-thing-per-page">one thing per page</a>. In general, this is the easiest approach for users and it helps you get the highest quality responses. When you plan out your form, start with one question per page using single question page templates and only combine them on multiple question pages when it makes sense to do so. For example, you might decide to ask for a user's contact details on one page which could include an email address and telephone number.</p>
+        <p>Questions cannot currently be re-ordered on multiple question pages so it will save you time to plan out the page and make sure you are happy with the order of questions in advance.</p>
+        <p>The autocomplete and file upload question types are only available as single question pages.</p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="question-formats" class="govuk-heading-m">Choosing which question format to use</h2>
-        <p>You can use the following question types on single and multiple question pages:</p>
+        <p>MoJ Forms has a wide range of question types. Picking the right format for your question will help ensure you get the highest quality responses from your users.</p>
+        <h3 id="text-question" class="govuk-heading-s">Text</h3>
+        <img src="/images/text-question.png" alt="An example of a text question. The question asks what is your full name." class="screenshot-image">
+        <p>Use the text question type when you want the user to enter a small amount of text such as a name or phone number. If the user might want to enter more than one line of text, use the <a class="govuk-link" href="#textarea-question">textarea question</a> type instead.</p>
+        <p>This question type allows you to set a <a class="govuk-link" href="#validation">minimum and maximum number of characters or words</a> for answers.</p>
+        <h3 id="textarea-question" class="govuk-heading-s">Textarea</h3>
+        <img src="/images/textarea-question.png" alt="An example of a textarea question. The title is tell us a little about your complaint. The hint text reads do not include any personal or financial information like your bank account or credit card number." class="screenshot-image">
+        <p>Use the textarea question type when the user might want to enter more than one line of text. Be clear and specific with your question and hint text so the user knows what is expected of them.</p>
+        <p>Don't use a textarea if there is a more structured way to collect the desired information using several questions.</p>
+        <p>This question type allows you to set a <a class="govuk-link" href="#validation">minimum and maximum number of characters or words</a> for answers. With a maximum answer length, it shows a counter as the user approaches and passes the limit.</p>
+        <h3 id="email-question" class="govuk-heading-s">Email address</h3>
+        <img src="/images/email-address-question.png" alt="An example of an email address question. The question asks what is youe full address? The hint text reads we will send a confirmation of your application to this address." class="screenshot-image">
+        <p>Use the email address question type to ask users for an email address. You must be clear why you are asking for it and how it will be used. (This should also be reflected in your <a class="govuk-link" href="/data-protection/#privacynotice">privacy notice</a>.) You must use this question type if you plan on sending users a <a class="govuk-link" href="/settings/#confirmation-email">confirmation email</a>.</p>
+        <p>This question type automatically checks that the answer looks like an email address (e.g. it contains an @ symbol).</p>
+        <h3 id="number-question" class="govuk-heading-s">Number</h3>
+        <img src="/images/number-question.png" alt="An example of a number question. The question asks what is your reference number? The hint text reads this is 8 digits long and will be on any correspondance you have received from us." class="screenshot-image">
+        <p>Use the number question type to ask users for a number.</p>
+        <p>This question type automatically checks that the answer contains only numbers and decimal points. Letters, spaces and other characters are not permitted. For this reason, don't use this question type to ask for telephone numbers as users might use brackets, spaces and so on. Use a text question for telephone numbers instead.</p>
+        <p>This question type allows you to set a <a class="govuk-link" href="#validation">minimum and maximum value</a> for answers. For example, only numbers up to 100 or numbers above 500.</p>
+        <h3 id="date-question" class="govuk-heading-s">Date</h3>
+        <img src="/images/date-question.png" alt="An example of a date question. The question asks when did you first contact us? The hint text reads for example, 23 1 2022." class="screenshot-image">
+        <p>Use the date question type to ask users for a date that they are likely to know, such as their date of birth. If the user is unlikely to know the exact date there are better options, such as <a class="govuk-link" href="#radio-question">radio buttons</a> offering users a choice or a <a class="govuk-link" href="#text-question">text</a> question allowing them to write in an answer.</p>
+        <p>This question type automatically checks that the days and months are valid possibilities. For example, a day can be up to 31 when the month is 1 but only 30 when the month is 9.</p>
+        <p>This question type allows you to set an <a class="govuk-link" href="#validation">earliest date and a latest date</a> for answers. For example, only dates before 1 January 2000 or dates after 31 December 2001.</p>
+        <h3 id="radio-question" class="govuk-heading-s">Radio buttons</h3>
+        <img src="/images/radio-question.png" alt="An example of a radio button question. The question asks is this the first time you have contacted us? There are 2 radio button options - yes and no." class="screenshot-image">
+        <p>Use the radio buttons question type to ask a user to select a single answer from a list. If the user can select multiple options, use <a class="govuk-link" href="#checkbox-question">checkboxes</a> instead.</p>
+        <p>If there are a lot of options, think about how they are ordered so a user can skim them easily and find the option that best fits.</p>
+        <p>If you want to offer an 'other' option, place this last. If you want the user to describe this other option, you can either:</p>
         <ul>
-        <li>text</li>
-        <li>textarea</li>
-        <li>email address</li>
-        <li>number</li>
-        <li>date</li>
-        <li>radio buttons</li>
-        <li>checkboxes</li>
+        <li>have an optional text or text area question beneath the radio buttons (using a multiple question page)</li>
+        <li>use branching to take those users to another page where you can ask more about the other option</li>
         </ul>
-        <p>The autocomplete and file upload question type can be used only on a single question page.</p>
-        <p>Most MoJ Forms question types follow the <a class="govuk-link" href="https://design-system.service.gov.uk/">GOV.UK Design system</a> which includes useful tips on when and how to use each type.
-        <p>We will be adding more question types and formatting options in future updates.</p>
+        <h3 id="checkbox-question" class="govuk-heading-s">Checkboxes</h3>
+        <img src="/images/checkbox-question.png" alt="An example of a checkbox question. The question asks what are your reasons for getting in touch? The hint text reads choose all that apply. There are 4 checkbox options - learn more, request a demo, discuss an opportunity and something else." class="screenshot-image">
+        <p>Use the checkboxes question type to allow users to select multiple answers from a list. If the user must select only a single option, use <a class="govuk-link" href="#radio-question">radio buttons</a> instead.</p>
+        <p>If there are a lot of options, think about how they are ordered so a user can skim them easily and find the option that best fits.</p>
+        <p>If you want to offer an 'other' option, place this last. If you want the user to describe this other option, you can either: </p>
+        <ul>
+        <li>have an optional text or text area question beneath the radio buttons (using a multiple question page)</li>
+        <li>use branching to take those users to another page where you can ask more about the other option</li>
+        </ul>
+        <h3 id="autocomplete-question" class="govuk-heading-s">Autocomplete</h3>
+        <img src="/images/autocomplete-question.png" alt="An example of an autocomplete question. The question asks which court did you attend?" class="screenshot-image">
+        <p>Use the autocomplete question type to help users select a single answer from a long list of options. The user can scroll through the list to select their answer or start typing to filter the options.</p>
+        <p>See the section on <a class="govuk-link" href="#autocomplete">presenting users with a long list of options</a> to learn more about how this question type works.</p>
+        <h3 id="file-question" class="govuk-heading-s">File upload</h3>
+        <img src="/images/file-upload-question.png" alt="An example of a file upload question. The title reads upload any evidence in support of your claim. The hint text reads maximum file size 7Mb." class="screenshot-image">
+        <p>Use the file upload question type to ask a user to attach a file to their form. A user can attach one file per page up to 7MB in size.</p>
+        See the section on <a class="govuk-link" href="#file-upload">asking users to submit a file</a> to learn more about how this question type works.</p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
       <h2 id="autocomplete" class="govuk-heading-m">Presenting users with a long list of options</h2>
       <p>The autocomplete question type allows you to specify a large range of options for the user to choose from, such as a list of courts or locations. It looks like a text field with a black triangle, indicating a dropdown. When the user clicks into it the list of options appears. The user can scroll through the list to select their answer or start typing to filter the options. The form will only accept answers from the options specified.</p>
       <img src="/images/autocomplete-example.gif" alt="This short animation shows an autocomplete question being filled in. The question is "Which airport did you fly from?" and there is a blank text field beneath it. The cursor moves to the text field and a dropdown appears listing UK airports. The options are filtered as the letters "l o n" are typed into the field and London Heathrow is selected." class="screenshot-image">
-      <p>This format is best when there are a lot of options to choose from. Smaller numbers of options are better presented using radio buttons.</p>
-      <h3 id="validation" class="govuk-heading-s">Formatting your autocomplete options</h3>
+      <p>This format is best when there are a lot of options to choose from. Smaller numbers of options are better presented using <a class="govuk-link" href="#radio-question">radio buttons</a>.</p>
+      <h3 id="autcomplete-formatting" class="govuk-heading-s">Formatting your autocomplete options</h3>
       <p>Your autocomplete options must be uploaded to MoJ Forms in a comma-separated values (CSV) file. This is a plain text format that many applications use for exporting data.</p>
       <p>The easiest way to create your autocomplete options is with a spreadsheet such as Microsoft Excel or Google Sheets. List your options in a column with a heading of 'Text', like this:</p>
       <table>
@@ -219,7 +278,7 @@ order: 3
     <li>there are no blank cells</li>
     </ul>
     <p>Remember to save your options as CSV when you are ready to upload them to your form. (If your application gives you a choice of CSV types, use the standard “Comma-separated Values (.csv)” option.) There is a maximum file size of 1Mb.</p>
-    <h3 id="validation" class="govuk-heading-s">Uploading your autocomplete options</h3>
+    <h3 id="autocomplete-uploading" class="govuk-heading-s">Uploading your autocomplete options</h3>
     <p>To upload your options, open your autocomplete page in edit mode. Click in the question title to show the component menu (...) and select 'Autocomplete options'.</p>
     <img src="/images/autocomplete-editor.png" alt="Screenshot of an autocomplete question being edited in MoJ Forms. The component menu is open and the autocomplete options link is highlighted." class="screenshot-image">
     <p>The page includes a blue warning message to indicate whether any options have been uploaded. After uploading, you won't be able to see your options on the page. You will need to save your changes and test them either in <a class="govuk-link" href="#preview">preview mode</a> or after <a class="govuk-link" href="/testing-and-publishing/#test">publishing to Test</a>.</p>
@@ -256,7 +315,7 @@ order: 3
       <h2 id="validation" class="govuk-heading-m">Validating user answers</h2>
       <p>You can set validation criteria for a range of question types, allowing you to specify things like the length or limits of an answer. When validation is present, the form will check the user's answers before moving to the next page and show an appropriate error if required.</p>
       <p>The full range of options available are shown in this table:</p>
-      <h3 id="validation" class="govuk-heading-s">Table: validation options</h3>
+      <h3 id="validation-options" class="govuk-heading-s">Table: validation options</h3>
       <table style="font-family: Arial, Helvetica, sans-serif; text-align: left; border:1px solid #dee0e2;" border="1">
       <thead>
         <tr>
@@ -307,7 +366,7 @@ order: 3
         <p>In most cases, you won't have to worry about formatting. The page templates include fields for headings, labels and hint text and all you have to do is add your own words.</p>
         <p>Content areas allow you to use markdown to add your own formatting. These are on every content page and can be added to some other page templates as required.</p>
         <p>Markdown is a way of adding formatting to plain text using basic symbols and patterns. With markdown, you can add headings, links, lists, tables and more. For example, to create a bulleted list, you start each item with an asterisk (*). Here is a selection of the most common markdown elements:</p>
-        <h3 id="validation" class="govuk-heading-s">Table: markdown formatting</h3>
+        <h3 id="markdown-formatting" class="govuk-heading-s">Table: markdown formatting</h3>
         <table style="font-family: Arial, Helvetica, sans-serif; text-align: left; border:1px solid #dee0e2;" border="1">
 <thead>
   <tr>
