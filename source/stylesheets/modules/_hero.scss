@@ -138,7 +138,7 @@
 
   @include govuk-media-query($from: tablet) {
     &__body {
-      width: govuk-grid-width(two-thirds);
+      width: 85%;
     }
 
     &__aside-image {
