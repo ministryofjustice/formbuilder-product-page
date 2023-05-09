@@ -144,5 +144,9 @@
     &__aside-image {
       width: govuk-grid-width(one-third);
     }
+
+    &:not(:has(.hero__aside-image)) &__body {
+      width: 85%;
+    }
   }
 }
