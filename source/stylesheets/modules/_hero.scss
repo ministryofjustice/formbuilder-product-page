@@ -138,11 +138,15 @@
 
   @include govuk-media-query($from: tablet) {
     &__body {
-      width: 85%;
+      width: govuk-grid-width(two-thirds);
     }
 
     &__aside-image {
       width: govuk-grid-width(one-third);
+    }
+
+    &:not(:has(.hero__aside-image)) &__body {
+      width: 85%;
     }
   }
 }
