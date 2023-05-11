@@ -13,9 +13,10 @@ order: 7
       <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
-        <p>Change your form’s name, enable Google Analytics and configure how you receive information when users submit their forms.</p>
+        <p>Enable optional features such as save for later and Google Analytics and configure how you receive information when users submit their forms.</p>
         <p><a class="govuk-link" href="#change-name">Changing your form's name</a><br>
         <a class="govuk-link" href="#google-analytics">Setting up Google Analytics</a><br>
+        <a class="govuk-link" href="#save-for-later">Enabling users to save their progress on a form</a><br>
         <a class="govuk-link" href="#email-settings">Collecting information by email</a><br>
         <a class="govuk-link" href="#confirmation-email">Sending users a confirmation email</a><br>
         <a class="govuk-link" href="#references">Providing users with reference numbers</a><br>
@@ -54,6 +55,30 @@ order: 7
       <p>The cookies page is temporarily uneditable while we make some changes to how our footer pages work. If you plan to use Google Tag Manager for any marketing or analytics tools other than Universal Analytics or Google Analytics 4, <a class="govuk-link" href="/contact/">contact us to discuss it</a>.</p>
       <p><a class="govuk-link" href="#top">Back to top</a></p>
     </section>
+    <section class="content-section content-section--with-top-border">
+    <h2 id="save-for-later" class="govuk-heading-m">Enabling users to save their progress on a form</h2>
+    <p>If you think users might not be able to complete your form in one sitting, you can enable 'save for later'. This feature lets users save their progress on a form and return to complete it another time.</p>
+    <p>Save for later is a good option for forms that:</p>
+    <ul>
+    <li>are long or complex</li>
+    <li>include questions that users might want time to think about</li>
+    <li>ask for information that users might not have immediately to hand</li>
+    </ul>
+    <p>How it works:
+    <ul>You switch on save for later in your form's settings and publish your form for the change to take effect.</li>
+    <li>This adds a secondary save button to the bottom of every question page of your form.</li>
+    <li>When a user saves their progress, they are asked to enter an email address and a security answer.</li>
+    <li>We then email the user a one-off link that they can use to come back to the form and continue.</li>
+    <li>The user needs to enter the security answer to retrieve their saved answers. They have 3 attempts to get it right.</li>
+    <li>The link is valid for 28 days and will work only once. There is no recovery option if the user loses the link or forgets their security answer.</li>
+    <li>Users can save their progress on a form as many times as they like by generating a new link each time.</li>
+    </ul>
+    <p>All user data is encrypted, stored securely and deleted after 28 days.</p>
+    <img src="/images/save-for-later.png" width="100%" alt="Two screenshots are shown alongside each other to illustrate how users can save their progress on a form. The first screenshot is a question page titled Why are you getting in touch? Beneath the question there are 2 buttons - one labelled Continue and another labelled Save for later. A blue arrow suggests that a user would go from this page to the next screenshot which is a page titled Save for later. This page asks the user to enter their email address and set a security answer in order to continue with saving.">
+    <p>To enable save and return, go to: Settings > Save for later</p>
+    <p>Check 'Enable save for later', save and publish your form for the setting to take effect.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+  </section>
       <section class="content-section content-section--with-top-border">
         <h2 id="email-settings" class="govuk-heading-m">Collecting information by email</h2>
         <p>When a user completes your form, you can have their form submission emailed to you.</p>
@@ -140,7 +165,7 @@ order: 7
     <section class="content-section content-section--with-top-border">
       <h2 id="payment-links" class="govuk-heading-m">Taking payments through GOV.UK Pay</h2>
       <p>If you have a GOV.UK Pay account and are set up to take payments through a payment link, MoJ Forms can help you join up form submissions with payments.</p>
-      <img src="/images/confirmation-page-to-gov-pay.png" alt="Two screenshots are shown alongside each other to illustrate how MoJ Forms can join up with GOV.UK Pay. The first screenshot is the confirmation page of a form titled Apply for a licence. A large blue box includes the words 'you still need to pay' and a reference number. Beneath the box is a button labelled continue to pay. A blue arrow suggests that a user would go from this page to the next screenshot which is a GOV.UK payment page. It is titled Pay for a licence application and includes the same reference number shown on the first screenshot." class="screenshot-image">
+      <img src="/images/confirmation-page-to-gov-pay.png" width="100%" alt="Two screenshots are shown alongside each other to illustrate how MoJ Forms can join up with GOV.UK Pay. The first screenshot is the confirmation page of a form titled Apply for a licence. A large blue box includes the words 'you still need to pay' and a reference number. Beneath the box is a button labelled continue to pay. A blue arrow suggests that a user would go from this page to the next screenshot which is a GOV.UK payment page. It is titled Pay for a licence application and includes the same reference number shown on the first screenshot.">
       <p>How it works:</p>
       <ul>
       <li>In GOV.UK Pay, you <a class="govuk-link" href="https://www.payments.service.gov.uk/govuk-payment-pages/">create a payment link</a>.</li>
