@@ -299,6 +299,12 @@ order: 3
         <li>rich text (.rtf)</li>
         </ul>
         <p>The component allows users to upload only one file per page. To collect additional files, you will need to add extra file upload pages.</p>
+        <p>MoJ Forms may alter files names during the upload process to:</p>
+        <ul>
+        <li>remove any unsupported special characters such as ? and *</li>
+        <li>remove any part of a file name that comes before a \ - for example, report\version1.doc would be renamed to version1.doc</li>
+        <li>differentiate any identically named files with a number - for example, instead of several documents all named document.xls, you would receive document.xls, document-(1).xls, document-(2).xls and so on</li>
+        </ul>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
