@@ -14,7 +14,7 @@ order: 3
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
         <p>Learn how to start building your first form.</p>
-        <p><a class="govuk-link" href="#form-name">Your form's name and URL</a><br>
+        <p><a class="govuk-link" href="#form-name">Naming your form</a><br>
         <a class="govuk-link" href="#start-page">Starting pages</a><br>
         <a class="govuk-link" href="#preview">Previewing your pages<a/><br>
         <a class="govuk-link" href="#adding-pages">Adding pages</a><br>
@@ -29,16 +29,33 @@ order: 3
         <a class="govuk-link" href="#validation">Validating user answers</a><br>
         <a class="govuk-link" href="#markdown">Formatting content with markdown</a></p>
       <section class="content-section content-section--with-top-border">
-        <h2 id="form-name" class="govuk-heading-m">Your form's name and URL</h2>
+        <h2 id="form-name" class="govuk-heading-m">Naming your form</h2>
+        
+        
+        
         <p>When you create a new form, you need to give it a name.</p>
         <p>This name is:</p>
         <ul>
         <li>what your form will be listed as in the MoJ Forms editor</li>
-        <li>the title that will appear on your form to users</li>
-        <li>used in your form's URL - for example, a name of Apply for a dog licence will produce a form URL of <u>https://apply-for-a-dog-licence.form.service.gov.uk</u></li>
+        <li>the title that will appear in your form's header</li>
+        <li>used to create your form's default URL</u></li>
         </ul>
-        <p>The title can contain lowercase and uppercase letters, hyphens and apostrophes. No other special characters are allowed. The name cannot start with a number but you could write it out - for example, 'two' instead of '2'.</p>
-        <p>We are making some changes in this area and it is not currently possible to change your form's name in the editor. <a href="/contact">Contact us</a> whenever you want to change the name</a>.</p>
+        <p>A name can be up to 255 characters, including spaces.</p>
+        <p>Your form's name is important. It affects how people find your form (through search, for example) and helps them understand what it's for and if it's right for them.<p>
+        <p>A good name should:</p>
+        <ul>
+        <li>describe a task, not a team or department</li>
+        <li>use the same words your users would choose</li>
+        <li>start with an action, such as "Get help with..." or "Apply for..."</li> 
+        <li>be in sentence case (only capitalise the first word and proper nouns)</li>
+        </ul>
+        <p>Examples of government service names include:</p>
+        <ul>
+        <li>Register to vote</li>
+        <li>Get help with court fees</li>
+        <li>Renew your passport</li>
+        </ul>
+        <p>Don't worry if you are not sure what to call it at this stage. You will be able to <a class="govuk-link" href="/settings/#change-name">change your name and URL</a> in settings later.</p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">

@@ -14,7 +14,7 @@ order: 7
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
         <p>Enable optional features such as save for later and Google Analytics and configure how you receive information when users submit their forms.</p>
-        <p><a class="govuk-link" href="#change-name">Changing your form's name</a><br>
+        <p><a class="govuk-link" href="#change-name">Changing your form's name and URL</a><br>
         <a class="govuk-link" href="#google-analytics">Setting up Google Analytics</a><br>
         <a class="govuk-link" href="#save-for-later">Enabling users to save their progress on a form</a><br>
         <a class="govuk-link" href="#email-settings">Collecting information by email</a><br>
@@ -22,8 +22,25 @@ order: 7
         <a class="govuk-link" href="#references">Providing users with reference numbers</a><br>
         <a class="govuk-link" href="#payment-links">Taking payments through GOV.UK Pay</a></p>
         <section class="content-section content-section--with-top-border">
-        <h2 id="change-name" class="govuk-heading-m">Changing your form's name</h2>
-        <p>We are making some changes to the form settings and it is not currently possible to change your form’s name in the editor. <a class="govuk-link" href="/contact">Contact us</a> whenever you want to change the name.</p>
+        <h2 id="change-name" class="govuk-heading-m">Changing your form's name and URL</h2>
+        <p>You can review and update both your form's name and URL in settings. Go to: Settings > Form name and URL</p>
+        <p>You can change your form's name at any time but you can only change the URL up until you have published your form to Live. After this point, the option is no longer available in settings. This is because changing a Live form's URL can cause problems for users if they have bookmarked the old form or are using an old link. If you need to change a Live form's URL, <a class="govuk-link" href="/contact">contact us to discuss it</a>.</p>
+        <p>You will need to publish your form for any changes to take effect. If you change the URL of a form that has already been published to Test, any links to the old URL will stop working after you publish the new URL.</p>
+        <h3 class="govuk-heading-s">Things to consider when changing the name</h3>
+        <p>The new name should continue to follow the guidelines for <a class="govuk-link" href="/building-and-editing/#form-name">naming your form</a>.</p>
+        <p>You can change your name independently of the URL but it's best to ensure your name and URL are closely aligned.</p>
+        <p>You should also ensure that the title of your start page is aligned with the new name.</p>
+        <h3 class="govuk-heading-s">Things to consider when changing the URL</h3>
+        <p>Your form is given a URL when you first create it, based on your form name. All forms sit on the same domain and you are only able to change the first part of the URL (the subdomain). For example, the subdomain in this URL is 'contact-us':</p>
+        <p><u>https://<strong>contact-us</strong>.form.service.justice.gov.uk</u></p>
+        <p>The subdomain selected by MoJ Forms may be shortened and simplified because of URL restrictions. It must:</p>
+        </ul>
+        <li>be a maximum of 57 characters</li>
+        <li>include only lower case letters</li>
+        <li>not include spaces or special characters except hyphens</li>
+        <li>not start with a number</li>
+        </ul>
+        <p>In addition to these restrictions, your URL should be easy to read and closely resemble your form's name and start page title. Words should be separated with hyphens. It's OK to cut small words like articles and conjunctions if you are short of space and the meaning is still clear.</p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
