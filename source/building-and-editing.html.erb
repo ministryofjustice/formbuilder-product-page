@@ -242,7 +242,7 @@ order: 3
         <p>See the section on <a class="govuk-link" href="#autocomplete">presenting users with a long list of options</a> to learn more about how this question type works.</p>
         <h3 id="file-question" class="govuk-heading-s">File upload</h3>
         <img src="/images/file-upload-question.png" alt="An example of a file upload question. The title reads upload any evidence in support of your claim. The hint text reads maximum file size 7Mb." class="screenshot-image">
-        <p>Use the file upload question type to ask a user to attach a file to their form. A user can attach one file per page up to 7MB in size.</p>
+        <p>Use the file upload question type to ask a user to attach a file to their form. A user can attach up to 10 files of up to 7MB each per page.</p>
         See the section on <a class="govuk-link" href="#file-upload">asking users to submit a file</a> to learn more about how this question type works.</p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
@@ -304,7 +304,15 @@ order: 3
     </section> 
     <section class="content-section content-section--with-top-border">
         <h2 id="file-upload" class="govuk-heading-m">Asking users to submit a file</h2>
-        <p>The file upload question type allows you to ask users to attach a file to their form. It supports the following file formats up to 7MB in size:</p>
+        <p>The file upload question type allows you to ask users to attach files to their form.</p>
+        <p>By default, the question allows the user to attach only 1 file per page but you can increase this number up to a maximum of 10. This can be useful if:</p>
+        <ul>
+        <li>you don't know how many files the user might want to upload</li>
+        <li>the user is likely to have several files of the same type, such as receipts or proofs of ID</li>
+        </ul>
+        <p>In many cases, it may still be better to ask for files over several different pages, rather than all in one go. This approach enables you to be more explicit with the user about what they need to provide and ensure they provide all the required files.</p>
+        <p>To set a maximum number of files, click in the question title to highlight the component settings button (...) and select "Number of files…"</p>
+        <p>MoJ Forms supports the following file formats up to 7MB in size:</p>
         <ul>
         <li>portable document format (.pdf)</li>
         <li>comma-separated values (.csv)</li>
@@ -315,8 +323,7 @@ order: 3
         <li>plain text (.txt)</li>
         <li>rich text (.rtf)</li>
         </ul>
-        <p>The component allows users to upload only one file per page. To collect additional files, you will need to add extra file upload pages.</p>
-        <p>MoJ Forms may alter files names during the upload process to:</p>
+        <p>File names may be altered during the upload process to:</p>
         <ul>
         <li>remove any unsupported special characters such as ? and *</li>
         <li>remove any part of a file name that comes before a \ - for example, report\version1.doc would be renamed to version1.doc</li>
