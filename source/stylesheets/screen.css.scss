@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 $govuk-assets-path: "/assets/govuk/assets/";
+$govuk-font-family: Arial, Helvetica, sans-serif;
 
 @import "govuk/all";
 
@@ -34,54 +35,36 @@ $govuk-assets-path: "/assets/govuk/assets/";
   border-top: 1px #dee0e2 solid;
 }
 
-.hero__title {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.hero__description {
-  font-family: Arial, Helvetica, sans-serif;
-}
-.govuk-header__navigation-item--active a:link, .govuk-header__navigation-item--active a:hover, .govuk-header__navigation-item--active a:visited
+.govuk-header__navigation-item--active a:link, 
+.govuk-header__navigation-item--active a:hover, 
+.govuk-header__navigation-item--active a:visited
 {
-  font-family: Arial, Helvetica, sans-serif; color:#FFF;
-}
-
-.govuk-header__link {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.govuk-heading-l {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.govuk-heading-m {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.govuk-heading-s {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.govuk-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.govuk-list {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.govuk-button {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.govuk-footer {
-  font-family: Arial, Helvetica, sans-serif;
+ color:#FFF;
 }
 
 table, th, td {
-  font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   border: 1px solid #dee0e2;
   vertical-align: top;
   padding: 15px;
 }
+
+.govuk-heading-xl,
+.govuk-heading-l,
+.govuk-heading-m,
+.govuk-body h2,
+.govuk-body h3,
+{
+  max-width: 60ch;
+  text-wrap: pretty;
+}
+
+.govuk-heading-s,
+.govuk-body h4,
+p.govuk-body, 
+.govuk-body p,
+.govuk-body li,
+.govuk-list {
+  max-width: 75ch;
+}
+

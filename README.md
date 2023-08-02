@@ -23,7 +23,7 @@ following commands from the root of this project:
 
 Deployments are handled by [CircleCI](https://github.com/ministryofjustice/formbuilder-product-page/blob/master/.circleci/config.yml).
 
-Any branch except master will deploy to the staging environment. This can be visited [here](https://formbuilder-product-page-staging.apps.live-1.cloud-platform.service.justice.gov.uk/)
+Any branch except master will deploy to the staging environment. This can be visited [here](https://formbuilder-product-page-staging.apps.live.cloud-platform.service.justice.gov.uk/)
 
 Once a change is pushed or merged to master then production will automatically be deployed.
 
