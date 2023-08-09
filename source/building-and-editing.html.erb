@@ -16,6 +16,7 @@ order: 3
         <p>Learn how to start building your first form.</p>
         <p><a class="govuk-link" href="#form-name">Naming your form</a><br>
         <a class="govuk-link" href="#start-page">Starting pages</a><br>
+        <a class="govuk-link" href="#footer">Footer pages</a><br>
         <a class="govuk-link" href="#preview">Previewing your pages<a/><br>
         <a class="govuk-link" href="#adding-pages">Adding pages</a><br>
         <a class="govuk-link" href="#moving-pages">Moving pages</a><br>
@@ -27,12 +28,10 @@ order: 3
         <a class="govuk-link" href="#file-upload">Asking users to submit a file</a><br>
         <a class="govuk-link" href="#optional">Making a question optional</a><br>
         <a class="govuk-link" href="#validation">Validating user answers</a><br>
-        <a class="govuk-link" href="#markdown">Formatting content with markdown</a></p>
+        <a class="govuk-link" href="#markdown">Formatting content with markdown</a><br>
+        <a class="govuk-link" href="#welsh-translation">Translating a form into Welsh</a></p>
       <section class="content-section content-section--with-top-border">
         <h2 id="form-name" class="govuk-heading-m">Naming your form</h2>
-        
-        
-        
         <p>When you create a new form, you need to give it a name.</p>
         <p>This name is:</p>
         <ul>
@@ -67,6 +66,7 @@ order: 3
         <li>check answers page</li>
         <li>confirmation page</li>
         </ul>
+        <p>The <a class="govuk-link" href="#footer">form footer</a> section also contains some pages which are required for your form and linked from your form's footer section.</p>
         <img src="/images/start-pages.png" alt="A new form is created with a start page, check answers page and confirmation page." class="screenshot-image">
         <p>The start page is your form's home page and cannot be deleted. To find out more about what should go on your start page, read the <a class="govuk-link" href="https://design-system.service.gov.uk/patterns/start-pages/">Design System guidance</a>.</p>
         <p>All your form's question pages should come after the start page and before the check answers page.</p>
@@ -79,6 +79,19 @@ order: 3
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
+      <h2 id="footer" class="govuk-heading-m">Footer pages</h2>
+      <p>Your form contains 3 pages that are linked from the footer section of every page of your form. These can be seen in the flow view under the heading of "form footer". They are:</p>
+      <ul>
+      <li>Cookies</li>
+      <li>Privacy</li>
+      <li>Accessibility</li>
+      </ul>
+      <p>These pages are required for every form so cannot be deleted or moved.</p>
+      <p>The cookies page doesn't require any input from you so can't be edited. However, the privacy and accessibility pages contain boilerplate copy with sections in square brackets - [like this] - that you need to fill in. the page names are highlighted in red to show that they are incomplete. The warnings will disappear when the sections have all been completed.<p>
+      Refer to the sections on <a class="govuk-link" href="/accessibility">accessibility</a> and <a class="govuk-link" href="/data-protection">data protection</a> for help completing these pages.</p>
+      <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </section>
+    <section class="content-section content-section--with-top-border">
       <h2 id="preview" class="govuk-heading-m">Previewing your form</h2>
       <p>The flow view includes a 'Preview' button in the top right-hand corner.</p>
       <p>Previewing your form is a quick way to check how the form will look and work without needing to publish it. Most things in preview will behave identically to the final published form but there are a few limitations:</p> 
@@ -456,7 +469,25 @@ order: 3
 <p>For the full range of markdown options available, see this <a class="govuk-link" href="https://www.markdownguide.org">markdown guide</a>.</p>
 <p><a class="govuk-link" href="#top">Back to top</a></p>
 </section>
-
+<section class="content-section content-section--with-top-border">
+        <h2 id="welsh-translation" class="govuk-heading-m">Translating a form into Welsh</h2>
+        <p>It's possible to create a separate version of a form for Welsh-language users, although the process is currently quite manual.</p>
+        <p>You will need to:</p>
+        <ul>
+        <li><a class="govuk-link" href="/contact">contact us</a> to create a copy of your form</li>
+        <li>arrange the translation yourself</li>
+        <li>update the copy of your form with the translated text</li>
+        <li>add links to the start pages of the English and Welsh forms allowing users to switch between languages</li>
+        <li>keep both versions in sync if you make any changes</li>
+        </ul>
+        <p>The current limitations of this approach are:</p>
+        <ul>
+        <li>the 2 forms are completely separate and users will be unable to switch between the languages during completion</li>
+        <li>any wording present in the form's template, such as button text and error messages, will not be translated</li>
+        </ul>
+        <p>We plan to explore and improve the way that MoJ Forms supports translations in the future.</p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
+      </section>
         <!-- END CONTENT -->
       </div>
     </div>
