@@ -13,7 +13,8 @@ order: 3
       <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
-        <p>Learn how to start building your first form.</p>
+        <p class="govuk-body-l">Learn how to start building your first form.</p>
+        <h2 class="govuk-heading-m">Contents</h2> 
         <p><a class="govuk-link" href="#form-name">Naming your form</a><br>
         <a class="govuk-link" href="#start-page">Starting pages</a><br>
         <a class="govuk-link" href="#footer">Footer pages</a><br>
@@ -466,12 +467,39 @@ order: 3
   </tr>
   <tr>
     <td>Call to action</td>
-    <td>Put $CTA on the lines before and after the text you want in the box</td>
+    <td>Put $CTA on the lines before and after the text you want in the box.</td>
     <td>$CTA<br>This markdown creates a tinted box. You can use it to highlight important links and information.<br>$CTA</td>
+  </tr>
+  <tr>
+    <td>Inset text (information callout)</td>
+    <td>Put ^ before and after the text you want to inset.</td>
+    <td>^This indents text and can be used to highlight useful information.^</td>
+  </tr>
+  <tr>
+    <td>Warning text (warning callout)</td>
+    <td>Put % before and after the text you want in the warning.</td>
+    <td>%This adds a warning icon and can be used to highlight something important.%</td>
+  </tr>
+  <tr>
+    <td>Contacts</td>
+    <td>Put $C on the lines before and after your contact details.</td>
+    <td>$C<br>Email: contact.us@team.gov.uk<br>
+    Telephone:01234 555666<br>
+    Monday to Friday, 8am to 5pm
+    <br>$C</td>
+  </tr>
+  <tr>
+    <td>Addresses</td>
+    <td>Put $A on the lines before and after your address.</td>
+    <td>$A<br>
+    Ministry of Justice<br>
+    102 Petty France<br>
+    London<br>
+    SW1H 9AJ<br>
+    $A</td>
   </tr>
 </tbody>
 </table>
-<p>For the full range of markdown options available, see this <a class="govuk-link" href="https://www.markdownguide.org">markdown guide</a>.</p>
 <p><a class="govuk-link" href="#top">Back to top</a></p>
 </section>
 <section class="content-section content-section--with-top-border">
