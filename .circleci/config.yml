@@ -2,6 +2,8 @@ version: 2.1
 orbs:
   ruby: circleci/ruby@2.0.0
   kubernetes: circleci/kubernetes@0.12.0
+  aws-cli: circleci/aws-cli@4.0.0
+  aws-ecr: circleci/aws-ecr@8.2.1 
 
 jobs:
   build:
@@ -33,6 +35,9 @@ jobs:
       - image: 'cimg/ruby:3.0.5-node'
     steps:
       - checkout
+      - aws-cli/setup:
+          role_arn: $ECR_ROLE_TO_ASSUME_STAGING
+          region: $ECR_REGION_STAGING
       - setup_remote_docker:
           docker_layer_caching: true
       - ruby/install-deps
@@ -44,6 +49,9 @@ jobs:
       - image: 'cimg/ruby:3.0.5-node'
     steps:
       - checkout
+      - aws-cli/setup:
+          role_arn: $ECR_ROLE_TO_ASSUME_STAGING
+          region: $ECR_REGION_STAGING
       - setup_remote_docker:
           docker_layer_caching: true
       - ruby/install-deps
