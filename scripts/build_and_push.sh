@@ -34,6 +34,7 @@ if [ $CIRCLE_BRANCH == "master" ] ;  then
   echo "*** Exporting environment variables PROD ***"
   export AWS_DEFAULT_REGION=eu-west-2
   export ECR_REPO_URL="${AWS_ECR_REGISTRY_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/formbuilder/formbuilder-product-page-prod"
+  ECR_ROLE_TO_ASSUME=${ECR_ROLE_TO_ASSUME_PROD}
   echo "*** Done ***"
   echo "**********************************"
   echo
@@ -52,6 +53,7 @@ else
   echo "*** Exporting environment variables STAGING ***"
   export AWS_DEFAULT_REGION=eu-west-2
   export ECR_REPO_URL="${AWS_ECR_REGISTRY_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/formbuilder/formbuilder-product-page-staging"
+  ECR_ROLE_TO_ASSUME=${ECR_ROLE_TO_ASSUME_STAGING}
   echo "*** Done ***"
   echo "**********************************"
   echo
@@ -94,10 +96,11 @@ echo "**********************************"
 echo
 
 echo  '*** logging in to ECR... ***'
-login=$(AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION} AWS_IAM_ROLE_ARN=${ECR_ROLE_TO_ASSUME_STAGING} aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ECR_REGISTRY_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com)
+login=$(AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION} AWS_IAM_ROLE_ARN=${ECR_ROLE_TO_ASSUME} aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ECR_REGISTRY_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com)
 echo $login
 echo "**********************************" 
 echo
+
 echo '*** Pushing docker image... ***'
 out=$(docker push ${ECR_REPO_URL}:latest)
 echo $out
