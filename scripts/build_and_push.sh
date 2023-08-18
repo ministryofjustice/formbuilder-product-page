@@ -33,7 +33,7 @@ if [ $CIRCLE_BRANCH == "master" ] ;  then
   echo
   echo "*** Exporting environment variables PROD ***"
   export AWS_DEFAULT_REGION=eu-west-2
-  export ECR_REPO_URL="${AWS_ECR_REGISTRY_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/formbuilder/formbuilder-product-page-prod"
+  export ECR_REPO_URL="${AWS_ECR_REGISTRY_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/formbuilder/formbuilder-product-page"
   ECR_ROLE_TO_ASSUME=${ECR_ROLE_TO_ASSUME_PROD}
   echo "*** Done ***"
   echo "**********************************"
