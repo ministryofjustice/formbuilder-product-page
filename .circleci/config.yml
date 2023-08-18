@@ -50,8 +50,8 @@ jobs:
     steps:
       - checkout
       - aws-cli/setup:
-          role_arn: $ECR_ROLE_TO_ASSUME_STAGING
-          region: $ECR_REGION_STAGING
+          role_arn: $ECR_ROLE_TO_ASSUME_PROD
+          region: $ECR_REGION_PROD
       - setup_remote_docker:
           docker_layer_caching: true
       - ruby/install-deps
