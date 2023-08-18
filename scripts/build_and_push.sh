@@ -33,9 +33,7 @@ if [ $CIRCLE_BRANCH == "master" ] ;  then
   echo
   echo "*** Exporting environment variables PROD ***"
   export AWS_DEFAULT_REGION=eu-west-2
-  export AWS_ACCESS_KEY_ID=$(kubectl get secrets -n ${EKS_NAMESPACE_PROD} ${ECR_CREDENTIALS_SECRET_PROD} -o json | jq -r '.data["access_key"]' | base64 -d)
-  export AWS_SECRET_ACCESS_KEY=$(kubectl get secrets -n ${EKS_NAMESPACE_PROD} ${ECR_CREDENTIALS_SECRET_PROD} -o json | jq -r '.data["secret_access_key"]' | base64 -d)
-  export ECR_REPO_URL=$(kubectl get secrets -n ${EKS_NAMESPACE_PROD} ${ECR_CREDENTIALS_SECRET_PROD} -o json | jq -r '.data["repo_url"]' | base64 -d)
+  export ECR_REPO_URL="${AWS_ECR_REGISTRY_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/formbuilder/formbuilder-product-page-prod"
   echo "*** Done ***"
   echo "**********************************"
   echo
@@ -53,9 +51,7 @@ else
   echo
   echo "*** Exporting environment variables STAGING ***"
   export AWS_DEFAULT_REGION=eu-west-2
-  export AWS_ACCESS_KEY_ID=$(kubectl get secrets -n ${EKS_NAMESPACE_STAGING} ${ECR_CREDENTIALS_SECRET_STAGING} -o json | jq -r '.data["access_key"]' | base64 -d)
-  export AWS_SECRET_ACCESS_KEY=$(kubectl get secrets -n ${EKS_NAMESPACE_STAGING} ${ECR_CREDENTIALS_SECRET_STAGING} -o json | jq -r '.data["secret_access_key"]' | base64 -d)
-  export ECR_REPO_URL=$(kubectl get secrets -n ${EKS_NAMESPACE_STAGING} ${ECR_CREDENTIALS_SECRET_STAGING} -o json | jq -r '.data["repo_url"]' | base64 -d)
+  export ECR_REPO_URL="${AWS_ECR_REGISTRY_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/formbuilder/formbuilder-product-page-staging"
   echo "*** Done ***"
   echo "**********************************"
   echo
@@ -97,12 +93,11 @@ echo $out
 echo "**********************************"
 echo
 
-echo  '*** Building docker image... ***'
-login="$(AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION} AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} aws ecr get-login --no-include-email)"
-${login}
-echo "**********************************"
+echo  '*** logging in to ECR... ***'
+login=$(AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION} AWS_IAM_ROLE_ARN=${ECR_ROLE_TO_ASSUME_STAGING} aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ECR_REGISTRY_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com)
+echo $login
+echo "**********************************" 
 echo
-
 echo '*** Pushing docker image... ***'
 out=$(docker push ${ECR_REPO_URL}:latest)
 echo $out
