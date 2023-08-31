@@ -13,7 +13,8 @@ order: 7
       <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
         <!-- START CONTENT -->
-        <p>Enable optional features such as save for later and Google Analytics and configure how you receive information when users submit their forms.</p>
+        <p class="govuk-body-l">Enable optional features such as save for later and Google Analytics and configure how you receive information when users submit their forms.</p>
+        <h2 class="govuk-heading-m">Contents</h2>
         <p><a class="govuk-link" href="#change-name">Changing your form's name and URL</a><br>
         <a class="govuk-link" href="#google-analytics">Setting up Google Analytics</a><br>
         <a class="govuk-link" href="#save-for-later">Enabling users to save their progress on a form</a><br>
@@ -156,6 +157,13 @@ order: 7
       <li>Message - the body text of the email</li>
       </ul>
       <p>The user's answers will be inserted into the email beneath the message. (You won't see this in the settings page.) They will also be attached automatically in a PDF. The message does not currently support any rich text formatting such as headings or bullet points.</p>
+      <p>When you enable confirmation email, MoJ Forms automatically adds disclaimers to your form to let users know how their email address will be used. These disclaimers appear:</p>
+      <ul>
+      <li>directly beneath the question used to capture the user's email address</li>
+      <li>on the check answers page, before the submit button</li>
+      </ul>
+      <img src="/images/confirmation-email-disclaimers.jpg" width="100%" alt="Two screenshots show the places where disclaimers are added automatically to forms that send confirmation emails. In one, a question page is titled Do you want to receive a confirmation email? with a disclaimer that reads We will use this address to send you a confirmation email with a copy of your answers. The second screenshot shows the check answers page with a disclaimer and submit button.">
+      <p>These messages are not currently editable. If you plan on using the email address for other purposes, you can still mention this in the question's hint text.</p>
       <p><a class="govuk-link" href="#top">Back to top</a></p>
     </section>
     <section class="content-section content-section--with-top-border">
