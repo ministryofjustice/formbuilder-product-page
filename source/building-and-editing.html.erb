@@ -30,6 +30,7 @@ order: 3
         <a class="govuk-link" href="#optional">Making a question optional</a><br>
         <a class="govuk-link" href="#validation">Validating user answers</a><br>
         <a class="govuk-link" href="#markdown">Formatting content with markdown</a><br>
+        <a class="govuk-link" href="#visibility">Targeting content with visibility</a><br>
         <a class="govuk-link" href="#welsh-translation">Translating a form into Welsh</a></p>
       <section class="content-section content-section--with-top-border">
         <h2 id="form-name" class="govuk-heading-m">Naming your form</h2>
@@ -503,6 +504,38 @@ order: 3
 </table>
 <p><a class="govuk-link" href="#top">Back to top</a></p>
 </section>
+<section class="content-section content-section--with-top-border">
+        <h2 id="visibility" class="govuk-heading-m">Targeting content with visibility</h2>
+        <p>Visibility is what we call being able to show users different blocks of content based on their previous answers. With visibility, you can change or hide some of the content on the page for different users.</p>
+        <p>It's also a really powerful tool for creating <a class="govuk=link" href="https://gds.blog.gov.uk/2012/02/16/smart-answers-are-smart/">'smart answer' services</a> where you ask the user a series of questions and provide information tailored to their answers. Visibility allows you to use a single information page to serve dozens of different combinations of answers.</p>
+        <p>Visibility is a setting on all content areas - the text boxes that allow you to add paragraphs of content and use markdown formatting. These are on content pages, exit pages, the confirmation page and a number of other <a class="govuk-link" href="#page-type">page templates</a>.</p>
+        <p>Visibility allows you to set a content area to show:</p>
+        <ul>
+        <li>always (the default setting)</li>
+        <li>never</li>
+        <li>only if…</li>
+        </ul>
+        <p>With "Only if…" you set the conditions under which the content area will show. For example, only show if a user answered yes to a previous question or selected a specific option. It works just like <a class="govuk-link" href="/branching/">branching</a>, only you are creating rules on a page rather than between pages. And as with branching, visibility rules can only be based on radio button or checkbox questions at the moment.</p>
+        <h3 class="govuk-heading-s">Setting a content area's visibility</h3>
+        <p>To set the visibility of a content area, click in the content area to highlight the component settings button (...) and click to open the menu. Select "Show if…" to open the settings window and choose between the 3 options (show always, only if… or never).</p>
+        <p>When you select "only if…", the window will expand to allow you to input your conditions.</p>
+        <p>A condition consists of:</p>
+        <ul>
+        <li>the question that the visibility will be based on</li>
+        <li>an operator - such as 'is' or 'is not'</li>
+        <li>the user's answer</li>
+        </ul>
+        <p>For example, a condition could be:</p>
+        <ul>
+        <li>question - what is your favourite colour?</li>
+        <li>operator - is</li>
+        <li>answer - red</li>
+        </ul>
+        <p>In this example, the content area would only show to users who said red was their favourite colour.</p>
+        <p>A content area can have as many conditions as you need.</p>
+        <p>A page will show all content areas in the MoJ Forms editor and when you preview the individual page, regardless of visibility settings. That's because you need the relevant answers to previous questions for the settings to apply. To check how a page will appear to users, you will need to start your form from the beginning, using either the <a class="govuk-link" href="#preview">“preview form” feature or when published to Test.</p>
+        <p><a class="govuk-link" href="#top">Back to top</a></p>
+      </section>
 <section class="content-section content-section--with-top-border">
         <h2 id="welsh-translation" class="govuk-heading-m">Translating a form into Welsh</h2>
         <p>It's possible to create a separate version of a form for Welsh-language users, although the process is currently quite manual.</p>
