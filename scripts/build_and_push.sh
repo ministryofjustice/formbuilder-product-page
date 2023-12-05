@@ -59,22 +59,6 @@ else
   echo
 fi
 
-echo
-echo "*** npm install ***"
-npm install
-echo "**********************************"
-echo
-echo "*** install bundler correct version and run ***"
-npm install
-sudo gem install bundler -v 2.1.4
-bundle install
-echo "**********************************"
-echo
-echo "*** Build Middleman site ***"
-bundle exec middleman build
-echo "**********************************"
-echo
-
 if [ "$ENVIRONMENT" == "staging" ]; then
   echo '*** Adding robots file to staging... ***'
   cp ./deploy/templates/staging_robots.txt ./build/robots.txt

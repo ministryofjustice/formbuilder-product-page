@@ -14,8 +14,12 @@ jobs:
       - setup_remote_docker
       - ruby/install-deps
       - run:
-          name: test build site
+          name: build site
           command: bash build.sh
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
   test:
     docker:
       - image: 'cimg/ruby:3.2.2-node'
@@ -32,7 +36,7 @@ jobs:
             --empty-alt-ignore --disable-external
   build_and_push_staging:
     docker:
-      - image: 'cimg/ruby:3.2.2-node'
+      - image: 'cimg/base:current'
     steps:
       - checkout
       - aws-cli/setup:
@@ -40,13 +44,14 @@ jobs:
           region: $ECR_REGION_STAGING
       - setup_remote_docker:
           docker_layer_caching: true
-      - ruby/install-deps
+      - attach_workspace:
+          at: .
       - run:
           name: Build and Push
           command: bash scripts/build_and_push.sh
   build_and_push_prod:
     docker:
-      - image: 'cimg/ruby:3.2.2-node'
+      - image: 'cimg/base:current'
     steps:
       - checkout
       - aws-cli/setup:
@@ -54,7 +59,8 @@ jobs:
           region: $ECR_REGION_PROD
       - setup_remote_docker:
           docker_layer_caching: true
-      - ruby/install-deps
+      - attach_workspace:
+          at: .
       - run:
           name: Build and Push
           command: bash scripts/build_and_push.sh
