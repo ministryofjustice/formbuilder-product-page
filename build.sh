@@ -15,7 +15,9 @@ fi
 echo "**********************************"
 echo
 echo "*** Bundle Install ***"
-bundle install --path=.gems --binstubs=.gem-bin
+bundle config set --local path .gems
+bundle config set --local bin .gem-bin
+bundle install --jobs 5 --retry 3
 echo "**********************************"
 echo
 echo "*** NPM Install ***"

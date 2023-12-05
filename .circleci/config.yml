@@ -8,7 +8,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: 'cimg/ruby:3.0.5-node'
+      - image: 'cimg/ruby:3.2.2-node'
     steps:
       - checkout
       - setup_remote_docker
@@ -18,7 +18,7 @@ jobs:
           command: bash build.sh
   test:
     docker:
-      - image: 'cimg/ruby:3.0.5-node'
+      - image: 'cimg/ruby:3.2.2-node'
     steps:
       - checkout
       - ruby/install-deps
@@ -32,7 +32,7 @@ jobs:
             --empty-alt-ignore --disable-external
   build_and_push_staging:
     docker:
-      - image: 'cimg/ruby:3.0.5-node'
+      - image: 'cimg/ruby:3.2.2-node'
     steps:
       - checkout
       - aws-cli/setup:
@@ -46,7 +46,7 @@ jobs:
           command: bash scripts/build_and_push.sh
   build_and_push_prod:
     docker:
-      - image: 'cimg/ruby:3.0.5-node'
+      - image: 'cimg/ruby:3.2.2-node'
     steps:
       - checkout
       - aws-cli/setup:
@@ -68,19 +68,10 @@ workflows:
      - build_and_push_staging:
         requires:
           - build
-        filters:
-          branches:
-            ignore:
-              - master
-              - main
      - build_and_push_prod:
         requires:
-          - build
+          - build_and_push_staging
         filters:
-            branches:
-              only:
-                - master
-                - main
-
-
-
+          branches:
+            only:
+              - main

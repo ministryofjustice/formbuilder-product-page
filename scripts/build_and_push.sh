@@ -19,7 +19,7 @@ sudo chmod +x /usr/bin/kubectl
   echo "**********************************"
   echo
 
-if [ $CIRCLE_BRANCH == "master" ] ;  then
+if [ $CIRCLE_BRANCH == "main" ] ;  then
   echo "*** Setting up Kubectl config PROD ***"
   export ENVIRONMENT=prod
   echo ${ENVIRONMENT}
@@ -107,7 +107,7 @@ echo $out
 echo "**********************************"
 echo
 
-if [ $CIRCLE_BRANCH == "master" ] ;  then
+if [ $CIRCLE_BRANCH == "main" ] ;  then
   echo '*** prod branches ***'
   echo "*** Applying namespace configuration to ${EKS_NAMESPACE_PROD}... ***"
   kubectl apply --filename "./deploy/${ENVIRONMENT}" -n ${EKS_NAMESPACE_PROD}

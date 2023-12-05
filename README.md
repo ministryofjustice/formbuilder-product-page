@@ -11,8 +11,9 @@ For information on MOJ Forms please contact moj-forms@digital.justice.gov.uk.
 If you wish to run in your own browser, you'll need to run the
 following commands from the root of this project:
 
-- `\curl -sSL https://get.rvm.io | bash` to install ruby version manager (rvm)
-- `cat .ruby-version | xargs rvm install` to install the correct version of ruby
+- `brew install rbenv ruby-build` to install ruby version manager (rbenv)
+- `rbenv init` to load rbenv in your shell, follow the printed instructions
+- `cat .ruby-version | xargs rbenv install` to install the correct version of ruby
 - `gem install bundler` to install the dependency manager
 - `bundle install` to install middleman and its dependencies
 - `npm install` to install the frontend dependencies
@@ -21,11 +22,11 @@ following commands from the root of this project:
 
 ## Deployment
 
-Deployments are handled by [CircleCI](https://github.com/ministryofjustice/formbuilder-product-page/blob/master/.circleci/config.yml).
+Deployments are handled by [CircleCI](https://github.com/ministryofjustice/formbuilder-product-page/blob/main/.circleci/config.yml).
 
-Any branch except master will deploy to the staging environment. This can be visited [here](https://formbuilder-product-page-staging.apps.live.cloud-platform.service.justice.gov.uk/)
+Any branch except main will deploy to the staging environment. This can be visited [here](https://formbuilder-product-page-staging.apps.live.cloud-platform.service.justice.gov.uk/)
 
-Once a change is pushed or merged to master then production will automatically be deployed.
+Once a change is pushed or merged to main then production will automatically be deployed.
 
 The environment variables required in CircleCI - check the [Tech Docs](https://ministryofjustice.github.io/moj-forms-tech-docs/#runbooks) for more infomation.
 

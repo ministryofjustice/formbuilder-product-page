@@ -1,4 +1,4 @@
-FROM httpd:2.4.43-alpine
+FROM httpd:2.4.58-alpine3.18
 
 ARG UID=1001
 
