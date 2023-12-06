@@ -28,6 +28,8 @@ jobs:
     steps:
       - checkout
       - ruby/install-deps
+      - attach_workspace:
+          at: .
       - run:
           name: htmlproofer checks
           command: bundle exec htmlproofer build
