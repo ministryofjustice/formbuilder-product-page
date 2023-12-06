@@ -13,8 +13,11 @@ jobs:
       - checkout
       - ruby/install-deps
       - run:
+          name: npm install
+          command: npm install
+      - run:
           name: build site
-          command: bash build.sh
+          command: bundle exec middleman build --verbose
       - persist_to_workspace:
           root: .
           paths:
@@ -26,11 +29,8 @@ jobs:
       - checkout
       - ruby/install-deps
       - run:
-          name: test build site
-          command: bash build.sh
-      - run:
           name: htmlproofer checks
-          command: .gem-bin/htmlproofer ./build
+          command: bundle exec htmlproofer build
   build_and_push_staging:
     docker:
       - image: 'cimg/base:current'
