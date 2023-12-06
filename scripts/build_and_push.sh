@@ -5,7 +5,7 @@ echo "*** Updating and installing required software ***"
 sudo apt-get update
 sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository \
+sudo add-apt-repository --yes \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
@@ -19,7 +19,7 @@ sudo chmod +x /usr/bin/kubectl
   echo "**********************************"
   echo
 
-if [ $CIRCLE_BRANCH == "master" ] ;  then
+if [ $CIRCLE_BRANCH == "main" ] ;  then
   echo "*** Setting up Kubectl config PROD ***"
   export ENVIRONMENT=prod
   echo ${ENVIRONMENT}
@@ -59,22 +59,6 @@ else
   echo
 fi
 
-echo
-echo "*** npm install ***"
-npm install
-echo "**********************************"
-echo
-echo "*** install bundler correct version and run ***"
-npm install
-sudo gem install bundler -v 2.1.4
-bundle install
-echo "**********************************"
-echo
-echo "*** Build Middleman site ***"
-bundle exec middleman build
-echo "**********************************"
-echo
-
 if [ "$ENVIRONMENT" == "staging" ]; then
   echo '*** Adding robots file to staging... ***'
   cp ./deploy/templates/staging_robots.txt ./build/robots.txt
@@ -107,7 +91,7 @@ echo $out
 echo "**********************************"
 echo
 
-if [ $CIRCLE_BRANCH == "master" ] ;  then
+if [ $CIRCLE_BRANCH == "main" ] ;  then
   echo '*** prod branches ***'
   echo "*** Applying namespace configuration to ${EKS_NAMESPACE_PROD}... ***"
   kubectl apply --filename "./deploy/${ENVIRONMENT}" -n ${EKS_NAMESPACE_PROD}
