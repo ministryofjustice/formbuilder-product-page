@@ -73,12 +73,20 @@ workflows:
      - lint:
          requires:
            - build
+         filters:
+           branches:
+             ignore:
+               - main
      - build_and_push_staging:
         requires:
           - lint
+        filters:
+          branches:
+            ignore:
+              - main
      - build_and_push_prod:
         requires:
-          - build_and_push_staging
+          - build
         filters:
           branches:
             only:
