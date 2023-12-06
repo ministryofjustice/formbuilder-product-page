@@ -11,7 +11,6 @@ jobs:
       - image: 'cimg/ruby:3.2.2-node'
     steps:
       - checkout
-      - setup_remote_docker
       - ruby/install-deps
       - run:
           name: build site
@@ -20,7 +19,7 @@ jobs:
           root: .
           paths:
             - build
-  test:
+  lint:
     docker:
       - image: 'cimg/ruby:3.2.2-node'
     steps:
@@ -30,10 +29,8 @@ jobs:
           name: test build site
           command: bash build.sh
       - run:
-          name: test build site - htmlproofer
-          command: |
-            htmlproofer ./build --allow-hash-href --check-html \
-            --empty-alt-ignore --disable-external
+          name: htmlproofer checks
+          command: .gem-bin/htmlproofer ./build
   build_and_push_staging:
     docker:
       - image: 'cimg/base:current'
@@ -71,9 +68,12 @@ workflows:
   build_and_test:
     jobs:
      - build
+     - lint:
+         requires:
+           - build
      - build_and_push_staging:
         requires:
-          - build
+          - lint
      - build_and_push_prod:
         requires:
           - build_and_push_staging
