@@ -1,6 +1,6 @@
 # MOJ Forms Product Page
 
-![Deploy to Production](https://github.com/ministryofjustice/formbuilder-product-page/workflows/Deploy%20to%20Production/badge.svg)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/ministryofjustice/formbuilder-product-page/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/ministryofjustice/formbuilder-product-page/tree/main)
 
 https://moj-forms.service.justice.gov.uk
 
