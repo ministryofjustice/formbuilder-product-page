@@ -21,12 +21,13 @@ sudo chmod +x /usr/bin/kubectl
 
 if [ $CIRCLE_BRANCH == "main" ] ;  then
   echo "*** Setting up Kubectl config PROD ***"
+  token=$(eval "echo \$EKS_TOKEN_PROD" | base64 -d)
   export ENVIRONMENT=prod
   echo ${ENVIRONMENT}
   echo -n ${EKS_CLUSTER_CERT_PROD} | base64 -d > ./ca.crt
   kubectl config set-cluster ${EKS_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://${EKS_CLUSTER_NAME}
-  kubectl config set-credentials ${EKS_SERVICE_ACCOUNT_PROD} --token=${EKS_TOKEN_PROD}
-  kubectl config set-context ${EKS_CLUSTER_NAME} --cluster=${EKS_CLUSTER_NAME} --user=${EKS_SERVICE_ACCOUNT_PROD} --namespace=${EKS_NAMESPACE_PROD}
+  kubectl config set-credentials circleci --token="${token}"
+  kubectl config set-context ${EKS_CLUSTER_NAME} --cluster=${EKS_CLUSTER_NAME} --user=circleci --namespace=${EKS_NAMESPACE_PROD}
   kubectl config use-context ${EKS_CLUSTER_NAME}
   echo "*** Done ***"
   echo "**********************************"
@@ -40,12 +41,13 @@ if [ $CIRCLE_BRANCH == "main" ] ;  then
   echo
 else
   echo "*** Setting up Kubectl config STAGING ***"
+  token=$(eval "echo \$EKS_TOKEN_STAGING" | base64 -d)
   export ENVIRONMENT=staging
   echo ${ENVIRONMENT}
   echo -n ${EKS_CLUSTER_CERT_STAGING} | base64 -d > ./ca.crt
   kubectl config set-cluster ${EKS_CLUSTER_NAME} --certificate-authority=./ca.crt --server=https://${EKS_CLUSTER_NAME}
-  kubectl config set-credentials ${EKS_SERVICE_ACCOUNT_STAGING} --token=${EKS_TOKEN_STAGING}
-  kubectl config set-context ${EKS_CLUSTER_NAME} --cluster=${EKS_CLUSTER_NAME} --user=${EKS_SERVICE_ACCOUNT_STAGING} --namespace=${EKS_NAMESPACE_STAGING}
+  kubectl config set-credentials circleci --token="${token}"
+  kubectl config set-context ${EKS_CLUSTER_NAME} --cluster=${EKS_CLUSTER_NAME} --user=circleci --namespace=${EKS_NAMESPACE_STAGING}
   kubectl config use-context ${EKS_CLUSTER_NAME}
   echo "*** Done ***"
   echo "**********************************"
