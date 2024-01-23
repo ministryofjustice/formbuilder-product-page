@@ -1,0 +1,241 @@
+---
+title: 2022 news
+heading: 2022 news
+menu:
+menuindex:
+---
+
+<main class="govuk-main-wrapper govuk-body" id="main-content" role="main">
+  <div class="govuk-width-container">
+  <h1 class="govuk-heading-l"><%= current_page.data.heading%></h1>
+  <section class="content-section">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    </div>
+  </div>
+  </section>
+  <section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>20 December 2022</p>
+    <h2 id="paymentlinks-20122022" class="govuk-heading-m">Taking payments through GOV.UK Pay</h2>
+    <p>If you have a GOV.UK Pay account and are set up to take payments through a payment link, MoJ Forms can now help you join up form submissions with payments.</p>
+    <p>A GOV.UK Pay payment link is a page on GOV.UK Pay that you can use to take card payments instantly. You can combine this with MoJ Forms to create a 2-step process for users to apply and pay for something:</p>
+    <ul>
+    <li>Step 1 - the user completes and submits your form. They are given a unique reference number and a link to your GOV.UK Pay payment page on the confirmation page and in the confirmation email.</li>
+    <li>Step 2 - the user goes to your GOV.UK Payment page to complete payment. The MoJ Forms reference number is automatically applied to that payment.</li>
+    </ul>
+    <p>You can then match the form submission with the payment using the MoJ Forms reference number.</p>
+    <p>You will need to <a class="govuk-link" href="https://www.payments.service.gov.uk/">set up a GOV.UK Pay account</a> if you don't already have one. You can set up a test page in a few minutes but you should allow several months to set up your payment service provider and be ready to start taking payments.</p>
+    <p>Learn more about setting up and <a class="govuk-link" href="/settings/#payment-links">taking payments through GOV.UK Pay</a>.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+  <section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>6 December 2022</p>
+    <h2 id="referencenumbers-06122022" class="govuk-heading-m">Providing users with reference numbers</h2>
+    <p>MoJ Forms can now generate unique reference numbers for each submission made by your form. This can make it easier to keep track of the submissions you receive and discuss them with users should the need arise.</p>
+    <p>For each submission made, a 10-digit number is generated and inserted into:</p>
+    <ul>
+    <li>the confirmation page</li>
+    <li>the subject and message of the submission email</li>
+    <li>the PDF and CSV attachments of user answers</li>
+    <li>the subject and message of the confirmation email</li>
+    </ul>
+    <p>(You will need to enable the emails separately.)</p>
+    <p>Set-up is easy - you can turn the setting on or off with just a single checkbox. The references are inserted or removed from your form automatically. Doing so will overwrite any custom text in your email templates though, so we recommend taking a copy of your emails beforehand.</p>
+    <p>Learn more about <a class="govuk-link" href="/settings/#references">providing users with reference numbers</a>.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+<section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>14 November 2022</p>
+    <h2 id="confirmationemail-14112022" class="govuk-heading-m">Sending your users a confirmation email</h2>
+    <p>You can now <a class="govuk-link" href="/settings/#confirmation-email">send users a confirmation email</a> when they complete your form. The message can be customised to your service and the user’s answers will be attached in PDF.</p>
+    <p>A confirmation email can be used to:</p>
+    <ul>
+    <li>reassure users that their information was submitted successfully</li>
+    <li>allow users to double-check the information they provided and keep it for reference</li>
+    <li>help you repeat and reinforce important messages from the confirmation page, such as response times and contact details</li>
+    </ul>
+    <p>To enable this feature, you will need to capture your users’ email addresses using the <a class="govuk-link" href="/building-and-editing/#question-formats">email address question format</a>.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+  <section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>2 September 2022</p>
+    <h2 id="autocomplete-02092022" class="govuk-heading-m">Presenting users with a long list of options</h2>
+    <p>A <a class="govuk-link" href="/building-and-editing/#autocomplete">new question type called autocomplete</a> enables you to specify a large range of options for the user to choose from, such as a list of courts or locations.</p>
+    <p>An autocomplete question presents the options in a dropdown menu while also allowing the user to type ahead to find matching entries.</p>
+    <img src="/images/autocomplete-example.gif" alt="This short animation shows an autocomplete question being filled in. The question is 'Which airport did you fly from?' and there is a blank text field beneath it. The cursor moves to the text field and a dropdown appears listing UK airports. The options are filtered as the letters 'l o n' are typed into the field and London Heathrow is selected." class="screenshot-image">
+    <p>This format is best when there are a lot of options to choose from. Smaller numbers of options are better presented using radio buttons.</p> 
+    <p>The options must be uploaded to MoJ Forms in comma-separated values (CSV) format.</p> 
+    <p>For more information on using autocomplete and formatting and uploading your options, check out the <a class="govuk-link" href="/building-and-editing/#autocomplete">user guide</a>.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+<section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>22 August 2022</p>
+    <h2 id="analytics-22082022" class="govuk-heading-m">Monitor your form’s performance with Google Analytics</h2>
+    <p>You can now <a class="govuk-link" href="/settings/#google-analytics">link your form to a Google Analytics account</a> to get real-time insights on your form’s performance and the people using it.</p>
+    <p>The new feature, under the settings tab, requires that you have an existing Google Analytics account. To enable it, simply add your tracking ID. You can use:</p>
+    <ul>
+    <li>Universal Analytics - Google’s legacy analytics service which will be retired in July 2023</li>
+    <li>Google Analytics 4 - Google’s latest analytics service, which we recommend for all new forms</li>
+    <li>Google Tag Manager - an alternative way of adding analytics to a form without needing to edit the code</li>
+    </ul>
+    <p>To comply with data protection regulations, users are given the option of accepting or rejecting analytics cookies when they first visit your site. This means you will only receive data for the users that actively opt-in to analytics.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+<section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>4 August 2022</p>
+    <h2 id="csvoutput-04082022" class="govuk-heading-m">Collecting information in CSV</h2>
+    <p>You can now collect the information your form users submit in comma separated values (CSV) format as well as PDF.</p>
+    <p>CSV files list the answers in plain text, separated by commas. They can be imported into spreadsheets and other applications, making it easier to handle and process the information you receive. For example, you could <a class="govuk-link" href="https://support.microsoft.com/en-us/office/import-data-from-a-folder-with-multiple-files-power-query-94b8023c-2e66-4f6b-8c78-6a00041c90e4">import data from multiple CSV files into Microsoft Excel</a> at once.</p>
+    <p>You will continue to receive information in PDF as well, even with CSV enabled. The CSV will be sent in a separate email. You will be able to choose between file formats in a future update.</p>
+    <p>Check the user guide to <a class="govuk-link" href="/settings/#email-settings">find out how to enable the CSV option</a>.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+   <section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>30 June 2022</p>
+    <h2 id="textareacounter-30062022" class="govuk-heading-m">Textareas now include a counter</h2>
+    <p>People filling in a textarea with a maximum answer length are now shown a counter as they approach the limit. A prompt appears below the textarea when the user reaches 75% of the limit - either characters or words, depending on the validation setting. It keeps a count of how many characters or words are remaining or over the limit.</p>
+    <p>Maximum answer length is one of the <a class="govuk-link" href="/building-and-editing/#validation">validation options</a> launched last month allowing you to specify things like the length or limits of an answer.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+<section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>30 May 2022</p>
+    <h2 id="validation-30052022" class="govuk-heading-m">How to check answers as users enter them</h2>
+    <p>Do you want to limit how much a user can write in your form or ensure that the information they enter is what you need? Now you can.</p>
+    <p>We have introduced a range of validation options to some question types, allowing you to specify things like the length or limits of an answer. When validation is present, the form will check that the user’s answer is within the specified parameters before moving to the next page. If it isn’t, it provides a useful error message and prompts the user to revise their answer.</p>
+    <p>The new options include:</p>
+    <ul>
+    <li>setting minimum and maximum character counts for text and text area questions (or word counts for text areas)</li>
+    <li>setting minimum and maximum values for number questions</li>
+    <li>setting earliest and latest dates for date questions</li>
+    </ul>
+    </p>Validation options are listed in the component settings menu (...) which appears when you click in the question title field.</p>
+    <p>See <a class="govuk-link" href="/building-and-editing/#validation">Validating user answers</a> for details.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+  <section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>11 May 2022</p>
+    <h2 id="test-policy-11052022" class="govuk-heading-m">Usernames and passwords now needed for all Test forms</h2>
+    <p>All forms on our Test site now require a username and password to access, which you set yourself during the <a class="govuk-link" href="/testing-and-publishing/#test">publishing process</a>. These credentials can be shared with anyone you want to view your draft form.</p>
+    <p>Up to now, setting a username and password has been optional. We have taken the decision to make it a requirement to help protect your work in progress and reduce the risk of anything inappropriate becoming public.</p>
+    <p>If you have a form on the Test site currently you will need to republish it and create a username and password.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+  <section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>25 April 2022</p>
+    <h2 id="move-launch-25042022" class="govuk-heading-m">An easier way to move pages</h2>
+    <p>You can now change the order of pages in your form flow with just a few clicks using a new <a class="govuk-link" href="/building-and-editing/#moving-pages">move page feature</a>.</p>
+    <p>The option is listed in the page menu, which you can open by hovering over the page you want to move and selecting the menu button (3 dots in a circle). A modal allows you to select the place you want to move your page to.</p>
+    <p>You can move most pages in this way, including pages that have become unconnected. Branching points, check answers and confirmation pages can’t be moved. In these cases, the move page option is not shown in the menu.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+<section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>18 January 2022</p>
+    <h2 id="branching-launch-10032022" class="govuk-heading-m">Branching is now live in MoJ Forms</h2>
+    <p>It's now possible to add logic to forms and show users different questions based on their previous answers using new branching functionality in MoJ Forms.</p>
+    <p>Branching is the ability to show the people filling in your forms different pages based on their previous answers. You can create multiple routes - branches - through your form so that the people filling it in see only the questions or content that are relevant to them.</p>
+    <p>Branching allows you to:
+    <ul>
+    <li>improve the quality of information you receive</li>
+    <li>reduce the number of submissions you get from ineligible users</li>
+    <li>show users more relevant questions, making your form easier and quicker to fill in</li>
+    <li>present users with information tailored to their needs and circumstances</li>
+    </ul>
+    <p>Branching currently works with 2 question types - radio buttons and checkboxes. You can make branching decisions based on whether the user answers the question and what answers they select. You can do this with a single question or a combination of questions.</p>
+    <p>As well as the core branching functionality, we have introduced a raft of new features, including:</p>
+    <ul>
+    <li><a class="govuk-link" href="/building-and-editing/#start-page">A new starting template</a> - consisting of a start page, a check answers page and a confirmation page. This is to help new users understand that forms are made up of consecutive pages and also saves you from having to create check answers and confirmation pages every time.</li>
+    <li><a class="govuk-link" href="/building-and-editing/#adding-pages">A new way to add pages</a> - through the new connection menu button (+) that sits on every connecting arrow.</li>
+    <li><a class="govuk-link" href="/branching/#change-next-page">Changing the order of pages</a> - using the ‘change next page’ option in the new connection menu. This feature effectively allows you to point an arrow at a different page and shuffle your pages around.</li>
+    <li><a class="govuk-link" href="/building-and-editing/#page-type">Exit pages</a> - a new page template to use at the end of a branch when you don’t require the user to submit any information. For example, you could tell the user that they are not eligible to continue.</li>
+    <li><a class="govuk-link" href="/branching/#unconnected">Unconnected pages</a> - one consequence of branching is that pages can become unconnected. This happens when a page has no other pages leading to it. These pages are stored in a separate section of the form flow and can be brought back into your main form by changing the order of pages.</li>
+    </ul>
+    <p>To get started, open the connection menu at the point where you want your form to branch and select ‘Add branching’. This will create a ‘branching point’ - a page where you configure the rules for your branches. If you’d like to know a little more about how it works, or have any questions, there are detailed instructions in the user guide under <a class="govuk-link" href="/branching/">Branching and flow management</a>.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+ <section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>18 January 2022</p>
+    <h2 id="email-addresses-18012022" class="govuk-heading-m">A better way to collect email addresses</h2>
+    <p>MoJ Forms now includes a component specifically designed for collecting email addresses.</p>
+    <p>The component follows the <a class="govuk-link" href="https://design-system.service.gov.uk/patterns/email-addresses/">GOV.UK Design System pattern</a> for asking users for their email addresses. It looks like a standard text input but includes custom validation to ensure that what the user enters fits a valid email address format.</p>
+    <p>You can find the email address option when adding a new single question page and when adding components to a multi-question page.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+<section class="content-section content-section--with-top-border">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  <p>18 January 2022</p>
+  <h2 id="form-names-18012022" class="govuk-heading-m">Special characters in form names</h2>
+  <p>Form names can now include hyphens and apostrophes.</p>
+  <p>When you create a new form, the name is used in the form's URL. To ensure we produce only valid URLs, special characters are not allowed.<p>
+  <p>However, after talking to users, we know that hyphens and apostrophes are most likely to be needed in titles so we have relaxed the rules to allow them. When creating the URL, the apostrophes are stripped out. For example, a form name of Register your father-in-law's permit would result in a URL of <u>https://register-your-father-in-laws-permit.form.service.gov.uk</u>.</p>
+  <p>You can <a class="govuk-link" href="https://moj-forms.service.justice.gov.uk/settings/#change-name">change the name</a> of any existing form in settings.</p>
+  <p><a class="govuk-link" href="#top">Back to top</a></p>
+  </div>
+</div>
+</section>
+  <section class="content-section content-section--with-top-border">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <p>4 January 2022</p>
+    <h2 id="2021review-04012022" class="govuk-heading-m">2021 in review</h2>
+    <p>Here’s a short but sweet summary of everything we’ve been up to in MoJ Forms in 2021 with a look forward to our plans in 2022.</p>
+    <div class="responsive-embed responsive-embed--16by9 responsive-embed--bordered bottom-gutter-2">
+            <div class="responsive-embed__wrapper">
+              <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KkYhUJH8RWc" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    </div>
+  </div>
+</section>
+  </div>
+</main>
+
