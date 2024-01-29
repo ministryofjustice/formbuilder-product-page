@@ -16,7 +16,8 @@ order: 3
         <p class="govuk-body-l">Learn how to start building your first form.</p>
         <h2 class="govuk-heading-m">Contents</h2> 
         <p><a class="govuk-link" href="#form-name">Naming your form</a><br>
-        <a class="govuk-link" href="#start-page">Starting pages</a><br>
+        <a class="govuk-link" href="#flow-view">Your initial view and pages</a><br>
+        <a class="govuk-link" href="#start-page">Choosing the right start page</a><br>
         <a class="govuk-link" href="#footer">Footer pages</a><br>
         <a class="govuk-link" href="#preview">Previewing your pages</a><br>
         <a class="govuk-link" href="#adding-pages">Adding pages</a><br>
@@ -60,8 +61,8 @@ order: 3
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
-        <h2 id="start-page" class="govuk-heading-m">The starting pages</h2>
-        <p>When you create a new form, you are taken to your form's 'pages flow' or flow view. This shows how all the pages link together and is where you will build and edit your form. Most actions, such as adding and deleting pages, editing pages and creating branching, are launched from the flow view.</p>
+      <h2 id="flow-view" class="govuk-heading-m">Your initial view and pages</h2>
+        <p>When you create a new form, you are taken to your form's 'pages flow' or flow view. This shows how all the pages link together and is where you will build and edit your form. Most actions, such as adding and deleting pages, editing pages and creating branching, are done from the flow view.</p>
         <p>You are given some default pages to help you structure your form:</p>
         <ul>
         <li>start page</li>
@@ -70,17 +71,51 @@ order: 3
         </ul>
         <p>The <a class="govuk-link" href="#footer">form footer</a> section also contains some pages which are required for your form and linked from your form's footer section.</p>
         <img src="/images/start-pages.png" alt="A new form is created with a start page, check answers page and confirmation page." class="screenshot-image">
-        <p>The start page is your form's home page and cannot be deleted. To find out more about what should go on your start page, read the <a class="govuk-link" href="https://design-system.service.gov.uk/patterns/start-pages/">Design System guidance</a>.</p>
+        <p>The start page is your form's home page. It cannot be deleted but you can replace it with a <a class="govuk-link" href="#start-page">GOV.UK start page</a>.</p>
         <p>All your form's question pages should come after the start page and before the check answers page.</p>
         <h3 id="check-confirm" class="govuk-heading-s">Check answers and confirmation pages</h3>
-        <p>For your form to successfully submit the user data it collects, it must have a check answers page and a confirmation page. In addition:
-        <ul>
-        <li>a form can only have one check answers page and one confirmation page</li>
-        <li>a form cannot be published to Live without both these pages</ul>
-        </li>
+        <p>For your form to successfully submit the user data it collects, it must have a check answers page and a confirmation page. A form can have only one check answers page and one confirmation page. If you need to show different versions of these pages to your users, you may be able to achieve this effect with the <a class="govuk-link" href="#visibility">visibility setting</a>.</p>
         <p><a class="govuk-link" href="#top">Back to top</a></p>
       </section>
       <section class="content-section content-section--with-top-border">
+      <h2 id="start-page" class="govuk-heading-m">Choosing the right start page</h2>
+      <p>Your form must have a start page. This is the starting point for your users. It should explain what the form is for, what information is required and whether there are any other ways to access the service you provide.</p>
+      <p>You can choose between 2 types of start page:</p>
+      <ul>
+      <li>an MoJ Forms start page - which you create as part of your form</li>
+      <li>a GOV.UK start page - which a GOV.UK publisher would create for you on GOV.UK</li>
+      </ul>
+      <h3 class="govuk-heading-s">When to use an MoJ Forms start page</h3>
+      <p>This is the default start page for every new form. You should use this start page unless you want your users to access your form from GOV.UK and all the information users need before starting your form will be on GOV.UK.</p>
+      <p>The MoJ Forms start page has some hints on what information to include. To find out more about what should go on your start page, read the <a class="govuk-link" href="https://design-system.service.gov.uk/patterns/start-using-a-service/">Design System guidance on start pages.</a></p>
+      <h3 class="govuk-heading-s">When to use a GOV.UK start page</h3>
+      <p>If your form is for an external audience, such as members of the public or a group of professionals, it may need a GOV.UK start page.</p>
+      <p>GOV.UK services must start on a GOV.UK content page. This links your service to the rest of GOV.UK, and means that users can find it using search or through GOV.UK’s navigation.</p>
+      <p>A GOV.UK start page may use a number of different templates depending on where on GOV.UK it will sit and what content is required.</p>
+      <p>You should talk to your local GOV.UK publishing team to decide:</p>
+      <ul>
+      <li>whether you need to link to your form from GOV.UK</li>
+      <li>where on GOV.UK it should link from</li>
+      <li>what to include on your start page</li>
+      <li>what other guidance or information your users may need</li>
+      <li>whether to use a GOV.UK start page or an MoJ Forms start page</li>
+      </ul>
+      <p>If your form is aimed at members of the public and will sit under services and information (sometimes called 'mainstream' content), your local GOV.UK publishing team will need to raise a request with the Government Digital Service (GDS) to make the changes.</p>
+    </section>
+    <h3 class="govuk-heading-s">How to switch to a GOV.UK start page</h3>
+    <p>From the flow view, hover over the start page thumbnail to reveal the page menu (...) and select 'Switch to GOV.UK start page'.</p>
+    <p>You will then be asked for a GOV.UK start page URL which you will get from your local GOV.UK publishing team.</p>
+    <p>When you switch to a GOV.UK start page, several things happen:</p>
+    <ul>
+    <li>your existing MoJ Forms start page is removed - but it's saved in the background and can be retrieved at any time by switching back</li>
+    <li>links to the start page, such as in your form's header, are updated to point to the GOV.UK URL</li>
+    </ul>
+    <p>You can test the URL is working in MoJ Forms by selecting 'Open start page' in the page menu. Bear in mind the link may not work or look correct until the GOV.UK publishing team push their work live.</p>
+    <p>The menu also includes an option to 'Edit start page URL'.</p>
+    <h3 class="govuk-heading-s">How to switch back to an MoJ Forms start page</h3>
+    <p>From the flow view, hover over the start page thumbnail to reveal the page menu (...) and select 'Switch to form start page'.</p>
+    <p><a class="govuk-link" href="#top">Back to top</a></p>
+    <section class="content-section content-section--with-top-border">
       <h2 id="footer" class="govuk-heading-m">Footer pages</h2>
       <p>Your form contains 3 pages that are linked from the footer section of every page of your form. These can be seen in the flow view under the heading of "form footer". They are:</p>
       <ul>
