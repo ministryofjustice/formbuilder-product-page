@@ -102,6 +102,7 @@ order: 7
         <p>When a user completes your form, you can have their form submission emailed to you.</p>
         <p>The email address you use must be an approved MoJ address. This is to help protect user data and ensure it isn't unknowingly sent outside of the organisation.</p>
         <p>The answers will be shown in the body of the email and attached to the emails in PDF. They can also be  attached in comma separated values (CSV) format. CSV files list the answers in plain text, separated by commas. They can be imported into spreadsheets and other applications, making it easier to handle and process the information you receive. For example, you could <a class="govuk-link" href="https://support.microsoft.com/en-us/office/import-data-from-a-folder-with-multiple-files-power-query-94b8023c-2e66-4f6b-8c78-6a00041c90e4">import data from multiple CSV files into Microsoft Excel</a> at once.</p>
+        <p>All data received from a form is labelled OFFICIAL-SENSITIVE. This is to comply with the Government Security Classifications Policy. (Find out more about <a class="govuk-link" href="/getting-started/#security-classifications">security classifications for your form</a>.)
         <p>Currently, email is the only way to collect the information your users submit. We plan to introduce other options, such as API integration, at a later time.</p>
         <h3 class="govuk-heading-s">Setting up the emails</h3>
         <p>Go to: Settings > Submission settings > Collect information by email</p>
@@ -124,7 +125,7 @@ order: 7
       </section>
       <section class="content-section content-section--with-top-border">
       <h2 id="confirmation-email" class="govuk-heading-m">Sending users a confirmation email</h2>
-      <p>You can configure your form to send users a confirmation email when they submit their answers. The message can be customised to your service and the user's answers will be inserted into the email and attached in a PDF.</p>
+      <p>You can configure your form to send users a confirmation email when they submit their answers. The message can be customised to your service and the user's answers will be inserted into the email.</p>
       <p>A confirmation email can be used to:</p>
       <ul>
       <li>reassure users that their information was submitted successfully</li>
@@ -146,7 +147,7 @@ order: 7
       <li>create a separate email address for replies and set an auto-reply message with meaningful information</li>
       </ul>
       <h3 class="govuk-heading-s">Setting up the confirmation email</h3>
-      <p>To enable this feature, you will need to capture your users' email addresses using the <a class="govuk-link" href="/building-and-editing/#question-formats">email address question format</a>. You will need at least one question in this format before you can set up the confirmation email.</p>
+      <p>To enable this feature, you will need to capture your users' email addresses using an <a class="govuk-link" href="/building-and-editing/#question-formats">email address question</a>. You will need at least one question of this type before you can set up the confirmation email.</p>
       <p>Once you have an email address question in your form, go to: Settings > Submission settings > Send a confirmation email</p>
       <p>On this page, you can enable a confirmation email on the Test site and on the Live site. You need to enable and configure the settings for both sites separately.</p>
       <p>To enable it on a site, check the 'Enable confirmation email' box. The 'configure' panel will then expand to show the following settings:<p>
@@ -156,14 +157,14 @@ order: 7
       <li>Subject - the subject line of the email</li>
       <li>Message - the body text of the email</li>
       </ul>
-      <p>The user's answers will be inserted into the email beneath the message. (You won't see this in the settings page.) They will also be attached automatically in a PDF. The message does not currently support any rich text formatting such as headings or bullet points.</p>
+      <p>The user's answers will be inserted into the email beneath the message. (You won't see this in the settings page.) The message does not currently support any rich text formatting such as headings or bullet points.</p>
       <p>When you enable confirmation email, MoJ Forms automatically adds disclaimers to your form to let users know how their email address will be used. These disclaimers appear:</p>
       <ul>
       <li>directly beneath the question used to capture the user's email address</li>
       <li>on the check answers page, before the submit button</li>
       </ul>
       <img src="/images/confirmation-email-disclaimers.jpg" width="100%" alt="Two screenshots show the places where disclaimers are added automatically to forms that send confirmation emails. In one, a question page is titled Do you want to receive a confirmation email? with a disclaimer that reads We will use this address to send you a confirmation email with a copy of your answers. The second screenshot shows the check answers page with a disclaimer and submit button.">
-      <p>These messages are not currently editable. If you plan on using the email address for other purposes, you can still mention this in the question's hint text.</p>
+      <p>These messages are not currently editable. If you plan on using the email address for other purposes, you should mention this in the question's hint text.</p>
       <p><a class="govuk-link" href="#top">Back to top</a></p>
     </section>
     <section class="content-section content-section--with-top-border">
