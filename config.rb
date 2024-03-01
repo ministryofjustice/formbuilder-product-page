@@ -1,4 +1,3 @@
-# coding: utf-8
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -46,10 +45,10 @@ end
 # Helpers
 ###
 # Methods defined in the helpers block are available in templates
- helpers do
-#   def some_helper
-#     "Helping"
-#   end
+helpers do
+  #   def some_helper
+  #     "Helping"
+  #   end
 
   # Helper to list pages in order for passed category (needs category and order in frontmatter)
   def pages_by_category(category)
@@ -61,10 +60,9 @@ end
   def pages_by_menu(menu)
     sitemap.resources.select do |resource|
       resource.data.menu.present? and resource.data.menu.include?(menu)
-      end.sort_by { |resource| resource.data.menuindex }
+    end.sort_by { |resource| resource.data.menuindex }
   end
-
- end
+end
 
 # Build-specific configuration
 configure :build do
@@ -82,14 +80,13 @@ configure :build do
   activate :asset_hash
 end
 
-activate :sprockets do |config|
-  config.expose_middleman_helpers = true
-end
+activate :sprockets, supported_output_extensions: ['.js']
 
 sprockets.append_path File.join(root, 'node_modules/govuk-frontend/')
 sprockets.append_path File.join(root, 'node_modules/gaap-analytics/')
+#
+# sass_assets_paths << File.join(root, 'node_modules/govuk-frontend/')
+# sass_source_maps
 
 # https://middlemanapp.com/advanced/pretty-urls/
 activate :directory_indexes
-
-
