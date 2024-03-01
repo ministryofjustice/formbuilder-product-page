@@ -1,9 +1,9 @@
 @charset "utf-8";
 
-$govuk-assets-path: "/assets/govuk/assets/";
+$govuk-assets-path: "/";
 $govuk-font-family: Arial, Helvetica, sans-serif;
 
-@import "govuk/all";
+@import "../../node_modules/govuk-frontend/govuk/all";
 
 @import "modules/borders";
 @import "modules/breadcrumbs";
@@ -17,19 +17,6 @@ $govuk-font-family: Arial, Helvetica, sans-serif;
 @import "modules/related-items";
 @import "modules/responsive-embed";
 @import "modules/sub-navigation";
-
-// Adjustments for Tudor crown copied in from govuk frontend 4.8.0
-// upadting to frontend 4.8.0 breaks sass compilation, so we are just pulling in
-// the relevant change for ease, and to meet the deadline
-
-  // Spacing adjustment for Tudor crown, as the new graphic is narrower than the
-  // existing crown. In Frontend v5, this rule should replace the equivalent in
-  // the block above.
-  .govuk-header__logotype-crown[width="32"] {
-    top: -3px;
-    margin-right: 2px;
-  }
-//////
 
 // scss-lint:disable IdSelector
 #main-content {
@@ -48,14 +35,15 @@ $govuk-font-family: Arial, Helvetica, sans-serif;
   border-top: 1px #dee0e2 solid;
 }
 
-.govuk-header__navigation-item--active a:link, 
-.govuk-header__navigation-item--active a:hover, 
-.govuk-header__navigation-item--active a:visited
-{
- color:#FFF;
+.govuk-header__navigation-item--active a:link,
+.govuk-header__navigation-item--active a:hover,
+.govuk-header__navigation-item--active a:visited {
+  color: #fff;
 }
 
-table, th, td {
+table,
+th,
+td {
   border-collapse: collapse;
   border: 1px solid #dee0e2;
   vertical-align: top;
@@ -66,18 +54,21 @@ table, th, td {
 .govuk-heading-l,
 .govuk-heading-m,
 .govuk-body h2,
-.govuk-body h3,
-{
+.govuk-body h3 {
   max-width: 60ch;
   text-wrap: pretty;
 }
 
 .govuk-heading-s,
 .govuk-body h4,
-p.govuk-body, 
+p.govuk-body,
 .govuk-body p,
 .govuk-body li,
 .govuk-list {
   max-width: 75ch;
 }
 
+.screenshot-image {
+  width: 100%;
+  border: 1px solid #ccc;
+}
