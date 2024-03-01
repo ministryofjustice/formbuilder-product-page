@@ -84,9 +84,6 @@ activate :sprockets, supported_output_extensions: ['.js']
 
 sprockets.append_path File.join(root, 'node_modules/govuk-frontend/')
 sprockets.append_path File.join(root, 'node_modules/gaap-analytics/')
-#
-# sass_assets_paths << File.join(root, 'node_modules/govuk-frontend/')
-# sass_source_maps
 
 # https://middlemanapp.com/advanced/pretty-urls/
 activate :directory_indexes
