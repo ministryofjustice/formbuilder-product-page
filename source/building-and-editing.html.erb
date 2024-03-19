@@ -448,6 +448,11 @@ order: 3
           <td>Sets the latest data that will be accepted</td>
         </tr>
         <tr>
+        <td>Specific answer format (regex)</td>
+        <td>Text<br>Number</td>
+        <td>Allows use of <a class="govuk-link" href="#regex">regular expressions (regex)</a> to specify a format such as a reference number or case ID</td>
+      </tr>
+        <tr>
           <td>Maximum number of files</td>
           <td>File upload</td>
           <td>Sets the maximum number of files that can be uploaded to that page</td>
@@ -456,6 +461,14 @@ order: 3
       </table>
       <p>To set validation, click in the question title to highlight the component settings button (3 dots in a circle) and click to open the menu. Validation options are listed in the menu.</p>
       <img src="/images/validation-modal.png" alt="The settings for maximum answer length allow you to specify the highest number of characters or words that will be accepted." class="screenshot-image">
+      <h3 id="regex" class="govuk-heading-s">About regular expressions</h3>
+      <p>A regular expression (regex) is a way of defining a pattern of characters. When you apply this to a question, the form checks if an answer matches that pattern.</p>
+      <p>For example, you might want to ask your users for a case reference that can be 8 to 11 letters long. The regex for this would look like:</p>
+      <p>[a-z]{8,11}</p>
+      <p>Regex 'options', which allow some additional flexibility, are not currently supported.</p>
+      <p>Regex uses programming language and can get quite complex, depending on what you want it to do. For this reason, we recommend that you get help from an expert, such as a developer, to write it for you.</p>
+      <p>There is always a risk when using a regex that you might inadvertently prevent some users from being able to complete your form. This can happen if you make a mistake in the regex or if you apply a pattern that doesn't work for all of your users.</p>
+      <p>MoJ Forms does not check to see if your regex is working correctly when applying it. You can check if your regex matches a particular answer using an online editor such as <a class="govuk-link" href="https://rubular.com/">Rublar</a>. You should also conduct proper testing with users.</p>
       <p><a class="govuk-link" href="#top">Back to top</a></p>
     </section>
       <section class="content-section content-section--with-top-border">
