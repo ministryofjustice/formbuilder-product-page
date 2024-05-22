@@ -15,24 +15,26 @@ order: 3
         <!-- START CONTENT -->
         <p class="govuk-body-l">Learn how to start building your first form.</p>
         <h2 class="govuk-heading-m">Contents</h2> 
-        <p><a class="govuk-link" href="#form-name">Naming your form</a><br>
-        <a class="govuk-link" href="#flow-view">Your initial view and pages</a><br>
-        <a class="govuk-link" href="#start-page">Choosing the right start page</a><br>
-        <a class="govuk-link" href="#footer">Footer pages</a><br>
-        <a class="govuk-link" href="#preview">Previewing your pages</a><br>
-        <a class="govuk-link" href="#adding-pages">Adding pages</a><br>
-        <a class="govuk-link" href="#moving-pages">Moving pages</a><br>
-        <a class="govuk-link" href="#editing-pages">Editing pages</a><br>
-        <a class="govuk-link" href="#deleting-pages">Deleting pages</a><br>
-        <a class="govuk-link" href="#page-type">Choosing the type of page</a><br>
-        <a class="govuk-link" href="#question-formats">Choosing which question format to use</a><br>
-        <a class="govuk-link" href="#autocomplete">Presenting users with a long list of options</a><br>
-        <a class="govuk-link" href="#file-upload">Asking users to submit a file</a><br>
-        <a class="govuk-link" href="#optional">Making a question optional</a><br>
-        <a class="govuk-link" href="#validation">Validating user answers</a><br>
-        <a class="govuk-link" href="#markdown">Formatting content with markdown</a><br>
-        <a class="govuk-link" href="#visibility">Targeting content with visibility</a><br>
-        <a class="govuk-link" href="#welsh-translation">Translating a form into Welsh</a></p>
+        <%= partial "toc", locals: { links: { 
+          'form-name': "Naming your form",
+          'flow-view': "Your initial view and pages",
+          'start-page': "Choosing the right start page",
+          'footer': "Footer pages",
+          'preview': "Previewing your pages",
+          'adding-pages': "Adding pages",
+          'moving-pages': "Moving pages",
+          'editing-pages': "Editing pages",
+          'deleting-pages': "Deleting pages",
+          'page-type': "Choosing the type of page",
+          'question-formats': "Choosing which question format to use",
+          'autocomplete': "Presenting users with a long list of options",
+          'file-upload': "Asking users to submit a file",
+          'optional': "Making a question optional",
+          'validation': "Validating user answers",
+          'markdown': "Formatting content with markdown",
+          'visibility': "Targeting content with visibility",
+          'welsh-translation': "Translating a form into Welsh",
+        }} %>
       <section class="content-section content-section--with-top-border">
         <h2 id="form-name" class="govuk-heading-m">Naming your form</h2>
         <p>When you create a new form, you need to give it a name.</p>

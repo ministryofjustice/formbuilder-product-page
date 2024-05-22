@@ -15,13 +15,15 @@ order: 4
         <!-- START CONTENT -->
         <p class="govuk-body-l">Use advanced features to create and manage more complex forms.</p>
         <h2 class="govuk-heading-m">Contents</h2>
-        <p><a class="govuk-link" href="#branching">What is branching?</a><br>
-        <a class="govuk-link" href="#add-branching">Adding branching</a><br>
-        <a class="govuk-link" href="#edit-branching">Editing branching</a><br>
-        <a class="govuk-link" href="#delete-branching">Deleting branching</a><br>
-        <a class="govuk-link" href="#unconnected">What are unconnected pages?</a><br>
-        <a class="govuk-link" href="#reconnect-unconnected">Reconnecting unconnected pages</a><br>
-        <a class="govuk-link" href="#change-next-page">Changing the order of pages</a></p>
+        <%= partial "toc", locals: { links: { 
+          'branching': "What is branching?",
+          'add-branching': "Adding branching",
+          'edit-branching': "Editing branching",
+          'delete-branching': "Deleting branching",
+          'unconnected': "What are unconnected pages?",
+          'reconnect-unconnected': "Reconnecting unconnected pages",
+          'change-next-page': "Changing the order of pages",
+        }} %>
 
       <section class="content-section content-section--with-top-border">
         <h2 id="branching" class="govuk-heading-m">What is branching?</h2>

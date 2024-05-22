@@ -15,9 +15,11 @@ order: 5
         <!-- START CONTENT -->
         <p class="govuk-body-l">How to ensure your form meets accessibility requirements and can be used by as many people as possible.</p>
         <h2 class="govuk-heading-m">Contents</h2>
-        <p><a class="govuk-link" href="#responsibilities">What you are responsible for</a><br>
-        <a class="govuk-link" href="#content">Ensuring your content is accessible</a><br>
-        <a class="govuk-link" href="#statement">Completing the accessibility statement</a></p>
+        <%= partial "toc", locals: { links: { 
+          'responsibilities': "What you are responsible for",
+          'content': "Ensuring your content is accessible",
+          'statement': "Completing the accessibility statement",
+         }} %>
       <section class="content-section content-section--with-top-border">
         
       
