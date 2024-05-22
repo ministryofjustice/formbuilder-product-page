@@ -15,12 +15,14 @@ order: 2
         <!-- START CONTENT -->
         <p class="govuk-body-l">Everything you need to know about getting started with MoJ Forms and planning a form.</p>
         <h2 class="govuk-heading-m">Contents</h2>
-        <p><a class="govuk-link" href="#good-forms">What makes a good form</a></br>
-        <a class="govuk-link" href="#planning">Planning your form</a></br>
-        <a class="govuk-link" href="#security-classifications">Security classifications for your form</a></br>
-        <a class="govuk-link" href="#timescales">Timescales and engagement</a></br>
-        <a class="govuk-link" href="#assessment">Getting your form assessed</a></br>
-        <a class="govuk-link" href="#govuk">Getting on GOV.UK</a></p>
+        <%= partial "toc", locals: { links: { 
+          'good-forms': 'What makes a good form',
+          planning: 'Planning your form',
+          'security-classifications': 'Security classifications for your form',
+          timescales: 'Timescales and engagement',
+          assessment: 'Getting your form assessed',
+          govuk: 'Getting on GOV.UK',
+        }} %>
       <section class="content-section content-section--with-top-border">
           <h2 id="good-forms" class="govuk-heading-m">What makes a good form</h2>
         <p>Forms built with MoJ Forms should aim to meet the GOV.UK <a class="govuk-link" href="https://www.gov.uk/service-manual/service-standard">Service Standard</a>. This is a set of principles that helps government teams create and run high-quality services.</p> 

@@ -15,12 +15,14 @@ order: 6
         <!-- START CONTENT -->
         <p class="govuk-body-l">How to ensure your form is compliant with data protection policies and procedures and keep your users’ data secure.</p>
         <h2 class="govuk-heading-m">Contents</h2>
-        <p><a class="govuk-link" href="#responsibilities">Your data protection responsibilities</a></br>
-        <a class="govuk-link" href="#registeractivity">Registering your data processing activity</a></br>
-        <a class="govuk-link" href="#designingtheform">Designing and building your form</a></br>
-        <a class="govuk-link" href="#privacynotice">Preparing a privacy notice</a></br>
-        <a class="govuk-link" href="#formsecurity">How your forms are secured</a></br>
-        <a class="govuk-link" href="#sessionduration">Session duration</a></p>
+        <%= partial "toc", locals: { links: { 
+          'responsibilities': "Your data protection responsibilities",
+          'registeractivity': "Registering your data processing activity",
+          'designingtheform': "Designing and building your form",
+          'privacynotice': "Preparing a privacy notice",
+          'formsecurity': "How your forms are secured",
+          'sessionduration': "Session duration",
+        }} %>
         <section class="content-section content-section--with-top-border">
         <h2 id="responsibilities" class="govuk-heading-m">Your data protection responsibilities</h2>
         <p>As you design a new form or make any substantial changes to an existing form, you will need to:</p>

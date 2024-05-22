@@ -18,10 +18,12 @@ menuindex: 3
         <!-- START CONTENT -->
         <p class="govuk-body-l">Learn how to build, configure and publish forms and get help when you need it.</p>
         <h2 class="govuk-heading-m">Contents</h2>
-        <p><a class="govuk-link" href="#access">Getting access and signing in</a><br>
-        <a class="govuk-link" href="#issues">Known issues</a><br>
-        <a class="govuk-link" href="#help">Get help or report a bug</a><br>
-        <a class="govuk-link" href="#feedback">Give feedback</a></p>
+        <%= partial "toc", locals: { links: { 
+          'access': "Getting access and signing in",
+          'issues': "Known issues",
+          'help': "Get help or report a bug",
+          'feedback': "Give feedabck"
+        }} %>
       <section class="content-section content-section--with-top-border">
         <h2 id="access" class="govuk-heading-m">Getting access and signing in</h2>
         <p>MoJ Forms is only available to employees of MoJ and its agencies and public bodies. To request access, <a class="govuk-link" href="/contact">contact us</a> to discuss your requirements. As MoJ Forms is still in development, we need your consent to take part in ongoing research.</p>

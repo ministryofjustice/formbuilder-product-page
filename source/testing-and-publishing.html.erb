@@ -15,14 +15,16 @@ order: 8
         <!-- START CONTENT -->
         <p class="govuk-body-l">How to test your form and share it securely with colleagues before publishing the final version.</p>
         <h2 class="govuk-heading-m">Contents</h2>
-        <p><a class="govuk-link" href="#publishing-process">Understanding the publishing process</a><br>
-        <a class="govuk-link" href="#before-publishing">Things to check before publishing</a><br>
-        <a class="govuk-link" href="#test">Publishing to Test</a><br>
-        <a class="govuk-link" href="#test-checks">What to look for when testing</a><br>
-        <a class="govuk-link" href="#final-check">Unlocking the ability to publish to Live</a><br>
-        <a class="govuk-link" href="#live">Publishing to Live</a></br>
-        <a class="govuk-link" href="#live-checks">What to check on Live</a></br>
-        <a class="govuk-link" href="#govuk">Getting your form on GOV.UK</a></p>
+        <%= partial "toc", locals: { links: { 
+          'publishing-process': "Understanding the publishing process",
+          'before-publishing': "Things to check before publishing",
+          'test': "Publishing to Test",
+          'test-checks': "What to look for when testing",
+          'final-check': "Unlocking the ability to publish to Live",
+          'live': "Publishing to Live",
+          'live-checks': "What to check on Live",
+          'govuk': "Getting your form on GOV.UK",
+        }} %>
         <section class="content-section content-section--with-top-border">
         <h2 id="publishing-process" class="govuk-heading-m">Understanding the publishing process</h2>
         <p>To see a fully working form that you can fill in and share with others, you have to publish it. MoJ Forms comes with both a Test site and Live site so that you can work on your form and only push changes live when you are happy with them. All changes made in the editor, including to settings, have to be published for them to take effect.<p>
