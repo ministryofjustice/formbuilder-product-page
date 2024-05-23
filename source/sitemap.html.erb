@@ -1,0 +1,48 @@
+---
+title: Sitemap
+heading: Sitemap
+menu: footer
+menuindex: 4
+---
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-body" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
+
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link" href="/">Home</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/news">News</a>
+            <ul class="govuk-list govuk-!-margin-left-4">
+              <% sitemap.resources.filter { |item| item.data[:menu] != 'top' && item.path.to_s.include?('news') }.sort { |a, b| b.data.title <=> a.data.title }.each do |item| %>
+                <li><a class="govuk-link" href="<%= item.url %>"><%= item.data.title %></a></li>
+              <% end %>
+            </ul>
+          </li>
+          <li>
+            <a class="govuk-link" href="/user-guide">User guide</a>
+            <ul class="govuk-list govuk-!-margin-left-4">
+              <% sitemap.resources.filter { |item| item.data[:menu] != 'top' && item.options[:layout] == 'user_guide' }.sort { |a, b| a.data[:order] <=> b.data[:order] }.each do |item| %>
+                <li><a class="govuk-link" href="<%= item.url %>"><%= item.data.title %></a></li>
+              <% end %>
+            </ul>
+          </li>
+          <li>
+            <a class="govuk-link" href="/contact">Contact</a>
+          </li>
+          <% pages_by_menu('footer').each do |page| %>
+            <% unless page.url == current_page.url  %>
+              <li>
+                <a class="govuk-link" href="<%= page.url %>"><%= page.data.title %></a>
+              </li>
+            <% end %> 
+          <% end %>
+      </div>
+    </div>
+  </main>
+</div>
