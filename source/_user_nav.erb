@@ -1,10 +1,11 @@
   <nav class="sub-navigation">
+    <ul class="govuk-list">
   <% pages_by_category('user-guide').each do |page| %>
     <% if current_page.data.heading == page.data.heading %>
-    <p class="sub-navigation__item  sub-navigation__item--active "><%= page.data.heading %></p>
+    <li class="sub-navigation__item  sub-navigation__item--active "><%= page.data.heading %></li>
     <% else %>
-      <p class="sub-navigation__item "><%= link_to page.data.heading, page.url, class: 'govuk-link' %></p>
+      <li class="sub-navigation__item "><%= link_to page.data.heading, page.url, class: 'govuk-link' %></li>
     <% end %>
   <% end %>
-
+  </ul>
 </nav>

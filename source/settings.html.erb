@@ -3,240 +3,228 @@ title: Settings
 heading: Settings
 category: user-guide
 order: 7
+layout: user_guide
 ---
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper govuk-body" id="main-content" role="main">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-quarter">
-        <%= partial "user_nav" %>
-      </div>
-      <div class="govuk-grid-column-three-quarters">
-        <h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
-        <!-- START CONTENT -->
-        <p class="govuk-body-l">Enable optional features such as save for later and Google Analytics and configure how you receive information when users submit their forms.</p>
-        <h2 class="govuk-heading-m">Contents</h2>
-        <%= partial "toc", locals: { links: { 
-'change-name': "Changing your form's name and URL",
-'google-analytics': "Setting up Google Analytics",
-'save-for-later': "Enabling users to save their progress on a form",
-'email-settings': "Collecting information by email",
-'confirmation-email': "Sending users a confirmation email",
-'references': "Providing users with reference numbers",
-'payment-links': "Taking payments through GOV.UK Pay",
-'transfer-form': "Transferring your form to another user",
+<h1 class="govuk-heading-l"><%= current_page.data.heading %></h1>
+<p class="govuk-body-l">Enable optional features such as save for later and Google Analytics and configure how you receive information when users submit their forms.</p>
+<h2 class="govuk-heading-m">Contents</h2>
+<%= partial "toc", locals: { links: { 
+  'change-name': "Changing your form's name and URL",
+  'google-analytics': "Setting up Google Analytics",
+  'save-for-later': "Enabling users to save their progress on a form",
+  'email-settings': "Collecting information by email",
+  'confirmation-email': "Sending users a confirmation email",
+  'references': "Providing users with reference numbers",
+  'payment-links': "Taking payments through GOV.UK Pay",
+  'transfer-form': "Transferring your form to another user",
 }} %>
-        <section class="content-section content-section--with-top-border">
-        <h2 id="change-name" class="govuk-heading-m">Changing your form's name and URL</h2>
-        <p>You can review and update both your form's name and URL in settings. Go to: Settings > Form name and URL</p>
-        <p>You can change your form's name at any time but you can only change the URL up until you have published your form to Live. After this point, the option is no longer available in settings. This is because changing a Live form's URL can cause problems for users if they have bookmarked the old form or are using an old link. If you need to change a Live form's URL, <a class="govuk-link" href="/contact">contact us to discuss it</a>.</p>
-        <p>You will need to publish your form for any changes to take effect. If you change the URL of a form that has already been published to Test, any links to the old URL will stop working after you publish the new URL.</p>
-        <h3 class="govuk-heading-s">Things to consider when changing the name</h3>
-        <p>The new name should continue to follow the guidelines for <a class="govuk-link" href="/building-and-editing/#form-name">naming your form</a>.</p>
-        <p>You can change your name independently of the URL but it's best to ensure your name and URL are closely aligned.</p>
-        <p>You should also ensure that the title of your start page is aligned with the new name.</p>
-        <h3 class="govuk-heading-s">Things to consider when changing the URL</h3>
-        <p>Your form is given a URL when you first create it, based on your form name. All forms sit on the same domain and you are only able to change the first part of the URL (the subdomain). For example, the subdomain in this URL is 'contact-us':</p>
-        <p><u>https://<strong>contact-us</strong>.form.service.justice.gov.uk</u></p>
-        <p>The subdomain selected by MoJ Forms may be shortened and simplified because of URL restrictions. It must:</p>
-        </ul>
-        <li>be a maximum of 57 characters</li>
-        <li>include only lower case letters</li>
-        <li>not include spaces or special characters except hyphens</li>
-        <li>not start with a number</li>
-        </ul>
-        <p>In addition to these restrictions, your URL should be easy to read and closely resemble your form's name and start page title. Words should be separated with hyphens. It's OK to cut small words like articles and conjunctions if you are short of space and the meaning is still clear.</p>
-        <p><a class="govuk-link" href="#top">Back to top</a></p>
-      </section>
-      <section class="content-section content-section--with-top-border">
-      <h2 id="google-analytics" class="govuk-heading-m">Setting up Google Analytics</h2>
-      <p>MoJ Forms allows you to link your form with a Google Analytics account and monitor your form’s performance.</p>
-      <p>You will need:</p>
-      <ul>
-      <li>a Google Analytics account - if you don’t have one already, talk to <a class="govuk-link" href="https://justiceuk.sharepoint.com/sites/DemandandBusinessRelationshipManagement/SitePages/Business-Relationship-Management.aspx">Technology Services Business Relationship Management</a> about raising a service request</li>
-      <li>your analytics tracking ID - see ‘Configuring Google Analytics’</li>
-      </ul>
-      <p>You can enable analytics on your Test and Live sites independently and add different tracking IDs. This allows you to test your analytics first and prevent test activity from being recorded in your live data.</p>
-      <p>To comply with data protection regulations, users are given the option of accepting or rejecting analytics cookies when they first visit your site. This means you will only receive data for the users that actively opt-in to analytics.</p>
-      <h3 class="govuk-heading-s">Configuring Google Analytics</h3>
-      <p>Go to: Settings > Google Analytics</p>
-      <p>On this page, you can enable Google Analytics on the Test site and on the Live site. You need to enable and configure the settings for both sites separately.</p>
-      <p>To enable Google Analytics on a site, check the 'Enable analytics' box. The ‘configure’ settings will then expand to show space for 3 types of tracking IDs. The tracking ID is what links your form to your Google Analytics account. You must enter at least 1 tracking ID and can potentially enter all 3.</p>
-      <p>MoJ Forms supports 3 types of tracking ID:</p>
-      <ul>
-      <li>Universal Analytics Tracking ID - for Google’s legacy analytics service which will be retired in July 2023. This starts with UA, for example: UA-000000-2.</li>
-      <li>Google Analytics 4 Measurement ID - for Google’s latest analytics service, which we recommend for all new forms. This starts with G, for example: G-0000004.</li>
-      <li>Google Tag Manager Container ID - for Google Tag Manager, which is an alternative way of adding analytics code to a form. This starts with GTM, for example: GTM-000003.</li>
-      </ul>
-      <p><a class="govuk-link" href="https://support.google.com/analytics/answer/9539598">How to find your Universal Analytics or Google Analytics 4 ID</a></p>
-      <p><a class="govuk-link" href="https://support.google.com/tagmanager/answer/6103696?hl=en">How to find your Google Tag Manager ID</a></p>
-      <p>You will need to publish your form for the changes to take effect.</p>
-      <h3 class="govuk-heading-s">About cookies</h3>
-      <p>To comply with data protection regulations, all our forms include a default cookies statement in the footer section, along with accessibility and privacy.</p>
-      <p>If you are using either Universal Analytics or Google Analytics 4, this should be sufficient to cover their use of cookies and will not require any additional work.</p>
-      <p>The cookies page is temporarily uneditable while we make some changes to how our footer pages work. If you plan to use Google Tag Manager for any marketing or analytics tools other than Universal Analytics or Google Analytics 4, <a class="govuk-link" href="/contact/">contact us to discuss it</a>.</p>
-      <p><a class="govuk-link" href="#top">Back to top</a></p>
-    </section>
-    <section class="content-section content-section--with-top-border">
-    <h2 id="save-for-later" class="govuk-heading-m">Enabling users to save their progress on a form</h2>
-    <p>If you think users might not be able to complete your form in one sitting, you can enable 'save for later'. This feature lets users save their progress on a form and return to complete it another time.</p>
-    <p>Save for later is a good option for forms that:</p>
-    <ul>
+<section class="content-section content-section--with-top-border">
+  <h2 id="change-name" class="govuk-heading-m">Changing your form's name and URL</h2>
+  <p>You can review and update both your form's name and URL in settings. Go to: Settings > Form name and URL</p>
+  <p>You can change your form's name at any time but you can only change the URL up until you have published your form to Live. After this point, the option is no longer available in settings. This is because changing a Live form's URL can cause problems for users if they have bookmarked the old form or are using an old link. If you need to change a Live form's URL, <a class="govuk-link" href="/contact">contact us to discuss it</a>.</p>
+  <p>You will need to publish your form for any changes to take effect. If you change the URL of a form that has already been published to Test, any links to the old URL will stop working after you publish the new URL.</p>
+  <h3 class="govuk-heading-s">Things to consider when changing the name</h3>
+  <p>The new name should continue to follow the guidelines for <a class="govuk-link" href="/building-and-editing/#form-name">naming your form</a>.</p>
+  <p>You can change your name independently of the URL but it's best to ensure your name and URL are closely aligned.</p>
+  <p>You should also ensure that the title of your start page is aligned with the new name.</p>
+  <h3 class="govuk-heading-s">Things to consider when changing the URL</h3>
+  <p>Your form is given a URL when you first create it, based on your form name. All forms sit on the same domain and you are only able to change the first part of the URL (the subdomain). For example, the subdomain in this URL is 'contact-us':</p>
+  <p><u>https://<strong>contact-us</strong>.form.service.justice.gov.uk</u></p>
+  <p>The subdomain selected by MoJ Forms may be shortened and simplified because of URL restrictions. It must:</p>
+  <ul>
+    <li>be a maximum of 57 characters</li>
+    <li>include only lower case letters</li>
+    <li>not include spaces or special characters except hyphens</li>
+    <li>not start with a number</li>
+  </ul>
+  <p>In addition to these restrictions, your URL should be easy to read and closely resemble your form's name and start page title. Words should be separated with hyphens. It's OK to cut small words like articles and conjunctions if you are short of space and the meaning is still clear.</p>
+  <p><a class="govuk-link" href="#top">Back to top</a></p>
+</section>
+<section class="content-section content-section--with-top-border">
+  <h2 id="google-analytics" class="govuk-heading-m">Setting up Google Analytics</h2>
+  <p>MoJ Forms allows you to link your form with a Google Analytics account and monitor your form’s performance.</p>
+  <p>You will need:</p>
+  <ul>
+    <li>a Google Analytics account - if you don’t have one already, talk to <a class="govuk-link" href="https://justiceuk.sharepoint.com/sites/DemandandBusinessRelationshipManagement/SitePages/Business-Relationship-Management.aspx">Technology Services Business Relationship Management</a> about raising a service request</li>
+    <li>your analytics tracking ID - see ‘Configuring Google Analytics’</li>
+  </ul>
+  <p>You can enable analytics on your Test and Live sites independently and add different tracking IDs. This allows you to test your analytics first and prevent test activity from being recorded in your live data.</p>
+  <p>To comply with data protection regulations, users are given the option of accepting or rejecting analytics cookies when they first visit your site. This means you will only receive data for the users that actively opt-in to analytics.</p>
+  <h3 class="govuk-heading-s">Configuring Google Analytics</h3>
+  <p>Go to: Settings > Google Analytics</p>
+  <p>On this page, you can enable Google Analytics on the Test site and on the Live site. You need to enable and configure the settings for both sites separately.</p>
+  <p>To enable Google Analytics on a site, check the 'Enable analytics' box. The ‘configure’ settings will then expand to show space for 3 types of tracking IDs. The tracking ID is what links your form to your Google Analytics account. You must enter at least 1 tracking ID and can potentially enter all 3.</p>
+  <p>MoJ Forms supports 3 types of tracking ID:</p>
+  <ul>
+    <li>Universal Analytics Tracking ID - for Google’s legacy analytics service which will be retired in July 2023. This starts with UA, for example: UA-000000-2.</li>
+    <li>Google Analytics 4 Measurement ID - for Google’s latest analytics service, which we recommend for all new forms. This starts with G, for example: G-0000004.</li>
+    <li>Google Tag Manager Container ID - for Google Tag Manager, which is an alternative way of adding analytics code to a form. This starts with GTM, for example: GTM-000003.</li>
+  </ul>
+  <p><a class="govuk-link" href="https://support.google.com/analytics/answer/9539598">How to find your Universal Analytics or Google Analytics 4 ID</a></p>
+  <p><a class="govuk-link" href="https://support.google.com/tagmanager/answer/6103696?hl=en">How to find your Google Tag Manager ID</a></p>
+  <p>You will need to publish your form for the changes to take effect.</p>
+  <h3 class="govuk-heading-s">About cookies</h3>
+  <p>To comply with data protection regulations, all our forms include a default cookies statement in the footer section, along with accessibility and privacy.</p>
+  <p>If you are using either Universal Analytics or Google Analytics 4, this should be sufficient to cover their use of cookies and will not require any additional work.</p>
+  <p>The cookies page is temporarily uneditable while we make some changes to how our footer pages work. If you plan to use Google Tag Manager for any marketing or analytics tools other than Universal Analytics or Google Analytics 4, <a class="govuk-link" href="/contact/">contact us to discuss it</a>.</p>
+  <p><a class="govuk-link" href="#top">Back to top</a></p>
+</section>
+<section class="content-section content-section--with-top-border">
+  <h2 id="save-for-later" class="govuk-heading-m">Enabling users to save their progress on a form</h2>
+  <p>If you think users might not be able to complete your form in one sitting, you can enable 'save for later'. This feature lets users save their progress on a form and return to complete it another time.</p>
+  <p>Save for later is a good option for forms that:</p>
+  <ul>
     <li>are long or complex</li>
     <li>include questions that users might want time to think about</li>
     <li>ask for information that users might not have immediately to hand</li>
-    </ul>
-    <p>How it works:
-    <ul>You switch on save for later in your form's settings and publish your form for the change to take effect.</li>
+  </ul>
+  <p>How it works:
+  <ul>You switch on save for later in your form's settings and publish your form for the change to take effect.</li>
     <li>This adds a secondary save button to the bottom of every question page of your form.</li>
     <li>When a user saves their progress, they are asked to enter an email address and a security answer.</li>
     <li>We then email the user a one-off link that they can use to come back to the form and continue.</li>
     <li>The user needs to enter the security answer to retrieve their saved answers. They have 3 attempts to get it right.</li>
     <li>The link is valid for 28 days and will work only once. There is no recovery option if the user loses the link or forgets their security answer.</li>
     <li>Users can save their progress on a form as many times as they like by generating a new link each time.</li>
-    </ul>
-    <p>All user data is encrypted, stored securely and deleted after 28 days.</p>
-    <img src="/images/save-for-later.png" width="100%" alt="Two screenshots are shown alongside each other to illustrate how users can save their progress on a form. The first screenshot is a question page titled Why are you getting in touch? Beneath the question there are 2 buttons - one labelled Continue and another labelled Save for later. A blue arrow suggests that a user would go from this page to the next screenshot which is a page titled Save for later. This page asks the user to enter their email address and set a security answer in order to continue with saving.">
-    <p>To enable save and return, go to: Settings > Save for later</p>
-    <p>Check 'Enable save for later', save and publish your form for the setting to take effect.</p>
-    <p><a class="govuk-link" href="#top">Back to top</a></p>
-  </section>
-      <section class="content-section content-section--with-top-border">
-        <h2 id="email-settings" class="govuk-heading-m">Collecting information by email</h2>
-        <p>When a user completes your form, you can have their form submission emailed to you.</p>
-        <p>The email address you use must be an approved MoJ address. This is to help protect user data and ensure it isn't unknowingly sent outside of the organisation.</p>
-        <p>The answers will be shown in the body of the email and attached to the emails in PDF. They can also be  attached in comma separated values (CSV) format. CSV files list the answers in plain text, separated by commas. They can be imported into spreadsheets and other applications, making it easier to handle and process the information you receive. For example, you could <a class="govuk-link" href="https://support.microsoft.com/en-us/office/import-data-from-a-folder-with-multiple-files-power-query-94b8023c-2e66-4f6b-8c78-6a00041c90e4">import data from multiple CSV files into Microsoft Excel</a> at once.</p>
-        <p>All data received from a form is labelled OFFICIAL-SENSITIVE. This is to comply with the Government Security Classifications Policy. (Find out more about <a class="govuk-link" href="/getting-started/#security-classifications">security classifications for your form</a>.)
-        <p>Currently, email is the only way to collect the information your users submit. We plan to introduce other options, such as API integration, at a later time.</p>
-        <h3 class="govuk-heading-s">Setting up the emails</h3>
-        <p>Go to: Settings > Submission settings > Collect information by email</p>
-        <p>On this page, you can enable collecting information by email on the Test site and on the Live site. You need to enable and configure the settings for both sites separately. The answers are attached in a PDF and can be additionally attached in a CSV.</p>
-        <p>To enable the setting on a site, check the 'Enable email' box. The 'configure' settings will then expand and allow you to enter the email address you want the emails sent to. This address should be:</p>
-        <ul>
-        <li>an MoJ email address, such as @justice.gov.uk or @digital.justice.gov.uk, or other approved address - if the address you want to use isn't accepted, <a class="govuk-link" href="/contact">contact us</a> to discuss your requirements</li>
-        <li>a team email account with several authorised users to ensure you can maintain your service in the event of team changes or absences</li>
-        </ul>
-        <p>Currently you can send the form to only one address.</p>
-        <p>There are a number of other email configuration options:</p>
-        <ul>
-        <li>Subject - the subject line of the email</li>
-        <li>Message - the body text of the email</li>
-        <li>PDF heading - in the attachment containing user answers (<a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.pdf">see a sample PDF</a>)</li>
-        <li>PDF subheading - in the attachment containing user answers (<a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.pdf">see a sample PDF</a>)</li>
-        <li>CSV attachment - opt to receive an additional email with user answers in CSV format (<a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.csv">see a sample CSV</a>)</li>
-        </ul>
-        <p><a class="govuk-link" href="#top">Back to top</a></p>
-      </section>
-      <section class="content-section content-section--with-top-border">
-      <h2 id="confirmation-email" class="govuk-heading-m">Sending users a confirmation email</h2>
-      <p>You can configure your form to send users a confirmation email when they submit their answers. The message can be customised to your service and the user's answers will be inserted into the email.</p>
-      <p>A confirmation email can be used to:</p>
-      <ul>
-      <li>reassure users that their information was submitted successfully</li>
-      <li>allow users to double-check the information they provided and keep it for reference</li>
-      <li>help you repeat and reinforce important messages from the confirmation page, such as response times and contact details</li>
-      </ul>
-      <p>The email will be sent by a generic MoJ Forms email address but show as coming from your form name.</p>
-      <img src="/images/confirmation-email-inbox.png" alt="A screenshot of an email inbox. A red arrow points to the top email which is from Find out if MoJ For. (The full name appears to have been truncated.) The subject of the email is Your submission to Find out if MoJ Forms is right for you." class="screenshot-image">
-      <p>You will need to set an email address for users to reply to - even if you don't want users to reply. Users may reply anyway and could include personal information. For data protection purposes, these emails should only go to your team.</p>
-      <p>The reply address should be:</p>
-      <ul>
-      <li>a username that is easily associated with your form</li>
-      <li>an MoJ email address, such as @justice.gov.uk or @digital.justice.gov.uk, or other approved address - if the address you want to use isn't accepted, <a class="govuk-link" href="/contact">contact us</a> to discuss your requirements</li>
-      <li>a team email account with several authorised users to ensure you can maintain your service in the event of team changes or absences</li>
-      </ul>
-      <p>To deter replies, you could:</p>
-      <ul>
-      <li>include appropriate contact details in the confirmation email</li>
-      <li>create a separate email address for replies and set an auto-reply message with meaningful information</li>
-      </ul>
-      <h3 class="govuk-heading-s">Setting up the confirmation email</h3>
-      <p>To enable this feature, you will need to capture your users' email addresses using an <a class="govuk-link" href="/building-and-editing/#question-formats">email address question</a>. You will need at least one question of this type before you can set up the confirmation email.</p>
-      <p>Once you have an email address question in your form, go to: Settings > Submission settings > Send a confirmation email</p>
-      <p>On this page, you can enable a confirmation email on the Test site and on the Live site. You need to enable and configure the settings for both sites separately.</p>
-      <p>To enable it on a site, check the 'Enable confirmation email' box. The 'configure' panel will then expand to show the following settings:<p>
-      <ul> 
-      <li>Reply to - the email address that replies will go to</li>
-      <li>To the email address captured by - the question in your form that asks the user for their email address (if there is more than one email address question in your form, you will be able to select between them)</li>
-      <li>Subject - the subject line of the email</li>
-      <li>Message - the body text of the email</li>
-      </ul>
-      <p>The user's answers will be inserted into the email beneath the message. (You won't see this in the settings page.) The message does not currently support any rich text formatting such as headings or bullet points.</p>
-      <p>When you enable confirmation email, MoJ Forms automatically adds disclaimers to your form to let users know how their email address will be used. These disclaimers appear:</p>
-      <ul>
-      <li>directly beneath the question used to capture the user's email address</li>
-      <li>on the check answers page, before the submit button</li>
-      </ul>
-      <img src="/images/confirmation-email-disclaimers.jpg" width="100%" alt="Two screenshots show the places where disclaimers are added automatically to forms that send confirmation emails. In one, a question page is titled Do you want to receive a confirmation email? with a disclaimer that reads We will use this address to send you a confirmation email with a copy of your answers. The second screenshot shows the check answers page with a disclaimer and submit button.">
-      <p>These messages are not currently editable. If you plan on using the email address for other purposes, you should mention this in the question's hint text.</p>
-      <p><a class="govuk-link" href="#top">Back to top</a></p>
-    </section>
-    <section class="content-section content-section--with-top-border">
-      <h2 id="references" class="govuk-heading-m">Providing users with reference numbers</h2>
-      <p>MoJ Forms can generate unique reference numbers for each submission made by your form. This can make it easier to keep track of the submissions you receive and discuss them with users should the need arise.</p>
-      <img src="/images/confirmation-page-with-reference-number.png" alt="A screenshot shows the confirmation page of a form titled: Contact us about a case. The screen is dominated by a large green box which contains the message: Thank you for contacting us about a case. Your reference number is: M35-CL64-Z5Y." class="screenshot-image">
-      <p>For each submission, a unique reference number is generated and inserted into:</p>
-      <ul>
-      <li>the confirmation page</li>
-      <li>the subject and message of the <a class="govuk-link" href="/settings/#email-settings">submission email</a></li>
-      <li>the PDF and CSV attachments of user answers</li>
-      <li>the subject and message of the <a class="govuk-link" href="/settings/#confirmation-email">confirmation email</a></li>
-      </ul>
-      <p>(You will need to enable the emails separately.)</p>
-      <p>MoJ Forms reference numbers are a mixture of 10 letters and numbers such as A12&#8209;B345&#8209;C67.</p>
-      <h3 class="govuk-heading-s">Setting up reference numbers</h3>
-      <p>Go to the settings page (Settings > Reference numbers and GOV.UK Pay) and check "Enable reference numbers".</p>
-      <p>This will insert a placeholder for the reference number into your confirmation page, submission email and confirmation email templates (for both Test and Live sites).</p>
-      <img src="/images/reference-number-email-template.png" alt="A screenshot from the MoJ Forms editor shows the settings page for a confirmation email. The subject and message both include placeholder text indicating where the reference number will be inserted." class="screenshot-image">
-      <p>You can edit the email content and use the placeholder {{reference_number}} wherever you want the reference number to appear.</p>
-      <p>When you enable or disable reference numbers it will overwrite any custom text in your email templates and reset them to default text. You may therefore want to take a copy of your emails before changing this setting.</p> 
-      <p><a class="govuk-link" href="#top">Back to top</a></p>
-    </section>
-    <section class="content-section content-section--with-top-border">
-      <h2 id="payment-links" class="govuk-heading-m">Taking payments through GOV.UK Pay</h2>
-      <p>If you have a GOV.UK Pay account and are set up to take payments through a payment link, MoJ Forms can help you join up form submissions with payments.</p>
-      <img src="/images/confirmation-page-to-gov-pay.png" width="100%" alt="Two screenshots are shown alongside each other to illustrate how MoJ Forms can join up with GOV.UK Pay. The first screenshot is the confirmation page of a form titled Apply for a licence. A large blue box includes the words 'you still need to pay' and a reference number. Beneath the box is a button labelled continue to pay. A blue arrow suggests that a user would go from this page to the next screenshot which is a GOV.UK payment page. It is titled Pay for a licence application and includes the same reference number shown on the first screenshot.">
-      <p>How it works:</p>
-      <ul>
-      <li>In GOV.UK Pay, you <a class="govuk-link" href="https://www.payments.service.gov.uk/govuk-payment-pages/">create a payment link</a>.</li>
-      <li>In your form, you enable GOV.UK Pay payment links and reference numbers and enter your payment link URL. </li>
-      <li>MoJ Forms then combines your payment link with the reference number and inserts the new link into the confirmation page and confirmation email. (You will need to enable the <a class="govuk-link" href="/settings/#confirmation-email">confirmation email settings</a> separately.)</li>
-      <li>After a user completes your form, they use the payment link to visit GOV.UK Pay to make a payment. This automatically applies the MoJ Forms reference number to the payment.</li>
-      <li>You can then use the reference number to match a payment with the corresponding form submission.</li>
-      </ul>
-      <h3 class="govuk-heading-s">Setting up GOV.UK Pay</h3>
-      <p>Before you can take payments in this way you will need to:</p>
-      <ul>
-      <li>set up a <a class="govuk-link" href="https://www.payments.service.gov.uk/">GOV.UK Pay account</a></li>
-      <li>talk to your local finance team to set up a payment service provider</li>
-      </ul>
-      <p>You can create a GOV.UK Pay account and set up a test payment link in just a few minutes but it may be several months before you are ready to take payments. This depends on the payment service provider arrangements in your area. For example, MoJ, HMCTS and HMPPS all have separate agreements with the Government Banking Service.</p>
-      <h3 class="govuk-heading-s">Setting up GOV.UK Pay payment links</h3>
-      <p>Go to the settings page (Settings > Reference numbers and GOV.UK Pay) and check both settings:</p>
-      <ul>
-      <li>Enable reference numbers</li>
-      <li>Add payment links with reference numbers</li>
-      </ul>
-      <p>Then enter your GOV.UK Pay payment link URL into the field provided. You get this from your GOV.UK Pay account and it should start with "https://gov.uk". When setting this up, ensure you select 'yes' when asked if your users already have a payment reference. This is the field that will be pre-filled for your users with the MoJ Forms reference number.</p>
-      <p>This will then insert placeholders for the payment link into your confirmation page and confirmation email templates (for both Test and Live sites). It will also insert separate placeholders for the reference number in several places. (See <a class="govuk-link" href="#references">Providing users with reference numbers</a>.)</p>
-      <img src="/images/payment-link-email-template.png" alt="A screenshot from the MoJ Forms editor shows the settings page for a confirmation email. The message includes placeholder text indicating where the payment link will be inserted." class="screenshot-image">
-      <p>You can edit the email content and use the placeholder {{payment_link}} wherever you want the payment link to appear.</p>
-      <p>When you enable or disable payment links it will overwrite any custom text in your email templates and reset them to default text. You may therefore want to take a copy of your emails before changing this setting.</p>
-      <p><a class="govuk-link" href="#top">Back to top</a></p>
-    </section>
-    <section class="content-section content-section--with-top-border">
-      <h2 id="transfer-form" class="govuk-heading-m">Transferring your form to another user</h2>
-      <p>You can transfer your form to another MoJ Forms user by changing your form's 'owner' in settings.</p>
-      <p>A form can have only one owner at a time. Only the owner can see the form on the 'Your forms' page and open the form in the MoJ Forms editor.</p>
-      <h3 class="govuk-heading-s">Transferring a form</h3>
-      <p>Go to: Settings > Change form owner</p>
-      <p>Enter the email address of the person you want to transfer the form to. They must already be an MoJ Forms user and have signed into MoJ Forms at least once.</p>
-      <p>If they aren't a user yet, ask them to <a class="govuk-link" href="/contact/">contact us</a> to get access.</p>
-      <p>Once you change the form's owner, you will be taken back to 'Your forms' and no longer see or be able to access the form.</p>
-      <p>The new form owner will be notified by email of the change.</p>
-      <p><a class="govuk-link" href="#top">Back to top</a></p>
-    </section>
-        <!-- END CONTENT -->
-      </div>
-    </div>
-  </main>
-</div>
+  </ul>
+  <p>All user data is encrypted, stored securely and deleted after 28 days.</p>
+  <img src="/images/save-for-later.png" width="100%" alt="Two screenshots are shown alongside each other to illustrate how users can save their progress on a form. The first screenshot is a question page titled Why are you getting in touch? Beneath the question there are 2 buttons - one labelled Continue and another labelled Save for later. A blue arrow suggests that a user would go from this page to the next screenshot which is a page titled Save for later. This page asks the user to enter their email address and set a security answer in order to continue with saving.">
+  <p>To enable save and return, go to: Settings > Save for later</p>
+  <p>Check 'Enable save for later', save and publish your form for the setting to take effect.</p>
+  <p><a class="govuk-link" href="#top">Back to top</a></p>
+</section>
+<section class="content-section content-section--with-top-border">
+  <h2 id="email-settings" class="govuk-heading-m">Collecting information by email</h2>
+  <p>When a user completes your form, you can have their form submission emailed to you.</p>
+  <p>The email address you use must be an approved MoJ address. This is to help protect user data and ensure it isn't unknowingly sent outside of the organisation.</p>
+  <p>The answers will be shown in the body of the email and attached to the emails in PDF. They can also be  attached in comma separated values (CSV) format. CSV files list the answers in plain text, separated by commas. They can be imported into spreadsheets and other applications, making it easier to handle and process the information you receive. For example, you could <a class="govuk-link" href="https://support.microsoft.com/en-us/office/import-data-from-a-folder-with-multiple-files-power-query-94b8023c-2e66-4f6b-8c78-6a00041c90e4">import data from multiple CSV files into Microsoft Excel</a> at once.</p>
+  <p>All data received from a form is labelled OFFICIAL-SENSITIVE. This is to comply with the Government Security Classifications Policy. (Find out more about <a class="govuk-link" href="/getting-started/#security-classifications">security classifications for your form</a>.)
+  <p>Currently, email is the only way to collect the information your users submit. We plan to introduce other options, such as API integration, at a later time.</p>
+  <h3 class="govuk-heading-s">Setting up the emails</h3>
+  <p>Go to: Settings > Submission settings > Collect information by email</p>
+  <p>On this page, you can enable collecting information by email on the Test site and on the Live site. You need to enable and configure the settings for both sites separately. The answers are attached in a PDF and can be additionally attached in a CSV.</p>
+  <p>To enable the setting on a site, check the 'Enable email' box. The 'configure' settings will then expand and allow you to enter the email address you want the emails sent to. This address should be:</p>
+  <ul>
+    <li>an MoJ email address, such as @justice.gov.uk or @digital.justice.gov.uk, or other approved address - if the address you want to use isn't accepted, <a class="govuk-link" href="/contact">contact us</a> to discuss your requirements</li>
+    <li>a team email account with several authorised users to ensure you can maintain your service in the event of team changes or absences</li>
+  </ul>
+  <p>Currently you can send the form to only one address.</p>
+  <p>There are a number of other email configuration options:</p>
+  <ul>
+    <li>Subject - the subject line of the email</li>
+    <li>Message - the body text of the email</li>
+    <li>PDF heading - in the attachment containing user answers (<a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.pdf">see a sample PDF</a>)</li>
+    <li>PDF subheading - in the attachment containing user answers (<a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.pdf">see a sample PDF</a>)</li>
+    <li>CSV attachment - opt to receive an additional email with user answers in CSV format (<a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.csv">see a sample CSV</a>)</li>
+  </ul>
+  <p><a class="govuk-link" href="#top">Back to top</a></p>
+</section>
+<section class="content-section content-section--with-top-border">
+  <h2 id="confirmation-email" class="govuk-heading-m">Sending users a confirmation email</h2>
+  <p>You can configure your form to send users a confirmation email when they submit their answers. The message can be customised to your service and the user's answers will be inserted into the email.</p>
+  <p>A confirmation email can be used to:</p>
+  <ul>
+    <li>reassure users that their information was submitted successfully</li>
+    <li>allow users to double-check the information they provided and keep it for reference</li>
+    <li>help you repeat and reinforce important messages from the confirmation page, such as response times and contact details</li>
+  </ul>
+  <p>The email will be sent by a generic MoJ Forms email address but show as coming from your form name.</p>
+  <img src="/images/confirmation-email-inbox.png" alt="A screenshot of an email inbox. A red arrow points to the top email which is from Find out if MoJ For. (The full name appears to have been truncated.) The subject of the email is Your submission to Find out if MoJ Forms is right for you." class="screenshot-image">
+  <p>You will need to set an email address for users to reply to - even if you don't want users to reply. Users may reply anyway and could include personal information. For data protection purposes, these emails should only go to your team.</p>
+  <p>The reply address should be:</p>
+  <ul>
+    <li>a username that is easily associated with your form</li>
+    <li>an MoJ email address, such as @justice.gov.uk or @digital.justice.gov.uk, or other approved address - if the address you want to use isn't accepted, <a class="govuk-link" href="/contact">contact us</a> to discuss your requirements</li>
+    <li>a team email account with several authorised users to ensure you can maintain your service in the event of team changes or absences</li>
+  </ul>
+  <p>To deter replies, you could:</p>
+  <ul>
+    <li>include appropriate contact details in the confirmation email</li>
+    <li>create a separate email address for replies and set an auto-reply message with meaningful information</li>
+  </ul>
+  <h3 class="govuk-heading-s">Setting up the confirmation email</h3>
+  <p>To enable this feature, you will need to capture your users' email addresses using an <a class="govuk-link" href="/building-and-editing/#question-formats">email address question</a>. You will need at least one question of this type before you can set up the confirmation email.</p>
+  <p>Once you have an email address question in your form, go to: Settings > Submission settings > Send a confirmation email</p>
+  <p>On this page, you can enable a confirmation email on the Test site and on the Live site. You need to enable and configure the settings for both sites separately.</p>
+  <p>To enable it on a site, check the 'Enable confirmation email' box. The 'configure' panel will then expand to show the following settings:<p>
+  <ul> 
+    <li>Reply to - the email address that replies will go to</li>
+    <li>To the email address captured by - the question in your form that asks the user for their email address (if there is more than one email address question in your form, you will be able to select between them)</li>
+    <li>Subject - the subject line of the email</li>
+    <li>Message - the body text of the email</li>
+  </ul>
+  <p>The user's answers will be inserted into the email beneath the message. (You won't see this in the settings page.) The message does not currently support any rich text formatting such as headings or bullet points.</p>
+  <p>When you enable confirmation email, MoJ Forms automatically adds disclaimers to your form to let users know how their email address will be used. These disclaimers appear:</p>
+  <ul>
+    <li>directly beneath the question used to capture the user's email address</li>
+    <li>on the check answers page, before the submit button</li>
+  </ul>
+  <img src="/images/confirmation-email-disclaimers.jpg" width="100%" alt="Two screenshots show the places where disclaimers are added automatically to forms that send confirmation emails. In one, a question page is titled Do you want to receive a confirmation email? with a disclaimer that reads We will use this address to send you a confirmation email with a copy of your answers. The second screenshot shows the check answers page with a disclaimer and submit button.">
+  <p>These messages are not currently editable. If you plan on using the email address for other purposes, you should mention this in the question's hint text.</p>
+  <p><a class="govuk-link" href="#top">Back to top</a></p>
+</section>
+<section class="content-section content-section--with-top-border">
+  <h2 id="references" class="govuk-heading-m">Providing users with reference numbers</h2>
+  <p>MoJ Forms can generate unique reference numbers for each submission made by your form. This can make it easier to keep track of the submissions you receive and discuss them with users should the need arise.</p>
+  <img src="/images/confirmation-page-with-reference-number.png" alt="A screenshot shows the confirmation page of a form titled: Contact us about a case. The screen is dominated by a large green box which contains the message: Thank you for contacting us about a case. Your reference number is: M35-CL64-Z5Y." class="screenshot-image">
+  <p>For each submission, a unique reference number is generated and inserted into:</p>
+  <ul>
+    <li>the confirmation page</li>
+    <li>the subject and message of the <a class="govuk-link" href="/settings/#email-settings">submission email</a></li>
+    <li>the PDF and CSV attachments of user answers</li>
+    <li>the subject and message of the <a class="govuk-link" href="/settings/#confirmation-email">confirmation email</a></li>
+  </ul>
+  <p>(You will need to enable the emails separately.)</p>
+  <p>MoJ Forms reference numbers are a mixture of 10 letters and numbers such as A12&#8209;B345&#8209;C67.</p>
+  <h3 class="govuk-heading-s">Setting up reference numbers</h3>
+  <p>Go to the settings page (Settings > Reference numbers and GOV.UK Pay) and check "Enable reference numbers".</p>
+  <p>This will insert a placeholder for the reference number into your confirmation page, submission email and confirmation email templates (for both Test and Live sites).</p>
+  <img src="/images/reference-number-email-template.png" alt="A screenshot from the MoJ Forms editor shows the settings page for a confirmation email. The subject and message both include placeholder text indicating where the reference number will be inserted." class="screenshot-image">
+  <p>You can edit the email content and use the placeholder {{reference_number}} wherever you want the reference number to appear.</p>
+  <p>When you enable or disable reference numbers it will overwrite any custom text in your email templates and reset them to default text. You may therefore want to take a copy of your emails before changing this setting.</p> 
+  <p><a class="govuk-link" href="#top">Back to top</a></p>
+</section>
+<section class="content-section content-section--with-top-border">
+  <h2 id="payment-links" class="govuk-heading-m">Taking payments through GOV.UK Pay</h2>
+  <p>If you have a GOV.UK Pay account and are set up to take payments through a payment link, MoJ Forms can help you join up form submissions with payments.</p>
+  <img src="/images/confirmation-page-to-gov-pay.png" width="100%" alt="Two screenshots are shown alongside each other to illustrate how MoJ Forms can join up with GOV.UK Pay. The first screenshot is the confirmation page of a form titled Apply for a licence. A large blue box includes the words 'you still need to pay' and a reference number. Beneath the box is a button labelled continue to pay. A blue arrow suggests that a user would go from this page to the next screenshot which is a GOV.UK payment page. It is titled Pay for a licence application and includes the same reference number shown on the first screenshot.">
+  <p>How it works:</p>
+  <ul>
+    <li>In GOV.UK Pay, you <a class="govuk-link" href="https://www.payments.service.gov.uk/govuk-payment-pages/">create a payment link</a>.</li>
+    <li>In your form, you enable GOV.UK Pay payment links and reference numbers and enter your payment link URL. </li>
+    <li>MoJ Forms then combines your payment link with the reference number and inserts the new link into the confirmation page and confirmation email. (You will need to enable the <a class="govuk-link" href="/settings/#confirmation-email">confirmation email settings</a> separately.)</li>
+    <li>After a user completes your form, they use the payment link to visit GOV.UK Pay to make a payment. This automatically applies the MoJ Forms reference number to the payment.</li>
+    <li>You can then use the reference number to match a payment with the corresponding form submission.</li>
+  </ul>
+  <h3 class="govuk-heading-s">Setting up GOV.UK Pay</h3>
+  <p>Before you can take payments in this way you will need to:</p>
+  <ul>
+    <li>set up a <a class="govuk-link" href="https://www.payments.service.gov.uk/">GOV.UK Pay account</a></li>
+    <li>talk to your local finance team to set up a payment service provider</li>
+  </ul>
+  <p>You can create a GOV.UK Pay account and set up a test payment link in just a few minutes but it may be several months before you are ready to take payments. This depends on the payment service provider arrangements in your area. For example, MoJ, HMCTS and HMPPS all have separate agreements with the Government Banking Service.</p>
+  <h3 class="govuk-heading-s">Setting up GOV.UK Pay payment links</h3>
+  <p>Go to the settings page (Settings > Reference numbers and GOV.UK Pay) and check both settings:</p>
+  <ul>
+    <li>Enable reference numbers</li>
+    <li>Add payment links with reference numbers</li>
+  </ul>
+  <p>Then enter your GOV.UK Pay payment link URL into the field provided. You get this from your GOV.UK Pay account and it should start with "https://gov.uk". When setting this up, ensure you select 'yes' when asked if your users already have a payment reference. This is the field that will be pre-filled for your users with the MoJ Forms reference number.</p>
+  <p>This will then insert placeholders for the payment link into your confirmation page and confirmation email templates (for both Test and Live sites). It will also insert separate placeholders for the reference number in several places. (See <a class="govuk-link" href="#references">Providing users with reference numbers</a>.)</p>
+  <img src="/images/payment-link-email-template.png" alt="A screenshot from the MoJ Forms editor shows the settings page for a confirmation email. The message includes placeholder text indicating where the payment link will be inserted." class="screenshot-image">
+  <p>You can edit the email content and use the placeholder {{payment_link}} wherever you want the payment link to appear.</p>
+  <p>When you enable or disable payment links it will overwrite any custom text in your email templates and reset them to default text. You may therefore want to take a copy of your emails before changing this setting.</p>
+  <p><a class="govuk-link" href="#top">Back to top</a></p>
+</section>
+<section class="content-section content-section--with-top-border">
+  <h2 id="transfer-form" class="govuk-heading-m">Transferring your form to another user</h2>
+  <p>You can transfer your form to another MoJ Forms user by changing your form's 'owner' in settings.</p>
+  <p>A form can have only one owner at a time. Only the owner can see the form on the 'Your forms' page and open the form in the MoJ Forms editor.</p>
+  <h3 class="govuk-heading-s">Transferring a form</h3>
+  <p>Go to: Settings > Change form owner</p>
+  <p>Enter the email address of the person you want to transfer the form to. They must already be an MoJ Forms user and have signed into MoJ Forms at least once.</p>
+  <p>If they aren't a user yet, ask them to <a class="govuk-link" href="/contact/">contact us</a> to get access.</p>
+  <p>Once you change the form's owner, you will be taken back to 'Your forms' and no longer see or be able to access the form.</p>
+  <p>The new form owner will be notified by email of the change.</p>
+  <p><a class="govuk-link" href="#top">Back to top</a></p>
+</section>
