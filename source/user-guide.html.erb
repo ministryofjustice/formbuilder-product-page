@@ -5,62 +5,53 @@ category: user-guide
 order: 1
 menu: top
 menuindex: 3
+layout: user_guide
 ---
 
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper govuk-body" id="main-content" role="main">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-quarter">
-        <%= partial "user_nav" %>
-      </div>
-      <div class="govuk-grid-column-three-quarters">
-        <h1 class="govuk-heading-l"><%= current_page.data.heading%></h1>
-        <!-- START CONTENT -->
-        <p class="govuk-body-l">Learn how to build, configure and publish forms and get help when you need it.</p>
-        <h2 class="govuk-heading-m">Contents</h2>
-        <%= partial "toc", locals: { links: { 
-          'access': "Getting access and signing in",
-          'issues': "Known issues",
-          'help': "Get help or report a bug",
-          'feedback': "Give feedabck"
-        }} %>
-      <section class="content-section content-section--with-top-border">
-        <h2 id="access" class="govuk-heading-m">Getting access and signing in</h2>
-        <p>MoJ Forms is only available to employees of MoJ and its agencies and public bodies. To request access, <a class="govuk-link" href="/contact">contact us</a> to discuss your requirements. As MoJ Forms is still in development, we need your consent to take part in ongoing research.</p>
-        <p>MoJ Forms shares a login with your primary work email address so you don't need to remember a separate username or password. We currently support email addresses ending in the following domains:</p>
-        <ul>
-        <li>@digital.justice.gov.uk</li>
-        <li>@justice.gov.uk</li>
-        <li>@cica.gov.uk</li>
-        <li>@judicialappointments.gov.uk</li>
-        <li>@judicialombudsman.gov.uk</li>
-        <li>@ospt.gov.uk</li>
-        <li>@ccrc.gov.uk</li>
-        <li>@hmcts.net</li>
-        </ul>
-        <p><a class="govuk-link" href="#top">Back to top</a></p>
-      </section>
-       <section class="content-section content-section--with-top-border">
-        <h2 id="issues" class="govuk-heading-m">Known issues</h2>
-        <p>MoJ Forms is a new platform with a range of features that we are working to expand. In the short term, you might encounter some limitations, including:
-        <ul>
-        <li>Forms cannot currently be deleted or unpublished (taken down from the internet). <a class="govuk-link" href="/contact/">Contact us</a> to do this.</li>
-        <li><a class="govuk-link" href="/building-and-editing/#autocomplete">Autocomplete questions</a> won't work if any of the uploaded answers contains an '&' symbol. Some other special characters may also cause problems. We recommend you use only standard letters in your answers.</li>
-        </ul>
-          <p><a class="govuk-link" href="#top">Back to top</a></p>
-      </section>
-      <section class="content-section content-section--with-top-border">
-          <h2 id="help" class="govuk-heading-m">Get help or report a bug</h2>
-        <p>If you need help doing something or think you have found a bug (something doesn’t work as you expected), <a class="govuk-link" href="/contact/">contact us by email or on Slack</a>.</p>
-        <p><a class="govuk-link" href="#top">Back to top</a></p>
-      </section>
-      <section class="content-section content-section--with-top-border">
-        <h2 id="feedback" class="govuk-heading-m">Give feedback</h2>
-        <p><a class="govuk-link" href="/contact/">Contact us by email or on Slack</a> to tell us what you think of MoJ Forms and suggest improvements.</p>
-        <p><a class="govuk-link" href="#top">Back to top</a></p>
-      </section>
-        <!-- END CONTENT -->
-      </div>
-    </div>
-  </main>
-</div>
+
+<h1 class="govuk-heading-l"><%= current_page.data.heading%></h1>
+<!-- START CONTENT -->
+<p class="govuk-body-l">Learn how to build, configure and publish forms and get help when you need it.</p>
+<h2 class="govuk-heading-m">Contents</h2>
+<%= partial "toc", locals: { links: { 
+  'access': "Getting access and signing in",
+  'issues': "Known issues",
+  'help': "Get help or report a bug",
+  'feedback': "Give feedabck"
+}} %>
+<section class="content-section content-section--with-top-border">
+  <h2 id="access" class="govuk-heading-m">Getting access and signing in</h2>
+  <p>MoJ Forms is only available to employees of MoJ and its agencies and public bodies. To request access, <a class="govuk-link" href="/contact">contact us</a> to discuss your requirements. As MoJ Forms is still in development, we need your consent to take part in ongoing research.</p>
+  <p>MoJ Forms shares a login with your primary work email address so you don't need to remember a separate username or password. We currently support email addresses ending in the following domains:</p>
+  <ul>
+  <li>@digital.justice.gov.uk</li>
+  <li>@justice.gov.uk</li>
+  <li>@cica.gov.uk</li>
+  <li>@judicialappointments.gov.uk</li>
+  <li>@judicialombudsman.gov.uk</li>
+  <li>@ospt.gov.uk</li>
+  <li>@ccrc.gov.uk</li>
+  <li>@hmcts.net</li>
+  </ul>
+  <p><a class="govuk-link" href="#top">Back to top</a></p>
+</section>
+<section class="content-section content-section--with-top-border">
+<h2 id="issues" class="govuk-heading-m">Known issues</h2>
+<p>MoJ Forms is a new platform with a range of features that we are working to expand. In the short term, you might encounter some limitations, including:
+<ul>
+<li>Forms cannot currently be deleted or unpublished (taken down from the internet). <a class="govuk-link" href="/contact/">Contact us</a> to do this.</li>
+<li><a class="govuk-link" href="/building-and-editing/#autocomplete">Autocomplete questions</a> won't work if any of the uploaded answers contains an '&' symbol. Some other special characters may also cause problems. We recommend you use only standard letters in your answers.</li>
+</ul>
+  <p><a class="govuk-link" href="#top">Back to top</a></p>
+</section>
+<section class="content-section content-section--with-top-border">
+  <h2 id="help" class="govuk-heading-m">Get help or report a bug</h2>
+<p>If you need help doing something or think you have found a bug (something doesn’t work as you expected), <a class="govuk-link" href="/contact/">contact us by email or on Slack</a>.</p>
+<p><a class="govuk-link" href="#top">Back to top</a></p>
+</section>
+<section class="content-section content-section--with-top-border">
+<h2 id="feedback" class="govuk-heading-m">Give feedback</h2>
+<p><a class="govuk-link" href="/contact/">Contact us by email or on Slack</a> to tell us what you think of MoJ Forms and suggest improvements.</p>
+<p><a class="govuk-link" href="#top">Back to top</a></p>
+</section>
+
