@@ -68,6 +68,11 @@ p.govuk-body,
   max-width: 75ch;
 }
 
+.govuk-body p + h3,
+.govuk-body ul + h3 {
+  margin-top: 2em;
+}
+
 .screenshot-image {
   width: 100%;
   border: 1px solid #ccc;
