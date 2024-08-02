@@ -142,6 +142,7 @@ layout: user_guide
   <li>the Teams site ID is the long string of letters and numbers that comes after - for example, in the screenshot below, the Teams site ID is <strong>3cd39371-12c8-4014-9b6e-95e11a1ba1ed</strong></li>
   </ul>
   <img src="/images/teams-site-code-example.png" alt="A screenshot showing some code from an example Teams site. The code includes the site's ID." class="screenshot-image">
+  <p>We recommend you also enable <a class="govuk-link" href="#email-settings">collecting information by email</a>. This ensures you have a backup of submissions in case there is any disruption to the Microsoft Lists connection.</p>
   <h3 class="govuk-heading-s">How it works</h3>
   <p>When you save the settings page, MoJ Forms will connect with your Teams site and create:</p>
   <ul>
@@ -149,14 +150,23 @@ layout: user_guide
   <li>a folder for attachments (even if your form doesn't have a file upload question) - which will be added to "documents"</li>
   </ul>
   <p>The list and folder names will be shown on the settings page. You can rename the files in Teams without breaking the connection, although the new names won't show in the settings page.</p>
+  <p>The columns will be arranged in the order in which the corresponding questions were created in your form.</p>
   <p>Submissions won't start appearing in your list until you publish your form.</p>
   <p>Every submission from your form will:</p>
   <ul>
   <li>create a new row in your list with all of the user's answers plus a submission ID unique to that submission</li>
   <li>if there are attachments, create a folder in the attachments folder using the submission ID as the folder name</li>
   </ul>
-  <p>When a user submits a file, the file name will show in the list but you will need to browse to find the file. The file's name will always start with the submission ID while the list will show the file's original name.</p>
-  <p>Whenever you publish an update to your form, MoJ Forms will create a new list and attachments folder. This is to ensure that the list always fully reflects the live version of the form. You will need to reapply any custom elements to the list and remember to update any automation that you are running.</p>
+  <p>When a user submits a file, the file name will show in the list and link directly to that file.</p>
+  <h3 class="govuk-heading-s">Managing your list</h3>
+  <p>Once your list has been created, you can make changes and enhancements without breaking submissions providing you don't delete the generated columns. For example, you could:</p>
+  <ul>
+  <li>rename column headers and reorder columns</li>
+  <li>add columns to help manage submissions, such as status or owner indicators</li>
+  <li>add automation using apps such as Microsoft Power Automate</li>
+  </ul>
+<p>However, whenever you publish an update to your form, MoJ Forms will create a new list and attachments folder. This is to ensure that the list always fully reflects the live version of the form. You will need to reapply any custom elements to the list and remember to update any automation that you are running.</p>
+<p>MoJ Forms may also need to update the MS Lists functionality from time-to-time, requiring a new list. We will contact you well in advance of any such changes to minimise the impact on your service.</p>
   <p><a class="govuk-link" href="#top">Back to top</a></p>
 </section>
 <section class="content-section content-section--with-top-border">
