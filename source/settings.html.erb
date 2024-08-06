@@ -13,6 +13,7 @@ layout: user_guide
   'google-analytics': "Setting up Google Analytics",
   'save-for-later': "Enabling users to save their progress on a form",
   'email-settings': "Collecting information by email",
+  'ms-lists': "Collecting information in MS Lists",
   'confirmation-email': "Sending users a confirmation email",
   'references': "Providing users with reference numbers",
   'payment-links': "Taking payments through GOV.UK Pay",
@@ -99,7 +100,7 @@ layout: user_guide
   <p>The email address you use must be an approved MoJ address. This is to help protect user data and ensure it isn't unknowingly sent outside of the organisation.</p>
   <p>The answers will be shown in the body of the email and attached to the emails in PDF. They can also be  attached in comma separated values (CSV) format. CSV files list the answers in plain text, separated by commas. They can be imported into spreadsheets and other applications, making it easier to handle and process the information you receive. For example, you could <a class="govuk-link" href="https://support.microsoft.com/en-us/office/import-data-from-a-folder-with-multiple-files-power-query-94b8023c-2e66-4f6b-8c78-6a00041c90e4">import data from multiple CSV files into Microsoft Excel</a> at once.</p>
   <p>All data received from a form is labelled OFFICIAL-SENSITIVE. This is to comply with the Government Security Classifications Policy. (Find out more about <a class="govuk-link" href="/getting-started/#security-classifications">security classifications for your form</a>.)
-  <p>Currently, email is the only way to collect the information your users submit. We plan to introduce other options, such as API integration, at a later time.</p>
+  <p>You will need to monitor and manage the volume of incoming emails carefully, especially if your form captures a large volume of attachments. Email submissions may be lost if an email inbox reaches its size limit.</p> 
   <h3 class="govuk-heading-s">Setting up the emails</h3>
   <p>Go to: Settings > Submission settings > Collect information by email</p>
   <p>On this page, you can enable collecting information by email on the Test site and on the Live site. You need to enable and configure the settings for both sites separately. The answers are attached in a PDF and can be additionally attached in a CSV.</p>
@@ -117,6 +118,55 @@ layout: user_guide
     <li>PDF subheading - in the attachment containing user answers (<a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.pdf">see a sample PDF</a>)</li>
     <li>CSV attachment - opt to receive an additional email with user answers in CSV format (<a class="govuk-link" href="https://moj-forms-editor.service.justice.gov.uk/sample.csv">see a sample CSV</a>)</li>
   </ul>
+  <p><a class="govuk-link" href="#top">Back to top</a></p>
+</section>
+<section class="content-section content-section--with-top-border">
+  <h2 id="ms-lists" class="govuk-heading-m">Collecting information in MS Lists</h2>
+  <p>You can configure your form to send user submissions to a Teams site in Microsoft 365. The answers are collected in Microsoft Lists and any attachments are saved in their own folder.<p>
+  <h3 class="govuk-heading-s">About MS Lists</h3>
+  <p>MS Lists is an app that helps you track information and organise work. The basic view looks like a table with columns for your form's questions and a row for each submission. You can create rules and automatic tasks, track actions, give access to colleagues and connect to other apps for more powerful automation.</p>
+  <p>The Technology Adoption Group runs occasional Bitesized learning sessions on MS Lists. Find out more on the <a class="govuk-link" href="https://justiceuk.sharepoint.com/sites/M365LP">How do I? learning site</a>.</p>
+  <h3 class="govuk-heading-s">Setting up a Teams site</h3>
+  <p>To use this feature, you will need a Teams site in the main "Ministry of Justice" Microsoft tenant. The tenant is shown on your profile whenever you are signed into MS 365. Most MoJ agencies are in the Ministry of Justice tenant but there are a few exceptions, including CICA.</p>
+  <p>A Teams site is a type of SharePoint site. When you create a Microsoft Team in the Teams app, this usually creates a Teams site at the same time. You can find the site by going to the SharePoint app and searching for the name of your MS Team.</p>
+  <p>If you don't have an MS Team, you can quickly set one up using the Teams Creator. It can take up to 30 minutes for your Teams site to show in SharePoint search results. Find out more about <a class="govuk-link" href="https://justiceuk.sharepoint.com/sites/M365LP/SitePages/Get-started-with-Microsoft-Teams.aspx">getting started with Teams</a>.</p>
+  <h3 class="govuk-heading-s">How to enable collecting information in MS Lists</h3>
+  <p>Go to: Settings > Submission settings > Collect information in Microsoft Lists</p>
+  <p>On this page, you can enable collecting information in MS Lists on the Test site and on the Live site. You need to enable and configure the setting for both sites separately.</p>
+  <p>To enable the setting on a site, check the 'Enable MS Lists' box. The 'configure' settings will then expand and ask for a Teams site ID.</p>
+  <p id="site-id">To find your Teams site ID:</p>
+  <ul>
+  <li>open your site in the SharePoint app</li>
+  <li>add "/_api/site/id" to the end of the site URL and enter - for example, https://justiceuk.sharepoint.com/sites/MOJFormscontentsupport/<strong>_api/site/id</strong></li>
+  <li>in the text that appears, search for "guid"</li>
+  <li>the Teams site ID is the long string of letters and numbers that comes after - for example, in the screenshot below, the Teams site ID is <strong>3cd39371-12c8-4014-9b6e-95e11a1ba1ed</strong></li>
+  </ul>
+  <img src="/images/teams-site-code-example.png" alt="A screenshot showing some code from an example Teams site. The code includes the site's ID." class="screenshot-image">
+  <p>We recommend you also enable <a class="govuk-link" href="#email-settings">collecting information by email</a>. This ensures you have a backup of submissions in case there is any disruption to the Microsoft Lists connection.</p>
+  <h3 class="govuk-heading-s">How it works</h3>
+  <p>When you save the settings page, MoJ Forms will connect with your Teams site and create:</p>
+  <ul>
+  <li>a list with columns for every question in your form - which will be added to "site contents"</li>
+  <li>a folder for attachments (even if your form doesn't have a file upload question) - which will be added to "documents"</li>
+  </ul>
+  <p>The list and folder names will be shown on the settings page. You can rename the files in Teams without breaking the connection, although the new names won't show in the settings page.</p>
+  <p>The columns will be arranged in the order in which the corresponding questions were created in your form.</p>
+  <p>Submissions won't start appearing in your list until you publish your form.</p>
+  <p>Every submission from your form will:</p>
+  <ul>
+  <li>create a new row in your list with all of the user's answers plus a submission ID unique to that submission</li>
+  <li>if there are attachments, create a folder in the attachments folder using the submission ID as the folder name</li>
+  </ul>
+  <p>When a user submits a file, the file name will show in the list and link directly to that file.</p>
+  <h3 class="govuk-heading-s">Managing your list</h3>
+  <p>Once your list has been created, you can make changes and enhancements without breaking submissions providing you don't delete the generated columns. For example, you could:</p>
+  <ul>
+  <li>rename column headers and reorder columns</li>
+  <li>add columns to help manage submissions, such as status or owner indicators</li>
+  <li>add automation using apps such as Microsoft Power Automate</li>
+  </ul>
+<p>However, whenever you publish an update to your form, MoJ Forms will create a new list and attachments folder. This is to ensure that the list always fully reflects the live version of the form. You will need to reapply any custom elements to the list and remember to update any automation that you are running.</p>
+<p>MoJ Forms may also need to update the MS Lists functionality from time-to-time, requiring a new list. We will contact you well in advance of any such changes to minimise the impact on your service.</p>
   <p><a class="govuk-link" href="#top">Back to top</a></p>
 </section>
 <section class="content-section content-section--with-top-border">
