@@ -32,7 +32,7 @@ jobs:
           at: .
       - run:
           name: htmlproofer checks
-          command: bundle exec htmlproofer --ignore-urls "/mcmw.abilitynet.org.uk/" build
+          command: bundle exec htmlproofer --ignore-urls "/mcmw.abilitynet.org.uk/" "/intranet.justice.gov.uk/" build
   build_and_push_staging:
     docker:
       - image: 'cimg/base:current'
