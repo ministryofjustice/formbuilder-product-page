@@ -4,7 +4,7 @@
 
 https://moj-forms.service.justice.gov.uk
 
-For information on MOJ Forms please contact moj-forms@digital.justice.gov.uk.
+For information on MOJ Forms please contact moj-forms@justice.gov.uk.
 
 ## Running Locally
 
