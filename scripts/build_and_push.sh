@@ -10,7 +10,7 @@ sudo add-apt-repository --yes \
    $(lsb_release -cs) \
    stable"
 
-sudo apt-get update && sudo apt-get install -y awscli docker-ce docker-ce-cli \
+sudo apt-get update && sudo apt-get install -y docker-ce docker-ce-cli \
   containerd.io ruby-full nodejs
 
 sudo curl -L -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.17.8/bin/linux/amd64/kubectl
