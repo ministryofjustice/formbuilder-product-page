@@ -17,6 +17,9 @@ menuindex: 4
             <a class="govuk-link" href="/">Home</a>
           </li>
           <li>
+            <a class="govuk-link" href="/govuk-and-moj-forms">Choosing between GOV.UK Forms and MoJ Forms</a>
+          </li>
+          <li>
             <a class="govuk-link" href="/news">News</a>
             <ul class="govuk-list govuk-!-margin-left-4">
               <% sitemap.resources.filter { |item| item.data[:menu] != 'top' && item.path.to_s.include?('news') }.sort { |a, b| b.data.title <=> a.data.title }.each do |item| %>
